@@ -19,6 +19,7 @@ import {
   ViewUpdate,
 } from '@codemirror/view';
 import { githubLight } from '@uiw/codemirror-theme-github';
+import Chart from 'chart.js/auto';
 import debounce from 'debounce';
 import { exclude } from 'manate';
 import { auto } from 'manate/react';
@@ -117,6 +118,16 @@ const Editor = auto((props: { store: Store }) => {
       document.getElementById('preview')!.innerHTML = mde.render(
         store.editor.state.doc.toString(),
       );
+      // Chart.js
+      document
+        .querySelectorAll('#preview .chartjs')
+        .forEach((element: HTMLCanvasElement) => {
+          try {
+            new Chart(element, JSON.parse(element.textContent));
+          } catch (e) {
+            element.outerHTML = `<pre>Chart.js complains: "${e}"</pre>`;
+          }
+        });
     }, 512);
 
     // load sample markdown

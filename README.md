@@ -40,7 +40,6 @@ Copyright © 2015 - 2024 [Tyler Liu](https://github.com/tylerlong/)
 - Replace mermaid with lightweight alternatives
   - elk.js + dynamically render to get element size
 - Make an app for ebook authoring
-- Upgrade all dependencies to latest version, no exception
 - Create a VS Code extension
 - Enable react strict mode
   - only after we could properly dispose all side effects
@@ -48,7 +47,6 @@ Copyright © 2015 - 2024 [Tyler Liu](https://github.com/tylerlong/)
   - a few lines of code to embed mdp to their own app
 - Download as pdf/png/html/html code
 - Add explict typings to most code
-- Make it support node.js, means it could run without browser
 - Close most GitHub issues
 - Just copy its example: https://docs.github.com/en/get-started/writing-on-github
 - Evaluate latest version of mermaid

@@ -38,7 +38,7 @@
     "@types/react-dom": "^18.3.1",
     "@uiw/codemirror-theme-github": "^4.23.5",
     "antd": "^5.21.5",
-    "chart.js": "2.6.0",
+    "chart.js": "^4.4.5",
     "debounce": "^2.2.0",
     "eslint-config-tyler": "^0.1.7",
     "github-markdown-css": "^5.7.0",
@@ -46,7 +46,7 @@
     "katex": "^0.16.11",
     "localforage": "^1.10.0",
     "manate": "^0.9.8",
-    "markdown-extensible": "^0.2.5",
+    "markdown-extensible": "^0.2.6",
     "parcel": "^2.12.0",
     "parcel-namer-hashless": "^1.0.6",
     "path-browserify": "^1.0.1",
@@ -64,10 +64,5 @@
   "@parcel/runtime-js": {
     "splitManifestThreshold": 100000000
   },
-  "parcel-namer-hashless": {},
-  "yarn-upgrade-all": {
-    "ignore": [
-      "chart.js"
-    ]
-  }
+  "parcel-namer-hashless": {}
 }
