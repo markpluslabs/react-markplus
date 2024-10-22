@@ -31,42 +31,6 @@ const Toolbar = auto((props: { store: Store }) => {
       },
     });
   };
-  const headingClicked = (level: number) => {
-    const editor = store.editor;
-    const currentLine = editor.state.doc.lineAt(
-      editor.state.selection.main.head,
-    );
-    editor.dispatch({
-      changes: {
-        from: currentLine.from,
-        to: currentLine.from,
-        insert: `${'#'.repeat(level)} `,
-      },
-    });
-  };
-  const hrClicked = () => {
-    const editor = store.editor;
-    const cursorPos = editor.state.selection.main.head;
-    const currentLine = editor.state.doc.lineAt(cursorPos);
-    const isAtLineStart = cursorPos === currentLine.from;
-    if (isAtLineStart) {
-      editor.dispatch({
-        changes: {
-          from: currentLine.from,
-          to: currentLine.from,
-          insert: '\n---\n\n',
-        },
-      });
-    } else {
-      editor.dispatch({
-        changes: {
-          from: currentLine.to,
-          to: currentLine.to,
-          insert: '\n\n---\n\n',
-        },
-      });
-    }
-  };
   const listClicked = (prefix: string) => {
     const editor = store.editor;
     const startLine = editor.state.doc.lineAt(editor.state.selection.main.from);
@@ -119,22 +83,17 @@ const Toolbar = auto((props: { store: Store }) => {
         ></i>
       ))}
       <i className="dividor">|</i>
-      {[1, 2, 3, 4, 5, 6].map((level) => (
-        <i
-          key={level}
-          title={`Heading ${level}`}
-          className="fa heading-icon"
-          onClick={() => headingClicked(level)}
-        >
-          h{level}
-        </i>
-      ))}
-      <i className="dividor">|</i>
       <i
-        title="Horizontal rule"
-        className="fa fa-minus"
-        onClick={() => hrClicked()}
+        title="Emoji"
+        className="fa fa-regular fa-smile"
+        onClick={() => modals.emoji.open()}
       ></i>
+      <i
+        title="Font awesome"
+        className="fa fa-regular fa-flag"
+        onClick={() => modals.fontAwesome.open()}
+      ></i>
+      <i className="dividor">|</i>
       {[
         { name: 'Quote', icon: 'fa-quote-left', prefix: '> ' },
         { name: 'Unordered list', icon: 'fa-list-ul', prefix: '- ' },
@@ -243,17 +202,6 @@ row 2 col 1 | row 2 col 2`.trim();
             });
           }
         }}
-      ></i>
-      <i className="dividor">|</i>
-      <i
-        title="Emoji"
-        className="fa fa-regular fa-smile"
-        onClick={() => modals.emoji.open()}
-      ></i>
-      <i
-        title="Font awesome"
-        className="fa fa-regular fa-flag"
-        onClick={() => modals.fontAwesome.open()}
       ></i>
       <i className="dividor">|</i>
       <i

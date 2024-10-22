@@ -13,22 +13,16 @@
   padding: 2px 5px;
   border: 1px solid transparent;
 }
-#toolbar .fa:hover,
-#about-icon:hover {
-  background-color: #999;
-  border-color: #ccc;
-  cursor: pointer;
-}
-
 #about-icon {
   height: 20px;
   vertical-align: top;
 }
 
-.heading-icon {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 100;
+#toolbar .fa:hover,
+#about-icon:hover {
+  background-color: #999;
+  border-color: #ccc;
+  cursor: pointer;
 }
 
 .dividor {
@@ -37,6 +31,7 @@
   margin: 0 6px;
 }
 
+/* toolbar cannot be select */
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -46,6 +41,7 @@
   user-select: none;
 }
 
+/* fix clicking anchor scroll issue */
 h1,
 h2,
 h3,
@@ -55,10 +51,12 @@ h6 {
   scroll-margin-top: 1px;
 }
 
+/* code highlight */
 pre code.hljs {
   padding: 0;
 }
 
+/* custom container */
 .success,
 .info,
 .warning,
@@ -68,38 +66,34 @@ pre code.hljs {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .success > p:last-child,
 .info > p:last-child,
 .warning > p:last-child,
 .danger > p:last-child {
   margin-bottom: 0;
 }
-
 .success {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-
 .info {
   color: #31708f;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
-
 .warning {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
-
 .danger {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
 
+/* mermaid */
 pre.mermaid {
   text-align: center;
 }
