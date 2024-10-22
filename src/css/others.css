@@ -99,3 +99,7 @@ pre code.hljs {
   background-color: #f2dede;
   border-color: #ebccd1;
 }
+
+pre.mermaid {
+  text-align: center;
+}

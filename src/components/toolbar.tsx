@@ -109,7 +109,7 @@ const Toolbar = auto((props: { store: Store }) => {
         { title: 'Italic', icon: 'fa-italic', modifier: '*' },
         { title: 'Strikethrough', icon: 'fa-strikethrough', modifier: '~~' },
         { title: 'Underline', icon: 'fa-underline', modifier: '++' },
-        { title: 'Mark', icon: 'fa-pencil', modifier: '==' },
+        { title: 'Mark', icon: 'fa-marker', modifier: '==' },
       ].map(({ title, icon, modifier }) => (
         <i
           key={title}
@@ -258,7 +258,7 @@ row 2 col 1 | row 2 col 2`.trim();
       <i className="dividor">|</i>
       <i
         title="Math"
-        className="fa fa-superscript"
+        className="fa fa-square-root-variable"
         onClick={() => {
           const editor = store.editor;
           const mainSelection = editor.state.selection.main;
