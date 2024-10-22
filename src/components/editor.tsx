@@ -24,6 +24,7 @@ import debounce from 'debounce';
 import { exclude } from 'manate';
 import { auto } from 'manate/react';
 import mde from 'markdown-extensible';
+import mermaid from 'mermaid/dist/mermaid.esm.mjs';
 import React, { useEffect, useRef } from 'react';
 
 import markdownUrl from '../sample.md';
@@ -114,6 +115,7 @@ const Editor = auto((props: { store: Store }) => {
     });
 
     // whenever user changes markdown
+    mermaid.initialize({ startOnLoad: false });
     const lazyChange = debounce(() => {
       document.getElementById('preview')!.innerHTML = mde.render(
         store.editor.state.doc.toString(),
@@ -128,6 +130,11 @@ const Editor = auto((props: { store: Store }) => {
             element.outerHTML = `<pre>Chart.js complains: "${e}"</pre>`;
           }
         });
+
+      // mermaid
+      mermaid.run({
+        nodes: document.querySelectorAll('#preview pre.mermaid'),
+      });
     }, 512);
 
     // load sample markdown

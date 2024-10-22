@@ -158,10 +158,6 @@ C -->|Three| F[Car]
 
 [Flowchart Syntax](http://knsv.github.io/mermaid/#flowcharts-basic-syntax)
 
-::: warning
-Adding many flowcharts will slow down the editor.
-:::
-
 ### Sequence diagram
 
 ```mermaid
@@ -173,10 +169,6 @@ end
 ```
 
 [Sequence Diagram Syntax](http://knsv.github.io/mermaid/#sequence-diagrams)
-
-::: warning
-Adding many sequence diagrams will slow down the editor.
-:::
 
 ### Gantt diagram
 
@@ -211,10 +203,6 @@ Add another diagram to demo page    : 48h
 ```
 
 [Gantt Diagram Syntax](http://knsv.github.io/mermaid/#gant-diagrams)
-
-::: warning
-Adding many gantt diagrams will slow down the editor.
-:::
 
 ## Custom Container
 

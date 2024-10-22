@@ -49,6 +49,5 @@ Copyright © 2015 - 2024 [Tyler Liu](https://github.com/tylerlong/)
 - Add explict typings to most code
 - Close most GitHub issues
 - Just copy its example: https://docs.github.com/en/get-started/writing-on-github
-- Evaluate latest version of mermaid
 - Every useEffect should have a dispose method
 - Why katex can generate size in node.js?
