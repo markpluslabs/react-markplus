@@ -118,7 +118,7 @@ note.]
 
 [Footnote Syntax](https://pandoc.org/MANUAL.html#footnotes)
 
-## Mathematical formula
+## Math
 
 Inline math: `$\dfrac{ \tfrac{1}{2}[1-(\tfrac{1}{2})^n] }{ 1-\tfrac{1}{2} } = s_n$`
 
