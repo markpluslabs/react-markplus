@@ -141,7 +141,7 @@ Math block:
  \left[R^2\frac{\partial D_n(R)}{\partial R}\right]\,dR
 ```
 
-[Mathematical Formula Syntax](https://www.mediawiki.org/wiki/Extension:Math/Syntax)
+[Math Syntax](https://www.mediawiki.org/wiki/Extension:Math/Syntax)
 
 ## Mermaid charts
 

@@ -257,7 +257,7 @@ row 2 col 1 | row 2 col 2`.trim();
       ></i>
       <i className="dividor">|</i>
       <i
-        title="Mathematical formula"
+        title="Math"
         className="fa fa-superscript"
         onClick={() => {
           const editor = store.editor;
@@ -269,38 +269,15 @@ row 2 col 1 | row 2 col 2`.trim();
             changes: {
               from: mainSelection.from,
               to: mainSelection.to,
-              insert: `\n\`\`\`katex\n${text}\n\`\`\`\n`,
+              insert: `\n\`\`\`math\n${text}\n\`\`\`\n`,
             },
           });
         }}
       ></i>
       <i
-        title="Flowchart"
-        className="fa fa-long-arrow-right"
+        title="Mermaid chart"
+        className="fa fa-diagram-project"
         onClick={() => mermaidClicked('graph LR\nA-->B')}
-      ></i>
-      <i
-        title="Sequence diagram"
-        className="fa fa-exchange"
-        onClick={() =>
-          mermaidClicked('sequenceDiagram\nA->>B: How are you?\nB->>A: Great!')
-        }
-      ></i>
-      <i
-        title="Gantt diagram"
-        className="fa fa-sliders"
-        onClick={() =>
-          mermaidClicked(
-            `gantt
-dateFormat YYYY-MM-DD
-section S1
-T1: 2014-01-01, 9d
-section S2
-T2: 2014-01-11, 9d
-section S3
-T3: 2014-01-02, 9d`,
-          )
-        }
       ></i>
       <i className="dividor">|</i>
       <i
