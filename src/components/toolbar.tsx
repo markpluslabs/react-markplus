@@ -82,7 +82,7 @@ const Toolbar = auto((props: { store: Store }) => {
       });
     }
   };
-  const mermaidClicked = (sample: string) => {
+  const insertFence = (type: string, sample: string) => {
     const editor = store.editor;
     const mainSelection = editor.state.selection.main;
     const text =
@@ -91,7 +91,7 @@ const Toolbar = auto((props: { store: Store }) => {
       changes: {
         from: mainSelection.from,
         to: mainSelection.to,
-        insert: `\n\`\`\`mermaid\n${text}\n\`\`\`\n`,
+        insert: `\n\`\`\`${type}\n${text}\n\`\`\`\n`,
       },
     });
   };
@@ -277,7 +277,34 @@ row 2 col 1 | row 2 col 2`.trim();
       <i
         title="Mermaid chart"
         className="fa fa-diagram-project"
-        onClick={() => mermaidClicked('graph LR\nA-->B')}
+        onClick={() => insertFence('mermaid', 'graph LR\nA-->B')}
+      ></i>
+      <i
+        title="Chart.js chart"
+        className="fa fa-chart-column"
+        onClick={() =>
+          insertFence(
+            'chartjs',
+            `{
+  "type": "bar",
+  "data": {
+    "labels": [
+      "last year",
+      "this year"
+    ],
+    "datasets": [
+      {
+        "label": "# of Rainy Days",
+        "data": [
+          60,
+          30
+        ]
+      }
+    ]
+  }
+}`,
+          )
+        }
       ></i>
       <i className="dividor">|</i>
       <i
