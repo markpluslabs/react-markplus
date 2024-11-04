@@ -2,7 +2,7 @@ import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
 import waitFor from 'wait-for-async';
 
-const Preview = auto(() => {
+const Preview = () => {
   useEffect(() => {
     // scroll past end
     const preview = document.querySelector('#preview') as HTMLElement;
@@ -31,6 +31,6 @@ const Preview = auto(() => {
     scrollToHash();
   }, []);
   return <article className="markdown-body" id="preview"></article>;
-});
+};
 
-export default Preview;
+export default auto(Preview);

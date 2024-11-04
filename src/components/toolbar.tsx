@@ -4,7 +4,7 @@ import React from 'react';
 import iconUrl from '../icon.svg';
 import { Store } from '../store';
 
-const Toolbar = auto((props: { store: Store }) => {
+const Toolbar = (props: { store: Store }) => {
   const { store } = props;
   const { modals } = store;
   const stylingClicked = (modifier: string) => {
@@ -266,6 +266,6 @@ row 2 col 1 | row 2 col 2`.trim();
       ></i>
     </div>
   );
-});
+};
 
-export default Toolbar;
+export default auto(Toolbar);

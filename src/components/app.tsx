@@ -25,7 +25,7 @@ const main = async () => {
   preferencesSaver.start();
 };
 
-const App = auto((props: { store: Store }) => {
+const App = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
   useEffect(() => {
@@ -78,6 +78,6 @@ const App = auto((props: { store: Store }) => {
       <Modals store={store} />
     </>
   );
-});
+};
 
-export default App;
+export default auto(App);

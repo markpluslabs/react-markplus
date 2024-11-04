@@ -4,7 +4,7 @@ import React, { useRef, useState } from 'react';
 
 import { Store } from '../../store';
 
-const promptModals = auto((props: { store: Store }) => {
+const PromptModals = (props: { store: Store }) => {
   const { store } = props;
   const { modals } = store;
   const emojiInput = useRef<InputRef>(null);
@@ -139,6 +139,6 @@ const promptModals = auto((props: { store: Store }) => {
       </Modal>
     </>
   );
-});
+};
 
-export default promptModals;
+export default auto(PromptModals);

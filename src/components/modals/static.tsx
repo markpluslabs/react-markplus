@@ -5,7 +5,7 @@ import React from 'react';
 import iconUrl from '../../icon.svg';
 import store from '../../store';
 
-const StaticModals = auto((props: { modals: typeof store.modals }) => {
+const StaticModals = (props: { modals: typeof store.modals }) => {
   const { modals } = props;
   return (
     <>
@@ -102,6 +102,6 @@ const StaticModals = auto((props: { modals: typeof store.modals }) => {
       </Modal>
     </>
   );
-});
+};
 
-export default StaticModals;
+export default auto(StaticModals);

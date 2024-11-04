@@ -7,7 +7,7 @@ import React, { useEffect } from 'react';
 import iconUrl from '../../icon.svg';
 import { Store } from '../../store';
 
-const PreferencesModal = auto((props: { store: Store }) => {
+const PreferencesModal = (props: { store: Store }) => {
   const { store } = props;
   const modal = store.modals.preferences;
   const preferences = store.preferences;
@@ -106,6 +106,6 @@ const PreferencesModal = auto((props: { store: Store }) => {
       </div>
     </Modal>
   );
-});
+};
 
-export default PreferencesModal;
+export default auto(PreferencesModal);

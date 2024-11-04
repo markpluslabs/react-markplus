@@ -30,7 +30,7 @@ import markdownUrl from '../sample.md';
 import { Store } from '../store';
 import { syncEditor, syncPreview } from '../sync_scroll';
 
-const Editor = auto((props: { store: Store }) => {
+const Editor = (props: { store: Store }) => {
   const { store } = props;
   const editorDiv = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -151,6 +151,6 @@ const Editor = auto((props: { store: Store }) => {
     loadSample();
   }, [store]);
   return <div id="editor" ref={editorDiv}></div>;
-});
+};
 
-export default Editor;
+export default auto(Editor);

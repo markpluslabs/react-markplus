@@ -6,7 +6,7 @@ import PreferencesModal from './preferences';
 import PromptModals from './prompt';
 import StaticModals from './static';
 
-const Modals = auto((props: { store: Store }) => {
+const Modals = (props: { store: Store }) => {
   const { store } = props;
   return (
     <>
@@ -15,6 +15,6 @@ const Modals = auto((props: { store: Store }) => {
       <StaticModals modals={store.modals} />
     </>
   );
-});
+};
 
-export default Modals;
+export default auto(Modals);
