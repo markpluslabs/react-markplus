@@ -4,33 +4,42 @@ import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
 import Split from 'split-grid';
 
-import store, { Store } from '../store';
+import { Store } from '../store';
 import Editor from './editor';
 import Modals from './modals';
 import Preview from './preview';
 import Toolbar from './toolbar';
 
-const main = async () => {
-  // load preferences
-  // we don't need to apply preferences here, it's done in modals.tsx useEffect
-  const savedPreferences = await localforage.getItem<string>('mdp-preferences');
-  if (savedPreferences) {
-    Object.assign(store.preferences, JSON.parse(savedPreferences));
-  }
-  // auto save preferences to localforage
-  // we can't start it until the first load, otherwise it will save the default preferences
-  const preferencesSaver = autoRun(store.preferences, () => {
-    localforage.setItem('mdp-preferences', JSON.stringify(store.preferences));
-  });
-  preferencesSaver.start();
-};
-
 const App = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
   useEffect(() => {
+    let preferencesSaver: ReturnType<typeof autoRun>;
+    const main = async () => {
+      // load preferences
+      // we don't need to apply preferences here, it's done in modals.tsx useEffect
+      const savedPreferences =
+        await localforage.getItem<string>('mdp-preferences');
+      if (savedPreferences) {
+        Object.assign(store.preferences, JSON.parse(savedPreferences));
+      }
+      // auto save preferences to localforage
+      // we can't start it until the first load, otherwise it will save the default preferences
+      preferencesSaver = autoRun(store.preferences, () => {
+        localforage.setItem(
+          'mdp-preferences',
+          JSON.stringify(store.preferences),
+        );
+      });
+      preferencesSaver.start();
+    };
     main();
-  }, []);
+    return () => {
+      if (preferencesSaver) {
+        preferencesSaver.stop();
+      }
+    };
+  }, [store.preferences]);
 
   useEffect(() => {
     Split({
