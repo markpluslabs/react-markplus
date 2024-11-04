@@ -22,7 +22,7 @@
   "type": "module",
   "scripts": {
     "lint": "tsc --jsx react --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "release": "rm -rf .parcel-cache && rm -rf docs && parcel build src/index.html --dist-dir docs --public-url ./ --no-source-maps --no-scope-hoist",
+    "release": "rm -rf .parcel-cache && rm -rf docs && parcel build src/index.html --dist-dir docs --public-url ./ --no-source-maps --no-scope-hoist && gh-pages -d docs",
     "serve": "rm -rf .parcel-cache && rm -rf temp && parcel src/index.html --dist-dir temp"
   },
   "devDependencies": {
@@ -41,6 +41,7 @@
     "chart.js": "^4.4.6",
     "debounce": "^2.2.0",
     "eslint-config-tyler": "^0.2.1",
+    "gh-pages": "^6.2.0",
     "github-markdown-css": "^5.7.0",
     "globals": "^15.11.0",
     "katex": "^0.16.11",

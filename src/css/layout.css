@@ -9,7 +9,7 @@
 #rows-grid {
   display: grid;
   grid-template-rows: 20px 6px 1fr;
-  height: 100vh;
+  height: 100%;
 }
 
 #cols-grid {
