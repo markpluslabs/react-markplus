@@ -26,7 +26,6 @@ const main = async () => {
 };
 
 const App = auto((props: { store: Store }) => {
-  console.log('render app');
   const { store } = props;
   const { preferences } = store;
   useEffect(() => {

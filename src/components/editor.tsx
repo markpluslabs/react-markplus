@@ -14,7 +14,6 @@ import {
   EditorView,
   highlightActiveLine,
   keymap,
-  lineNumbers,
   scrollPastEnd,
   ViewUpdate,
 } from '@codemirror/view';
@@ -84,7 +83,6 @@ const Editor = auto((props: { store: Store }) => {
         ),
         EditorView.lineWrapping,
         highlightActiveLine(),
-        lineNumbers(),
         scrollPastEnd(),
         history(),
         keymap.of([...defaultKeymap, ...historyKeymap]),
@@ -137,6 +135,7 @@ const Editor = auto((props: { store: Store }) => {
       });
     }, 512);
 
+    // todo: move to index.tsx (out of the library)
     // load sample markdown
     const loadSample = async () => {
       const r = await fetch(markdownUrl);
@@ -150,7 +149,7 @@ const Editor = auto((props: { store: Store }) => {
       });
     };
     loadSample();
-  }, []);
+  }, [store]);
   return <div id="editor" ref={editorDiv}></div>;
 });
 

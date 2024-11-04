@@ -7,7 +7,6 @@ import PromptModals from './prompt';
 import StaticModals from './static';
 
 const Modals = auto((props: { store: Store }) => {
-  console.log('render modals');
   const { store } = props;
   return (
     <>

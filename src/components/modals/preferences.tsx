@@ -8,7 +8,6 @@ import iconUrl from '../../icon.svg';
 import { Store } from '../../store';
 
 const PreferencesModal = auto((props: { store: Store }) => {
-  console.log('render preferences modal');
   const { store } = props;
   const modal = store.modals.preferences;
   const preferences = store.preferences;
@@ -33,7 +32,7 @@ const PreferencesModal = auto((props: { store: Store }) => {
     });
     start();
     return () => stop();
-  }, []);
+  }, [store]);
   return (
     <Modal
       open={modal.isOpen}

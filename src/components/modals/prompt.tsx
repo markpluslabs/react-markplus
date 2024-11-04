@@ -5,7 +5,6 @@ import React, { useRef, useState } from 'react';
 import { Store } from '../../store';
 
 const promptModals = auto((props: { store: Store }) => {
-  console.log('render prompt modals');
   const { store } = props;
   const { modals } = store;
   const emojiInput = useRef<InputRef>(null);

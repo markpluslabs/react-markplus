@@ -5,7 +5,6 @@ import iconUrl from '../icon.svg';
 import { Store } from '../store';
 
 const Toolbar = auto((props: { store: Store }) => {
-  console.log('render toolbar');
   const { store } = props;
   const { modals } = store;
   const stylingClicked = (modifier: string) => {
