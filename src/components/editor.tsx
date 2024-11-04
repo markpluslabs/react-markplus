@@ -107,9 +107,11 @@ const Editor = (props: { store: Store }) => {
     store.editor.scrollDOM.addEventListener('scroll', () => {
       syncPreview();
     });
-    document.getElementById('right-panel').addEventListener('scroll', () => {
+    const handleScroll = () => {
       syncEditor();
-    });
+    };
+    const rightPanel = document.getElementById('right-panel')!;
+    rightPanel.addEventListener('scroll', handleScroll);
 
     // whenever user changes markdown
     mermaid.initialize({ startOnLoad: false });
@@ -133,6 +135,10 @@ const Editor = (props: { store: Store }) => {
         nodes: document.querySelectorAll('#preview pre.mermaid'),
       });
     }, 512);
+    return () => {
+      store.editor.destroy();
+      rightPanel.removeEventListener('scroll', handleScroll);
+    };
   }, [store]);
   return <div id="editor" ref={editorDiv}></div>;
 };
