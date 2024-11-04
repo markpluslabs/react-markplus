@@ -26,7 +26,6 @@ import mde from 'markdown-extensible';
 import mermaid from 'mermaid/dist/mermaid.esm.mjs';
 import React, { useEffect, useRef } from 'react';
 
-import markdownUrl from '../sample.md';
 import { Store } from '../store';
 import { syncEditor, syncPreview } from '../sync_scroll';
 
@@ -134,21 +133,6 @@ const Editor = (props: { store: Store }) => {
         nodes: document.querySelectorAll('#preview pre.mermaid'),
       });
     }, 512);
-
-    // todo: move to index.tsx (out of the library)
-    // load sample markdown
-    const loadSample = async () => {
-      const r = await fetch(markdownUrl);
-      const data = await r.text();
-      store.editor.dispatch({
-        changes: {
-          from: 0,
-          to: store.editor.state.doc.length,
-          insert: data,
-        },
-      });
-    };
-    loadSample();
   }, [store]);
   return <div id="editor" ref={editorDiv}></div>;
 };
