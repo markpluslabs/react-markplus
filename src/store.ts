@@ -5,9 +5,11 @@ import { exclude, manage } from 'manate';
 
 class Modal {
   public isOpen = false;
+
   public open() {
     this.isOpen = true;
   }
+
   public close() {
     this.isOpen = false;
     store.editor?.focus();
