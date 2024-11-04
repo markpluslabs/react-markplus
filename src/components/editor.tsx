@@ -104,14 +104,16 @@ const Editor = (props: { store: Store }) => {
 
     store.editor = exclude(cm);
 
-    store.editor.scrollDOM.addEventListener('scroll', () => {
+    const handleEditorScroll = () => {
       syncPreview();
-    });
-    const handleScroll = () => {
+    };
+    store.editor.scrollDOM.addEventListener('scroll', handleEditorScroll);
+
+    const handlePreviewScroll = () => {
       syncEditor();
     };
     const rightPanel = document.getElementById('right-panel')!;
-    rightPanel.addEventListener('scroll', handleScroll);
+    rightPanel.addEventListener('scroll', handlePreviewScroll);
 
     // whenever user changes markdown
     mermaid.initialize({ startOnLoad: false });
@@ -136,8 +138,9 @@ const Editor = (props: { store: Store }) => {
       });
     }, 512);
     return () => {
+      store.editor.scrollDOM.removeEventListener('scroll', handleEditorScroll);
       store.editor.destroy();
-      rightPanel.removeEventListener('scroll', handleScroll);
+      rightPanel.removeEventListener('scroll', handlePreviewScroll);
     };
   }, [store]);
   return <div id="editor" ref={editorDiv}></div>;

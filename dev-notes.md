@@ -4,7 +4,6 @@
 
 - Write Playwright tests
 - Replace mermaid with lightweight alternatives
-  - elk.js + dynamically render to get element size
 - Make an app for ebook authoring
 - Create a VS Code extension
 - Enable react strict mode
@@ -14,5 +13,4 @@
 - Download as pdf/png/html/html code
 - Add explict typings to most code
 - Close most GitHub issues
-- Every useEffect should have a dispose method
 - must support print preview
