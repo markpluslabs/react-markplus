@@ -47,3 +47,4 @@ Copyright © 2015 - 2024 [Tyler Liu](https://github.com/tylerlong/)
 - Add explict typings to most code
 - Close most GitHub issues
 - Every useEffect should have a dispose method
+- must support print preview

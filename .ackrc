@@ -1,4 +1,3 @@
 --ignore-dir=.parcel-cache
---ignore-dir=docs
 --ignore-dir=temp
 --ignore-file=match:/^yarn\.lock$/
