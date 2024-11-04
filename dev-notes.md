@@ -6,8 +6,6 @@
 - Replace mermaid with lightweight alternatives
 - Make an app for ebook authoring
 - Create a VS Code extension
-- Enable react strict mode
-  - only after we could properly dispose all side effects
 - Release a React library so that everyone can use it easily
   - a few lines of code to embed mdp to their own app
 - Download as pdf/png/html/html code

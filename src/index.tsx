@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import MarkdownPlus from './library';
@@ -18,4 +18,8 @@ const Root = () => {
 };
 
 const root = createRoot(document.getElementById('root'));
-root.render(<Root />);
+root.render(
+  <StrictMode>
+    <Root />
+  </StrictMode>,
+);
