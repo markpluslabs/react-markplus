@@ -2,4 +2,3 @@ node_modules/
 .DS_Store
 .parcel-cache/
 temp/
-docs/

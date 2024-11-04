@@ -35,8 +35,6 @@ Copyright © 2015 - 2024 [Tyler Liu](https://github.com/tylerlong/)
 ## Todo
 
 - Write Playwright tests
-- Support mobile devices
-  - codemirror support mobile devices
 - Replace mermaid with lightweight alternatives
   - elk.js + dynamically render to get element size
 - Make an app for ebook authoring
@@ -48,6 +46,4 @@ Copyright © 2015 - 2024 [Tyler Liu](https://github.com/tylerlong/)
 - Download as pdf/png/html/html code
 - Add explict typings to most code
 - Close most GitHub issues
-- Just copy its example: https://docs.github.com/en/get-started/writing-on-github
 - Every useEffect should have a dispose method
-- Why katex can generate size in node.js?

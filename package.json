@@ -22,7 +22,7 @@
   "type": "module",
   "scripts": {
     "lint": "tsc --jsx react --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "release": "rm -rf .parcel-cache && rm -rf docs && parcel build src/index.html --dist-dir docs --public-url ./ --no-source-maps --no-scope-hoist && gh-pages -d docs",
+    "release": "rm -rf .parcel-cache && rm -rf docs && parcel build src/index.html --dist-dir docs --public-url ./ --no-source-maps --no-scope-hoist && gh-pages -d docs && rm -rf docs",
     "serve": "rm -rf .parcel-cache && rm -rf temp && parcel src/index.html --dist-dir temp"
   },
   "devDependencies": {
