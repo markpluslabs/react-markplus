@@ -1,7 +1,6 @@
 {
   "name": "markdown-plus",
   "version": "3.0.0-alpha.1",
-  "private": true,
   "description": "Markdown editor with extra features",
   "keywords": [
     "markdown",
@@ -20,10 +19,15 @@
   "license": "MIT",
   "author": "Tyler Liu",
   "type": "module",
+  "main": "lib/library.js",
+  "types": "lib/library.d.ts",
   "scripts": {
-    "lint": "tsc --jsx react --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
+    "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
     "release": "rm -rf .parcel-cache && parcel build src/index.html --dist-dir docs --public-url ./ --no-source-maps --no-scope-hoist && gh-pages -d docs && rm -rf docs",
-    "serve": "rm -rf .parcel-cache && rm -rf temp && parcel src/index.html --dist-dir temp"
+    "serve": "rm -rf .parcel-cache && rm -rf temp && parcel src/index.html --dist-dir temp",
+    "compile": "tsc --skipLibCheck --outDir lib --declaration --sourceMap",
+    "prepublishOnly": "yarn compile",
+    "postpublish": "rm -rf lib"
   },
   "dependencies": {
     "@codemirror/commands": "^6.7.1",
