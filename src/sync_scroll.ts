@@ -12,7 +12,7 @@ type IScroll = {
 
 let scrollingSide = null;
 let timeoutHandle = null;
-const scrollSide = (side: 'left' | 'right', howToScroll): void => {
+const scrollSide = (side: 'left' | 'right', howToScroll: () => void): void => {
   if (scrollingSide !== null && scrollingSide !== side) {
     return; // the other side hasn't finished scrolling
   }
@@ -78,7 +78,7 @@ const getEditorScroll = (): IScroll => {
   return r;
 };
 
-const setPreviewScroll = (editorScroll: IScroll) => {
+const setPreviewScroll = (editorScroll: IScroll): void => {
   let lastPosition = 0;
   let nextPosition =
     document.querySelector<HTMLElement>('#preview').offsetHeight -
@@ -141,7 +141,7 @@ const getPreviewScroll = (): IScroll => {
   return r;
 };
 
-const setEditorScroll = (previewScroll: IScroll) => {
+const setEditorScroll = (previewScroll: IScroll): void => {
   const targetLineNumber =
     (previewScroll.nextMarker - previewScroll.lastMarker) *
       previewScroll.percentage +

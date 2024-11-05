@@ -7,7 +7,7 @@ import { Store } from '../store';
 const Toolbar = (props: { store: Store }) => {
   const { store } = props;
   const { modals } = store;
-  const stylingClicked = (modifier: string) => {
+  const stylingClicked = (modifier: string): void => {
     const editor = store.editor;
     let mainSelection = editor.state.selection.main;
     if (mainSelection.empty) {
@@ -30,7 +30,7 @@ const Toolbar = (props: { store: Store }) => {
       },
     });
   };
-  const listClicked = (prefix: string) => {
+  const listClicked = (prefix: string): void => {
     const editor = store.editor;
     const startLine = editor.state.doc.lineAt(editor.state.selection.main.from);
     const endLine = editor.state.doc.lineAt(editor.state.selection.main.to);
@@ -45,7 +45,7 @@ const Toolbar = (props: { store: Store }) => {
       });
     }
   };
-  const insertFence = (type: string, sample: string) => {
+  const insertFence = (type: string, sample: string): void => {
     const editor = store.editor;
     const mainSelection = editor.state.selection.main;
     const text =

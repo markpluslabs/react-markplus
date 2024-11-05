@@ -3,7 +3,7 @@ export const animate = (
   start: number,
   end: number,
   duration: number,
-) => {
+): void => {
   const startTime = performance.now();
   const animate = (currentTime: number) => {
     const timeElapsed = currentTime - startTime;
