@@ -11,4 +11,3 @@
 - Download as pdf/png/html/html code
 - Add explict typings to most code
 - Close most GitHub issues
-- must support print preview
