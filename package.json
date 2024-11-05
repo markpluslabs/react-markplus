@@ -44,7 +44,7 @@
     "katex": "^0.16.11",
     "localforage": "^1.10.0",
     "manate": "^0.9.8",
-    "markdown-extensible": "^0.2.7",
+    "markdown-extensible": "^0.2.8",
     "mermaid": "^11.4.0",
     "split-grid": "^1.0.11",
     "wait-for-async": "^0.7.0"

@@ -120,9 +120,8 @@ const Editor = (props: { store: Store }) => {
     // whenever user changes markdown
     mermaid.initialize({ startOnLoad: false });
     const lazyChange = debounce(() => {
-      document.getElementById('preview')!.innerHTML = mde.render(
-        store.editor.state.doc.toString(),
-      );
+      const markdown = store.editor.state.doc.toString();
+      document.getElementById('preview')!.innerHTML = mde.render(markdown);
       // Chart.js
       document
         .querySelectorAll('#preview .chartjs')
