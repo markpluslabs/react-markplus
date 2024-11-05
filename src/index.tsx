@@ -17,20 +17,16 @@ const Root = () => {
 
   // for printing
   useEffect(() => {
-    let paddingBottom = '0';
     const beforePrintHandler = () => {
       const element = document.getElementById('preview');
       document.body.appendChild(element);
       document.getElementById('root').style.display = 'none';
-      paddingBottom = element.style.paddingBottom;
-      element.style.paddingBottom = '0'; // disable scroll past end
     };
     window.addEventListener('beforeprint', beforePrintHandler);
     const afterPrintHandler = () => {
       const element = document.getElementById('preview');
       document.getElementById('root').style.display = 'block';
       document.getElementById('right-panel').appendChild(element);
-      element.style.paddingBottom = paddingBottom;
     };
     window.addEventListener('afterprint', afterPrintHandler);
     return () => {

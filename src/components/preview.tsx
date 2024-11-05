@@ -4,15 +4,6 @@ import waitFor from 'wait-for-async';
 
 const Preview = () => {
   useEffect(() => {
-    // scroll past end
-    const preview = document.querySelector('#preview') as HTMLElement;
-    const rightPanel = document.querySelector('#right-panel') as HTMLElement;
-    let lineHeight = parseInt(getComputedStyle(preview).lineHeight, 10);
-    if (isNaN(lineHeight)) {
-      lineHeight = 24;
-    }
-    preview.style.paddingBottom = `${rightPanel.offsetHeight - lineHeight * 1.5}px`;
-
     const scrollToHash = async () => {
       if (window.location.hash.length === 0) {
         return;

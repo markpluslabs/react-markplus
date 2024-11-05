@@ -14,7 +14,6 @@ import {
   EditorView,
   highlightActiveLine,
   keymap,
-  scrollPastEnd,
   ViewUpdate,
 } from '@codemirror/view';
 import { githubLight } from '@uiw/codemirror-theme-github';
@@ -82,7 +81,6 @@ const Editor = (props: { store: Store }) => {
         ),
         EditorView.lineWrapping,
         highlightActiveLine(),
-        scrollPastEnd(),
         history(),
         keymap.of([...defaultKeymap, ...historyKeymap]),
         markdown(),
