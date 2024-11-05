@@ -21,14 +21,6 @@ class Preferences {
   public editorVsPreview = '1fr 6px 1fr';
   public theme: 'light' | 'dark' | 'auto' = 'auto';
   public editorFontSize = 14;
-
-  // neither editor or preview is hidden
-  public get normalEvsP() {
-    return this.editorVsPreview.startsWith('0fr ') ||
-      this.editorVsPreview.endsWith(' 0fr')
-      ? '1fr 6px 1fr'
-      : this.editorVsPreview;
-  }
 }
 
 export class Store {
