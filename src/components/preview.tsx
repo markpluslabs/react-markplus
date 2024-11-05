@@ -6,9 +6,12 @@ const Preview = () => {
   useEffect(() => {
     // scroll past end
     const preview = document.querySelector('#preview') as HTMLElement;
-    const leftPanel = document.querySelector('#left-panel') as HTMLElement;
-    const lineHeight = parseInt(getComputedStyle(preview).lineHeight, 10);
-    preview.style.paddingBottom = `${leftPanel.offsetHeight - lineHeight}px`;
+    const rightPanel = document.querySelector('#right-panel') as HTMLElement;
+    let lineHeight = parseInt(getComputedStyle(preview).lineHeight, 10);
+    if (isNaN(lineHeight)) {
+      lineHeight = 24;
+    }
+    preview.style.paddingBottom = `${rightPanel.offsetHeight - lineHeight * 1.5}px`;
 
     const scrollToHash = async () => {
       if (window.location.hash.length === 0) {
