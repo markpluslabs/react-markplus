@@ -14,6 +14,26 @@ const Root = () => {
     };
     loadSampleData();
   }, []);
+
+  // for printing
+  useEffect(() => {
+    const beforePrintHandler = () => {
+      document.body.appendChild(document.getElementById('preview'));
+      document.getElementById('root').style.display = 'none';
+    };
+    window.addEventListener('beforeprint', beforePrintHandler);
+    const afterPrintHandler = () => {
+      document.getElementById('root').style.display = 'block';
+      document
+        .getElementById('right-panel')
+        .appendChild(document.getElementById('preview'));
+    };
+    window.addEventListener('afterprint', afterPrintHandler);
+    return () => {
+      window.removeEventListener('beforeprint', beforePrintHandler);
+      window.removeEventListener('afterprint', afterPrintHandler);
+    };
+  }, []);
   return <MarkdownPlus data={data} />;
 };
 

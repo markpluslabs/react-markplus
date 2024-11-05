@@ -11,3 +11,4 @@
 - Download as pdf/png/html/html code
 - Add explict typings to most code
 - Close most GitHub issues
+- Do not use element ids so that we can have multiple components in the same page.
