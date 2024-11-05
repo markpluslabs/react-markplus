@@ -1,3 +1,4 @@
+import localforage from 'localforage';
 import React, { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -36,7 +37,19 @@ const Root = () => {
     };
   }, []);
 
-  return <MarkdownPlus markdown={markdown} toolbar="show" />;
+  // load preferences from local
+  const [preferences, setPreferences] = React.useState({});
+  useEffect(() => {
+    const main = async () => {
+      const savedPreferences = await localforage.getItem<string>(
+        'markdown-plus-preferences',
+      );
+      setPreferences(savedPreferences ? JSON.parse(savedPreferences) : {});
+    };
+    main();
+  }, []);
+
+  return <MarkdownPlus markdown={markdown} {...preferences} />;
 };
 
 const root = createRoot(document.getElementById('root'));

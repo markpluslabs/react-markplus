@@ -6,7 +6,9 @@
     "markdown",
     "editor",
     "markdown plus",
-    "mdp"
+    "react markdown",
+    "react markdown editor",
+    "react editor"
   ],
   "homepage": "https://github.com/tylerlong/markdown-plus/",
   "bugs": {
@@ -22,9 +24,8 @@
   "main": "lib/library.js",
   "types": "lib/library.d.ts",
   "scripts": {
-    "compile": "tsc --skipLibCheck --outDir lib --declaration --sourceMap",
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "prepublishOnly": "yarn compile",
+    "prepublishOnly": "tsc --skipLibCheck --outDir lib --declaration --sourceMap",
     "postpublish": "rm -rf lib",
     "release": "rm -rf .parcel-cache docs && parcel build src/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
     "serve": "rm -rf .parcel-cache temp && parcel src/index.html --dist-dir temp"
@@ -42,7 +43,6 @@
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.7.0",
     "katex": "^0.16.11",
-    "localforage": "^1.10.0",
     "manate": "^0.9.8",
     "markdown-extensible": "^0.2.8",
     "mermaid": "^11.4.0",
@@ -57,6 +57,7 @@
     "eslint-config-tyler": "^0.2.1",
     "gh-pages": "^6.2.0",
     "globals": "^15.12.0",
+    "localforage": "^1.10.0",
     "parcel": "^2.12.0",
     "parcel-namer-hashless": "^1.0.6",
     "path-browserify": "^1.0.1",
