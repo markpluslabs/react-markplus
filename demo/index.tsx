@@ -2,7 +2,7 @@ import localforage from 'localforage';
 import React, { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import MarkdownPlus from './library';
+import MarkdownPlus from '../src/library';
 import markdownUrl from './sample.md';
 
 const Root = () => {

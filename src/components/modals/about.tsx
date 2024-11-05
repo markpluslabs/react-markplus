@@ -2,7 +2,7 @@ import { Button, Modal, Space } from 'antd';
 import { auto } from 'manate/react';
 import React from 'react';
 
-import iconUrl from '../../icon.svg';
+import iconUrl from '../../../icon.svg';
 import store from '../../store';
 
 const AboutModal = (props: { modal: typeof store.modals.about }) => {

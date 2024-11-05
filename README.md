@@ -27,3 +27,5 @@ import MarkdownPlus from 'markdown-plus';
 ## Tutorial
 
 TBD
+
+For details, please check [demo](./demo/) folder.

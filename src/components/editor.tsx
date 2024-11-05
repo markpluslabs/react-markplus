@@ -58,8 +58,14 @@ const Editor = (props: { store: Store }) => {
       {
         key: 'Mod-,',
         run: () => {
-          (document.querySelector('i.fa-cog') as HTMLElement).click();
-          return true;
+          const preferencesIcon = document.querySelector(
+            'i.fa-cog',
+          ) as HTMLElement;
+          if (preferencesIcon) {
+            preferencesIcon.click();
+            return true;
+          }
+          return false;
         },
       },
       {

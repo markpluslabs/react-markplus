@@ -4,8 +4,8 @@ import { autoRun } from 'manate';
 import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
 
-import iconUrl from '../../icon.svg';
-import { Store } from '../../store';
+import iconUrl from '../icon.svg';
+import { Store } from '../src/store';
 
 const PreferencesModal = (props: { store: Store }) => {
   const { store } = props;

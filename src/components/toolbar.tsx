@@ -1,7 +1,7 @@
 import { auto } from 'manate/react';
 import React, { cloneElement, ReactElement } from 'react';
 
-import iconUrl from '../icon.svg';
+import iconUrl from '../../icon.svg';
 import { Store } from '../store';
 
 const Toolbar = (props: { store: Store }) => {

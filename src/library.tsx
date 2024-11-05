@@ -46,7 +46,6 @@ const MarkdownPlus = (props: {
       'mermaid',
       'chartjs',
       '|',
-      'preferences',
       'print',
     ];
   }, [mode, toolbar, theme, editorFontSize, toolBarItems]);
