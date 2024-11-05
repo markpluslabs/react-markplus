@@ -57,9 +57,7 @@ const App = (props: { store: Store }) => {
       <div
         id="rows-grid"
         style={{
-          gridTemplateRows: preferences.showToolbar
-            ? '20px 6px 1fr'
-            : '0fr 6px 1fr',
+          gridTemplateRows: preferences.toolbarVsBody,
         }}
       >
         <div id="toolbar">
@@ -68,8 +66,18 @@ const App = (props: { store: Store }) => {
         <div
           id="row-gutter"
           className="gutter"
-          title={preferences.showToolbar ? 'Hide toolbar' : 'Show toolbar'}
-          onClick={() => (preferences.showToolbar = !preferences.showToolbar)}
+          title={
+            String(preferences.toolbarVsBody).startsWith('0')
+              ? 'Show toolbar'
+              : 'Hide toolbar'
+          }
+          onClick={() =>
+            (preferences.toolbarVsBody = String(
+              preferences.toolbarVsBody,
+            ).startsWith('0')
+              ? '20px 6px 1fr'
+              : '0 6px 1fr')
+          }
         ></div>
         <div
           id="cols-grid"

@@ -17,7 +17,7 @@ class Modal {
 }
 
 class Preferences {
-  public showToolbar = true;
+  public toolbarVsBody = '20px 6px 1fr';
   public editorVsPreview = '1fr 6px 1fr';
   public theme: 'light' | 'dark' | 'auto' = 'auto';
   public editorFontSize = 14;

@@ -59,14 +59,15 @@ const PreferencesModal = (props: { store: Store }) => {
         </p>
         <h2>Markdown Plus Preferences</h2>
         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 12 }} labelWrap>
-          <Form.Item label="Show toolbar">
+          <Form.Item label="Toolbar">
             <Select
-              value={preferences.showToolbar}
+              value={preferences.toolbarVsBody}
               options={[
-                { value: true, label: 'Yes' },
-                { value: false, label: 'No' },
+                { value: '20px 6px 1fr', label: 'Show' },
+                { value: '0 6px 1fr', label: 'Hide' },
+                { value: '0 0 1fr', label: 'None' },
               ]}
-              onChange={(value) => (preferences.showToolbar = value)}
+              onChange={(value) => (preferences.toolbarVsBody = value)}
             />
           </Form.Item>
           <Form.Item label="Editor vs. Preview">
