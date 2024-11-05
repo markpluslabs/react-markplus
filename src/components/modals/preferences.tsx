@@ -61,26 +61,24 @@ const PreferencesModal = (props: { store: Store }) => {
         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 12 }} labelWrap>
           <Form.Item label="Toolbar">
             <Select
-              value={preferences.toolbarVsBody}
+              value={preferences.toolbar}
               options={[
-                { value: '20px 6px 1fr', label: 'Show' },
-                { value: '0 6px 1fr', label: 'Hide' },
-                { value: '0 0 1fr', label: 'None' },
+                { value: 'show', label: 'Show' },
+                { value: 'hide', label: 'Hide' },
+                { value: 'none', label: 'None' },
               ]}
-              onChange={(value) => (preferences.toolbarVsBody = value)}
+              onChange={(value) => (preferences.toolbar = value)}
             />
           </Form.Item>
           <Form.Item label="Editor vs. Preview">
             <Select
-              value={preferences.editorVsPreview}
+              value={preferences.mode}
               options={[
-                { value: '0fr 6px 1fr', label: '0 : 1' },
-                { value: '1fr 6px 2fr', label: '1 : 2' },
-                { value: '1fr 6px 1fr', label: '1 : 1' },
-                { value: '2fr 6px 1fr', label: '2 : 1' },
-                { value: '1fr 6px 0fr', label: '1 : 0' },
+                { value: '0 0 1fr', label: 'Preview' },
+                { value: '1fr 6px 1fr', label: 'Both' },
+                { value: '1fr 0 0', label: 'Editor' },
               ]}
-              onChange={(value) => (preferences.editorVsPreview = value)}
+              onChange={(value) => (preferences.mode = value)}
             />
           </Form.Item>
           <Form.Item label="Theme">
