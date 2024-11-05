@@ -1,55 +1,56 @@
-import { EditorView } from '@codemirror/view';
+// import { EditorView } from '@codemirror/view';
 import { Button, Form, Modal, Select } from 'antd';
-import { autoRun } from 'manate';
+// import { autoRun } from 'manate';
 import { auto } from 'manate/react';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import iconUrl from '../icon.svg';
-import { Store } from '../src/store';
+import { Preferences } from './preferences';
 
-const PreferencesModal = (props: { store: Store }) => {
-  const { store } = props;
-  const modal = store.modals.preferences;
-  const preferences = store.preferences;
-  useEffect(() => {
-    const { start, stop } = autoRun(store, () => {
-      if (!store.editor) {
-        return;
-      }
-      // apply light/dark theme
-      store.applyTheme();
+const PreferencesModal = (props: {
+  preferences: Preferences;
+  modalOpen: boolean;
+  setModalOpen: (boolean) => void;
+}) => {
+  const { preferences, modalOpen, setModalOpen } = props;
+  // const modal = store.modals.preferences;
+  // useEffect(() => {
+  //   const { start, stop } = autoRun(store, () => {
+  //     if (!store.editor) {
+  //       return;
+  //     }
+  //     // apply light/dark theme
+  //     store.applyTheme();
 
-      // editor font size
-      store.editor.dispatch({
-        effects: store.editorFontSize.reconfigure(
-          EditorView.theme({
-            '&': {
-              fontSize: store.preferences.editorFontSize + 'px',
-            },
-          }),
-        ),
-      });
-    });
-    start();
-    return () => stop();
-  }, [store]);
+  //     // editor font size
+  //     store.editor.dispatch({
+  //       effects: store.editorFontSize.reconfigure(
+  //         EditorView.theme({
+  //           '&': {
+  //             fontSize: store.preferences.editorFontSize + 'px',
+  //           },
+  //         }),
+  //       ),
+  //     });
+  //   });
+  //   start();
+  //   return () => stop();
+  // }, []);
   return (
     <Modal
-      open={modal.isOpen}
+      open={modalOpen}
       footer={
         <div style={{ textAlign: 'center' }}>
           <Button
             type="primary"
             size="large"
-            onClick={() => {
-              modal.close();
-            }}
+            onClick={() => setModalOpen(false)}
           >
             Save
           </Button>
         </div>
       }
-      onCancel={() => modal.close()}
+      onCancel={() => setModalOpen(false)}
       maskClosable={true}
       centered={true}
     >
@@ -70,13 +71,13 @@ const PreferencesModal = (props: { store: Store }) => {
               onChange={(value) => (preferences.toolbar = value)}
             />
           </Form.Item>
-          <Form.Item label="Editor vs. Preview">
+          <Form.Item label="Mode">
             <Select
               value={preferences.mode}
               options={[
-                { value: '0 0 1fr', label: 'Preview' },
-                { value: '1fr 6px 1fr', label: 'Both' },
-                { value: '1fr 0 0', label: 'Editor' },
+                { value: 'both', label: 'Both' },
+                { value: 'editor', label: 'Editor' },
+                { value: 'preview', label: 'Preview' },
               ]}
               onChange={(value) => (preferences.mode = value)}
             />

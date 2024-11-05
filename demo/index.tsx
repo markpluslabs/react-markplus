@@ -1,8 +1,11 @@
 import localforage from 'localforage';
+import { autoRun } from 'manate';
 import React, { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import MarkdownPlus from '../src/library';
+import preferences from './preferences';
+// import PreferencesModal from './preferencesModal';
 import markdownUrl from './sample.md';
 
 const Root = () => {
@@ -37,19 +40,50 @@ const Root = () => {
     };
   }, []);
 
-  // load preferences from local
-  const [preferences, setPreferences] = React.useState({});
+  // load/save preferences
   useEffect(() => {
+    let preferencesSaver: ReturnType<typeof autoRun>;
     const main = async () => {
       const savedPreferences = await localforage.getItem<string>(
         'markdown-plus-preferences',
       );
-      setPreferences(savedPreferences ? JSON.parse(savedPreferences) : {});
+      if (savedPreferences) {
+        Object.assign(preferences, JSON.parse(savedPreferences));
+      }
+      // must be after loading, otherwise it will save the default preferences
+      preferencesSaver = autoRun(preferences, () => {
+        localforage.setItem(
+          'markdown-plus-preferences',
+          JSON.stringify(preferences),
+        );
+      });
+      preferencesSaver.start();
     };
     main();
+    return () => {
+      if (preferencesSaver) {
+        preferencesSaver.stop();
+      }
+    };
   }, []);
 
-  return <MarkdownPlus markdown={markdown} {...preferences} />;
+  // const [modalOpen, setModalOpen] = React.useState(false);
+
+  return (
+    <>
+      <MarkdownPlus
+        markdown={markdown}
+        {...preferences}
+        toolbar="show"
+        toolBarItems={['about', '|', 'print']}
+      />
+      {/* <PreferencesModal
+        preferences={preferences}
+        // modalOpen={modalOpen}
+        // setModalOpen={setModalOpen}
+      /> */}
+    </>
+  );
 };
 
 const root = createRoot(document.getElementById('root'));
