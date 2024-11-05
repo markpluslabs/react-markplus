@@ -7,5 +7,8 @@
     "*.md": [
       "@parcel/transformer-raw"
     ]
-  }
+  },
+  "namers": [
+    "parcel-namer-hashless"
+  ]
 }

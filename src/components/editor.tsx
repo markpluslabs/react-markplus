@@ -13,6 +13,7 @@ import {
 import {
   EditorView,
   highlightActiveLine,
+  KeyBinding,
   keymap,
   ViewUpdate,
 } from '@codemirror/view';
@@ -82,7 +83,10 @@ const Editor = (props: { store: Store }) => {
         EditorView.lineWrapping,
         highlightActiveLine(),
         history(),
-        keymap.of([...defaultKeymap, ...historyKeymap]),
+        keymap.of([
+          ...defaultKeymap,
+          ...historyKeymap,
+        ] as unknown as KeyBinding[]), // todo: type casting is unnecessary in the future
         markdown(),
         syntaxHighlighting(defaultHighlightStyle),
         customKeymap,
