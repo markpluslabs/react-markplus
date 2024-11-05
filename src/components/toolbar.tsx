@@ -398,16 +398,6 @@ row 2 col 1 | row 2 col 2`.trim();
               );
               break;
             }
-            case 'help': {
-              reactElement = (
-                <i
-                  title="Help"
-                  className="fa fa-question-circle"
-                  onClick={() => modals.help.open()}
-                ></i>
-              );
-              break;
-            }
             default: {
               throw new Error(`Unknown toolbar item: ${item}`);
             }

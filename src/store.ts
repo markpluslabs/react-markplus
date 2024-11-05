@@ -32,7 +32,6 @@ export class Store {
 
   public modals = {
     about: new Modal(),
-    help: new Modal(),
     preferences: new Modal(),
     emoji: new Modal(),
     fontAwesome: new Modal(),

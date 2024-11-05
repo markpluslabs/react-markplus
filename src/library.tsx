@@ -48,7 +48,6 @@ const MarkdownPlus = (props: {
       '|',
       'preferences',
       'print',
-      'help',
     ];
   }, [mode, toolbar, theme, editorFontSize, toolBarItems]);
   useEffect(() => {

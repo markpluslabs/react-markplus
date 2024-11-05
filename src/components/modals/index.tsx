@@ -2,9 +2,9 @@ import { auto } from 'manate/react';
 import React from 'react';
 
 import { Store } from '../../store';
+import AboutModal from './about';
 import PreferencesModal from './preferences';
 import PromptModals from './prompt';
-import StaticModals from './static';
 
 const Modals = (props: { store: Store }) => {
   const { store } = props;
@@ -12,7 +12,7 @@ const Modals = (props: { store: Store }) => {
     <>
       <PreferencesModal store={store} />
       <PromptModals store={store} />
-      <StaticModals modals={store.modals} />
+      <AboutModal modal={store.modals.about} />
     </>
   );
 };

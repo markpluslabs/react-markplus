@@ -1,6 +1,6 @@
 # Markdown Plus
 
-Markdown Plus ("M+" or "mdp" for short) is a markdown editor with extra features.
+A React markdown editor and previewer.
 
 <img src="https://chuntaoliu.com/markdown-plus/icon.svg" alt="icon" width="256" height="256"/>
 

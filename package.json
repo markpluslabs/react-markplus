@@ -1,7 +1,7 @@
 {
   "name": "markdown-plus",
   "version": "3.0.0-alpha.1",
-  "description": "Markdown editor with extra features",
+  "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
     "editor",
