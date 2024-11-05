@@ -24,7 +24,7 @@ const App = (props: { store: Store }) => {
         Object.assign(store.preferences, JSON.parse(savedPreferences));
       }
       // auto save preferences to localforage
-      // we can't start it until the first load, otherwise it will save the default preferences
+      // we can't start it before the first load, otherwise it will save the default preferences
       preferencesSaver = autoRun(store.preferences, () => {
         localforage.setItem(
           'mdp-preferences',

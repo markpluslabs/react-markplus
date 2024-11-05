@@ -11,3 +11,5 @@
 - Close most GitHub issues
 - Do not use element ids so that we can have multiple components in the same page.
 - allow user to configure toolbar icons, allow them to add custom icons
+- the library should not depend on localforage. it's up to app to persist configs
+- should allow user to specify toolbar items as an array. `['about', '|', <i></i>]`

@@ -160,11 +160,11 @@ C -->|Three| F[Car]
 
 Markup is similar to fenced code blocks. Valid container types are `success`, `info`, `warning` and `danger`.
 
-::: info
+:::info
 You have new mail.
 :::
 
-::: danger
+:::danger
 Staying up all night is bad for health.
 :::
 
