@@ -260,6 +260,11 @@ row 2 col 1 | row 2 col 2`.trim();
         onClick={() => modals.preferences.open()}
       ></i>
       <i
+        title="Print"
+        className="fa fa-print"
+        onClick={() => window.print()}
+      ></i>
+      <i
         title="Help"
         className="fa fa-regular fa-question-circle"
         onClick={() => modals.help.open()}
