@@ -5,12 +5,13 @@ import MarkdownPlus from './library';
 import markdownUrl from './sample.md';
 
 const Root = () => {
-  const [data, setData] = React.useState('');
+  // load sample markdown
+  const [markdown, setMarkdown] = React.useState('');
   useEffect(() => {
     const loadSampleData = async () => {
       const r = await fetch(markdownUrl);
       const text = await r.text();
-      setData(text);
+      setMarkdown(text);
     };
     loadSampleData();
   }, []);
@@ -34,7 +35,8 @@ const Root = () => {
       window.removeEventListener('afterprint', afterPrintHandler);
     };
   }, []);
-  return <MarkdownPlus data={data} />;
+
+  return <MarkdownPlus markdown={markdown} toolbar="show" />;
 };
 
 const root = createRoot(document.getElementById('root'));

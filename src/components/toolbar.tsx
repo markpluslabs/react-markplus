@@ -1,5 +1,5 @@
 import { auto } from 'manate/react';
-import React from 'react';
+import React, { cloneElement, ReactElement } from 'react';
 
 import iconUrl from '../icon.svg';
 import { Store } from '../store';
@@ -60,179 +60,301 @@ const Toolbar = (props: { store: Store }) => {
   };
   return (
     <div id="toolbar" className="noselect">
-      <img
-        src={iconUrl}
-        id="about-icon"
-        onClick={() => modals.about.open()}
-        title="About"
-      />
-      <i className="dividor">|</i>
-      {[
-        { title: 'Bold', icon: 'fa-bold', modifier: '**' },
-        { title: 'Italic', icon: 'fa-italic', modifier: '*' },
-        { title: 'Strikethrough', icon: 'fa-strikethrough', modifier: '~~' },
-        { title: 'Underline', icon: 'fa-underline', modifier: '++' },
-        { title: 'Mark', icon: 'fa-marker', modifier: '==' },
-      ].map(({ title, icon, modifier }) => (
-        <i
-          key={title}
-          title={title}
-          className={`fa ${icon}`}
-          onClick={() => stylingClicked(modifier)}
-        ></i>
-      ))}
-      <i className="dividor">|</i>
-      <i
-        title="Emoji"
-        className="fa fa-regular fa-smile"
-        onClick={() => modals.emoji.open()}
-      ></i>
-      <i
-        title="Font awesome"
-        className="fa fa-regular fa-flag"
-        onClick={() => modals.fontAwesome.open()}
-      ></i>
-      <i className="dividor">|</i>
-      {[
-        { name: 'Quote', icon: 'fa-quote-left', prefix: '> ' },
-        { name: 'Unordered list', icon: 'fa-list-ul', prefix: '- ' },
-        { name: 'Ordered list', icon: 'fa-list-ol', prefix: '1. ' },
-        {
-          name: 'Incomplete task list',
-          icon: 'fa-regular fa-square',
-          prefix: '- [ ] ',
-        },
-        {
-          name: 'Complete task list',
-          icon: 'fa-regular fa-check-square',
-          prefix: '- [x] ',
-        },
-      ].map(({ name, icon, prefix }) => (
-        <i
-          key={name}
-          title={name}
-          className={`fa ${icon}`}
-          onClick={() => listClicked(prefix)}
-        ></i>
-      ))}
-      <i className="dividor">|</i>
-      <i
-        title="Link"
-        className="fa fa-link"
-        onClick={() => {
-          const editor = store.editor;
-          const mainSelection = editor.state.selection.main;
-          const text =
-            editor.state.sliceDoc(mainSelection.from, mainSelection.to) ||
-            'link';
-          editor.dispatch({
-            changes: {
-              from: mainSelection.from,
-              to: mainSelection.to,
-              insert: `[${text}](https://github.com/tylerlong/markdown-plus/)`,
-            },
-          });
-        }}
-      ></i>
-      <i
-        title="Image"
-        className="fa fa-regular fa-image"
-        onClick={() => {
-          const editor = store.editor;
-          const mainSelection = editor.state.selection.main;
-          const text =
-            editor.state.sliceDoc(mainSelection.from, mainSelection.to) ||
-            'image';
-          editor.dispatch({
-            changes: {
-              from: mainSelection.from,
-              to: mainSelection.to,
-              insert: `![${text}](https://chuntaoliu.com/markdown-plus/icon.svg)`,
-            },
-          });
-        }}
-      ></i>
-      <i
-        title="Code"
-        className="fa fa-code"
-        onClick={() => {
-          const editor = store.editor;
-          const mainSelection = editor.state.selection.main;
-          const text =
-            editor.state.sliceDoc(mainSelection.from, mainSelection.to) ||
-            "console.log('Hello, world!');";
-          editor.dispatch({
-            changes: {
-              from: mainSelection.from,
-              to: mainSelection.to,
-              insert: `\n\`\`\`\n${text}\n\`\`\`\n`,
-            },
-          });
-        }}
-      ></i>
-      <i
-        title="Table"
-        className="fa fa-table"
-        onClick={() => {
-          const sample = `
-          header 1 | header 2
+      {store.preferences.toolBarItems.map((item, index) => {
+        let reactElement: ReactElement;
+        if (typeof item === 'string') {
+          switch (item) {
+            case 'about': {
+              reactElement = (
+                <img
+                  src={iconUrl}
+                  id="about-icon"
+                  onClick={() => modals.about.open()}
+                  title="About"
+                />
+              );
+              break;
+            }
+            case '|': {
+              reactElement = <i className="dividor">|</i>;
+              break;
+            }
+            case 'bold': {
+              reactElement = (
+                <i
+                  title="Bold"
+                  className={`fa fa-bold`}
+                  onClick={() => stylingClicked('**')}
+                ></i>
+              );
+              break;
+            }
+            case 'italic': {
+              reactElement = (
+                <i
+                  title="Italic"
+                  className={`fa fa-italic`}
+                  onClick={() => stylingClicked('*')}
+                ></i>
+              );
+              break;
+            }
+            case 'strikethrough': {
+              reactElement = (
+                <i
+                  title="Strikethrough"
+                  className={`fa fa-strikethrough`}
+                  onClick={() => stylingClicked('~~')}
+                ></i>
+              );
+              break;
+            }
+            case 'underline': {
+              reactElement = (
+                <i
+                  title="Underline"
+                  className={`fa fa-underline`}
+                  onClick={() => stylingClicked('++')}
+                ></i>
+              );
+              break;
+            }
+            case 'mark': {
+              reactElement = (
+                <i
+                  title="Mark"
+                  className={`fa fa-marker`}
+                  onClick={() => stylingClicked('==')}
+                ></i>
+              );
+              break;
+            }
+            case 'emoji': {
+              reactElement = (
+                <i
+                  title="Emoji"
+                  className="fa fa-regular fa-smile"
+                  onClick={() => modals.emoji.open()}
+                ></i>
+              );
+              break;
+            }
+            case 'fontawesome': {
+              reactElement = (
+                <i
+                  title="Font awesome"
+                  className="fa fa-regular fa-flag"
+                  onClick={() => modals.fontAwesome.open()}
+                ></i>
+              );
+              break;
+            }
+            case 'quote': {
+              reactElement = (
+                <i
+                  title={'Quote'}
+                  className={`fa fa-quote-left`}
+                  onClick={() => listClicked('> ')}
+                ></i>
+              );
+              break;
+            }
+            case 'unordered-list': {
+              reactElement = (
+                <i
+                  title={'Unordered list'}
+                  className={`fa fa-list-ul`}
+                  onClick={() => listClicked('- ')}
+                ></i>
+              );
+              break;
+            }
+            case 'ordered-list': {
+              reactElement = (
+                <i
+                  title={'Ordered list'}
+                  className={`fa fa-list-ol`}
+                  onClick={() => listClicked('1. ')}
+                ></i>
+              );
+              break;
+            }
+            case 'unchecked-list': {
+              reactElement = (
+                <i
+                  title={'Unchecked list'}
+                  className={`fa fa-regular fa-square`}
+                  onClick={() => listClicked('- [ ] ')}
+                ></i>
+              );
+              break;
+            }
+            case 'checked-list': {
+              reactElement = (
+                <i
+                  title={'Checked list'}
+                  className={`fa fa-regular fa-check-square`}
+                  onClick={() => listClicked('- [x] ')}
+                ></i>
+              );
+              break;
+            }
+            case 'link': {
+              reactElement = (
+                <i
+                  title="Link"
+                  className="fa fa-link"
+                  onClick={() => {
+                    const editor = store.editor;
+                    const mainSelection = editor.state.selection.main;
+                    const text =
+                      editor.state.sliceDoc(
+                        mainSelection.from,
+                        mainSelection.to,
+                      ) || 'link';
+                    editor.dispatch({
+                      changes: {
+                        from: mainSelection.from,
+                        to: mainSelection.to,
+                        insert: `[${text}](https://github.com/tylerlong/markdown-plus/)`,
+                      },
+                    });
+                  }}
+                ></i>
+              );
+              break;
+            }
+            case 'image': {
+              reactElement = (
+                <i
+                  title="Image"
+                  className="fa fa-regular fa-image"
+                  onClick={() => {
+                    const editor = store.editor;
+                    const mainSelection = editor.state.selection.main;
+                    const text =
+                      editor.state.sliceDoc(
+                        mainSelection.from,
+                        mainSelection.to,
+                      ) || 'image';
+                    editor.dispatch({
+                      changes: {
+                        from: mainSelection.from,
+                        to: mainSelection.to,
+                        insert: `![${text}](https://chuntaoliu.com/markdown-plus/icon.svg)`,
+                      },
+                    });
+                  }}
+                ></i>
+              );
+              break;
+            }
+            case 'code': {
+              reactElement = (
+                <i
+                  title="Code"
+                  className="fa fa-code"
+                  onClick={() => {
+                    const editor = store.editor;
+                    const mainSelection = editor.state.selection.main;
+                    const text =
+                      editor.state.sliceDoc(
+                        mainSelection.from,
+                        mainSelection.to,
+                      ) || "console.log('Hello, world!');";
+                    editor.dispatch({
+                      changes: {
+                        from: mainSelection.from,
+                        to: mainSelection.to,
+                        insert: `\n\`\`\`\n${text}\n\`\`\`\n`,
+                      },
+                    });
+                  }}
+                ></i>
+              );
+              break;
+            }
+            case 'table': {
+              reactElement = (
+                <i
+                  title="Table"
+                  className="fa fa-table"
+                  onClick={() => {
+                    const sample = `
+header 1 | header 2
 ---|---
 row 1 col 1 | row 1 col 2
 row 2 col 1 | row 2 col 2`.trim();
-          const editor = store.editor;
-          const cursorPos = editor.state.selection.main.head;
-          const currentLine = editor.state.doc.lineAt(cursorPos);
-          const isAtLineStart = cursorPos === currentLine.from;
-          if (isAtLineStart) {
-            editor.dispatch({
-              changes: {
-                from: currentLine.from,
-                to: currentLine.from,
-                insert: `\n${sample}\n\n`,
-              },
-            });
-          } else {
-            editor.dispatch({
-              changes: {
-                from: currentLine.to,
-                to: currentLine.to,
-                insert: `\n\n${sample}\n`,
-              },
-            });
-          }
-        }}
-      ></i>
-      <i className="dividor">|</i>
-      <i
-        title="Math"
-        className="fa fa-square-root-variable"
-        onClick={() => {
-          const editor = store.editor;
-          const mainSelection = editor.state.selection.main;
-          const text =
-            editor.state.sliceDoc(mainSelection.from, mainSelection.to) ||
-            'E = mc^2';
-          editor.dispatch({
-            changes: {
-              from: mainSelection.from,
-              to: mainSelection.to,
-              insert: `\n\`\`\`math\n${text}\n\`\`\`\n`,
-            },
-          });
-        }}
-      ></i>
-      <i
-        title="Mermaid chart"
-        className="fa fa-diagram-project"
-        onClick={() => insertFence('mermaid', 'graph LR\nA-->B')}
-      ></i>
-      <i
-        title="Chart.js chart"
-        className="fa fa-chart-column"
-        onClick={() =>
-          insertFence(
-            'chartjs',
-            `{
+                    const editor = store.editor;
+                    const cursorPos = editor.state.selection.main.head;
+                    const currentLine = editor.state.doc.lineAt(cursorPos);
+                    const isAtLineStart = cursorPos === currentLine.from;
+                    if (isAtLineStart) {
+                      editor.dispatch({
+                        changes: {
+                          from: currentLine.from,
+                          to: currentLine.from,
+                          insert: `\n${sample}\n\n`,
+                        },
+                      });
+                    } else {
+                      editor.dispatch({
+                        changes: {
+                          from: currentLine.to,
+                          to: currentLine.to,
+                          insert: `\n\n${sample}\n`,
+                        },
+                      });
+                    }
+                  }}
+                ></i>
+              );
+              break;
+            }
+            case 'math': {
+              reactElement = (
+                <i
+                  title="Math"
+                  className="fa fa-square-root-variable"
+                  onClick={() => {
+                    const editor = store.editor;
+                    const mainSelection = editor.state.selection.main;
+                    const text =
+                      editor.state.sliceDoc(
+                        mainSelection.from,
+                        mainSelection.to,
+                      ) || 'E = mc^2';
+                    editor.dispatch({
+                      changes: {
+                        from: mainSelection.from,
+                        to: mainSelection.to,
+                        insert: `\n\`\`\`math\n${text}\n\`\`\`\n`,
+                      },
+                    });
+                  }}
+                ></i>
+              );
+              break;
+            }
+            case 'mermaid': {
+              reactElement = (
+                <i
+                  title="Mermaid chart"
+                  className="fa fa-diagram-project"
+                  onClick={() => insertFence('mermaid', 'graph LR\nA-->B')}
+                ></i>
+              );
+              break;
+            }
+            case 'chartjs': {
+              reactElement = (
+                <i
+                  title="Chart.js chart"
+                  className="fa fa-chart-column"
+                  onClick={() =>
+                    insertFence(
+                      'chartjs',
+                      `{
   "type": "bar",
   "data": {
     "labels": [
@@ -250,25 +372,51 @@ row 2 col 1 | row 2 col 2`.trim();
     ]
   }
 }`,
-          )
+                    )
+                  }
+                ></i>
+              );
+              break;
+            }
+            case 'preferences': {
+              reactElement = (
+                <i
+                  title="Preferences"
+                  className="fa fa-cog"
+                  onClick={() => modals.preferences.open()}
+                ></i>
+              );
+              break;
+            }
+            case 'print': {
+              reactElement = (
+                <i
+                  title="Print"
+                  className="fa fa-print"
+                  onClick={() => window.print()}
+                ></i>
+              );
+              break;
+            }
+            case 'help': {
+              reactElement = (
+                <i
+                  title="Help"
+                  className="fa fa-question-circle"
+                  onClick={() => modals.help.open()}
+                ></i>
+              );
+              break;
+            }
+            default: {
+              throw new Error(`Unknown toolbar item: ${item}`);
+            }
+          }
+        } else {
+          reactElement = item as ReactElement;
         }
-      ></i>
-      <i className="dividor">|</i>
-      <i
-        title="Preferences"
-        className="fa fa-cog"
-        onClick={() => modals.preferences.open()}
-      ></i>
-      <i
-        title="Print"
-        className="fa fa-print"
-        onClick={() => window.print()}
-      ></i>
-      <i
-        title="Help"
-        className="fa fa-regular fa-question-circle"
-        onClick={() => modals.help.open()}
-      ></i>
+        return cloneElement(reactElement, { key: `item-${index}` });
+      })}
     </div>
   );
 };

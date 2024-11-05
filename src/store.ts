@@ -2,6 +2,7 @@ import { Compartment } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
 import { githubDark, githubLight } from '@uiw/codemirror-theme-github';
 import { exclude, manage } from 'manate';
+import { ReactElement } from 'react';
 
 class Modal {
   public isOpen = false;
@@ -17,10 +18,11 @@ class Modal {
 }
 
 class Preferences {
-  public toolbarVsBody = '20px 6px 1fr';
-  public editorVsPreview = '1fr 6px 1fr';
+  public mode: 'editor' | 'preview' | 'both' = 'both';
+  public toolbar: 'show' | 'hide' | 'none' = 'none';
   public theme: 'light' | 'dark' | 'auto' = 'auto';
   public editorFontSize = 14;
+  public toolBarItems: (string | ReactElement)[] = [];
 }
 
 export class Store {

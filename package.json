@@ -26,8 +26,8 @@
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
     "prepublishOnly": "yarn compile",
     "postpublish": "rm -rf lib",
-    "release": "rm -rf .parcel-cache && parcel build src/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
-    "serve": "rm -rf .parcel-cache && rm -rf temp && parcel src/index.html --dist-dir temp"
+    "release": "rm -rf .parcel-cache docs && parcel build src/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
+    "serve": "rm -rf .parcel-cache temp && parcel src/index.html --dist-dir temp"
   },
   "dependencies": {
     "@codemirror/commands": "^6.7.1",
