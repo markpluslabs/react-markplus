@@ -19,10 +19,51 @@ yarn add markdown-plus
 ```tsx
 import MarkdownPlus from 'markdown-plus';
 
-...
-<MarkdownPlus data="# Hello world!" />
-...
+<MarkdownPlus markdown="# Hello world!" />;
 ```
+
+## props
+
+### markdown
+
+Initial markdown text to load into the editor:
+
+```tsx
+<MarkdownPlus markdown="# Hello world!" />
+```
+
+### toolbar
+
+Show, hide or remove toolbar:
+
+```tsx
+<MarkdownPlus toolbar="show" />
+```
+
+3 possible values:
+
+- `show`
+- `hide`
+- `none`
+
+The difference between `hide` and `none` is:
+
+- `hide`: hide the toolbar but show a gutter on the top, click the gutter to toggle the toolbar
+- `none`: no toolbar and no gutter
+
+### mode
+
+Display editor, preview or both"
+
+```tsx
+<MarkdownPlus mode="both" />
+```
+
+3 possible values:
+
+- `both`: show both editor and preview
+- `editor`: show editor only
+- `preview`: show preview only
 
 ## Tutorial
 

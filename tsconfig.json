@@ -2,6 +2,8 @@
   "compilerOptions": {
     "typeRoots": ["node_modules/@types", "src/@types"],
     "jsx": "react",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "outDir": "./lib"
+  },
+  "include": ["src/**/*"]
 }
