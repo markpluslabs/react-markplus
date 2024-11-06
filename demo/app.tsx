@@ -75,10 +75,7 @@ const App = (props: { store: Store }) => {
     <>
       <MarkdownPlus
         markdown={markdown}
-        mode={preferences.mode}
-        toolbar="show"
-        theme={preferences.theme}
-        editorFontSize={preferences.editorFontSize}
+        {...preferences}
         toolBarItems={[
           'about',
           '|',

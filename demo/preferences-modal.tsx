@@ -9,6 +9,7 @@ import { Store } from './store';
 
 const PreferencesModal = (props: { store: Store }) => {
   const { store } = props;
+  const { preferences } = store;
   // const modal = store.modals.preferences;
   // useEffect(() => {
   //   const { start, stop } = autoRun(store, () => {
@@ -58,44 +59,44 @@ const PreferencesModal = (props: { store: Store }) => {
         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 12 }} labelWrap>
           <Form.Item label="Toolbar">
             <Select
-              value={store.preferences.toolbar}
+              value={preferences.toolbar}
               options={[
                 { value: 'show', label: 'Show' },
                 { value: 'hide', label: 'Hide' },
                 { value: 'none', label: 'None' },
               ]}
-              onChange={(value) => (store.preferences.toolbar = value)}
+              onChange={(value) => (preferences.toolbar = value)}
             />
           </Form.Item>
           <Form.Item label="Mode">
             <Select
-              value={store.preferences.mode}
+              value={preferences.mode}
               options={[
                 { value: 'both', label: 'Both' },
                 { value: 'editor', label: 'Editor' },
                 { value: 'preview', label: 'Preview' },
               ]}
-              onChange={(value) => (store.preferences.mode = value)}
+              onChange={(value) => (preferences.mode = value)}
             />
           </Form.Item>
           <Form.Item label="Theme">
             <Select
-              value={store.preferences.theme}
+              value={preferences.theme}
               options={[
                 { value: 'auto', label: 'Auto' },
                 { value: 'light', label: 'Light' },
                 { value: 'dark', label: 'Dark' },
               ]}
-              onChange={(value) => (store.preferences.theme = value)}
+              onChange={(value) => (preferences.theme = value)}
             />
           </Form.Item>
           <Form.Item label="Editor font size">
             <Select
-              value={store.preferences.editorFontSize}
+              value={preferences.editorFontSize}
               options={[
                 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 24, 32,
               ].map((i) => ({ value: i, label: `${i}px` }))}
-              onChange={(value) => (store.preferences.editorFontSize = value)}
+              onChange={(value) => (preferences.editorFontSize = value)}
             />
           </Form.Item>
         </Form>
