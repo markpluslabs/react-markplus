@@ -4,7 +4,7 @@ import { autoRun } from 'manate';
 import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
 
-import MarkdownPlus from '../src/library';
+import MarkdownPlus from '../src';
 import PreferencesModal from './preferences-modal';
 import markdownUrl from './sample.md';
 import { Store } from './store';

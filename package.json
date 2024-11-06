@@ -21,8 +21,8 @@
   "license": "MIT",
   "author": "Tyler Liu",
   "type": "module",
-  "main": "lib/library.js",
-  "types": "lib/library.d.ts",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
   "scripts": {
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
     "prepublishOnly": "tsc --skipLibCheck --declaration --sourceMap",
