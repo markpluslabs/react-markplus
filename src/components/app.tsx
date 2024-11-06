@@ -37,9 +37,7 @@ const App = (props: { store: Store }) => {
   return (
     <>
       <div id="rows-grid" style={{ gridTemplateRows }}>
-        <div id="toolbar">
-          <Toolbar store={store} />
-        </div>
+        <Toolbar store={store} />
         <div
           id="row-gutter"
           className="gutter"
