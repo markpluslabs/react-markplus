@@ -21,11 +21,11 @@
   "license": "MIT",
   "author": "Tyler Liu",
   "type": "module",
-  "main": "lib/src/index.js",
-  "types": "lib/src/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "prepublishOnly": "tsc --skipLibCheck --declaration --sourceMap",
+    "prepublishOnly": "rm -rf lib && tsc --skipLibCheck --declaration --sourceMap && rm -rf lib/demo && mv lib/src/* lib/ && rmdir lib/src",
     "postpublish": "rm -rf lib",
     "release": "rm -rf .parcel-cache docs && parcel build demo/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
     "serve": "rm -rf .parcel-cache temp && parcel demo/index.html --dist-dir temp"
