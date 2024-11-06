@@ -43,7 +43,7 @@
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.7.0",
     "katex": "^0.16.11",
-    "manate": "^0.9.8",
+    "manate": "^0.9.11",
     "markdown-extensible": "^0.2.8",
     "mermaid": "^11.4.0",
     "split-grid": "^1.0.11",

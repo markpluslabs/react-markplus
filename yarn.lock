@@ -4312,10 +4312,10 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
-manate@^0.9.8:
-  version "0.9.8"
-  resolved "https://registry.yarnpkg.com/manate/-/manate-0.9.8.tgz#5a2b97f832a36389d7903cadef161692a67ff1b6"
-  integrity sha512-kFQ1APK53tG4o07+8SUuJYOzBzYMIwa7FnIN3Z8Czlo9C+g5OJ0RBy9wlV7q8Sw2uUojTfH72y8oSz8G2jFhSA==
+manate@^0.9.11:
+  version "0.9.11"
+  resolved "https://registry.yarnpkg.com/manate/-/manate-0.9.11.tgz#ad99810c70956299fdfc0fa7f689913bc6ddf33f"
+  integrity sha512-4Db8j0FFFD+heLFZshVuEOQEA537fM1mGpD15sh2TTC8N/HPC2bknuH5/uGvHziISoc+2fVWJeBCWxH59adAiw==
 
 markdown-extensible@^0.2.8:
   version "0.2.8"
