@@ -5,14 +5,10 @@ import { auto } from 'manate/react';
 import React from 'react';
 
 import iconUrl from '../icon.svg';
-import { Preferences } from './preferences';
+import { Store } from './store';
 
-const PreferencesModal = (props: {
-  preferences: Preferences;
-  modalOpen: boolean;
-  setModalOpen: (boolean) => void;
-}) => {
-  const { preferences, modalOpen, setModalOpen } = props;
+const PreferencesModal = (props: { store: Store }) => {
+  const { store } = props;
   // const modal = store.modals.preferences;
   // useEffect(() => {
   //   const { start, stop } = autoRun(store, () => {
@@ -38,19 +34,19 @@ const PreferencesModal = (props: {
   // }, []);
   return (
     <Modal
-      open={modalOpen}
+      open={store.preferencesModalOpen}
       footer={
         <div style={{ textAlign: 'center' }}>
           <Button
             type="primary"
             size="large"
-            onClick={() => setModalOpen(false)}
+            onClick={() => (store.preferencesModalOpen = false)}
           >
-            Save
+            Close
           </Button>
         </div>
       }
-      onCancel={() => setModalOpen(false)}
+      onCancel={() => (store.preferencesModalOpen = false)}
       maskClosable={true}
       centered={true}
     >
@@ -62,44 +58,44 @@ const PreferencesModal = (props: {
         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 12 }} labelWrap>
           <Form.Item label="Toolbar">
             <Select
-              value={preferences.toolbar}
+              value={store.preferences.toolbar}
               options={[
                 { value: 'show', label: 'Show' },
                 { value: 'hide', label: 'Hide' },
                 { value: 'none', label: 'None' },
               ]}
-              onChange={(value) => (preferences.toolbar = value)}
+              onChange={(value) => (store.preferences.toolbar = value)}
             />
           </Form.Item>
           <Form.Item label="Mode">
             <Select
-              value={preferences.mode}
+              value={store.preferences.mode}
               options={[
                 { value: 'both', label: 'Both' },
                 { value: 'editor', label: 'Editor' },
                 { value: 'preview', label: 'Preview' },
               ]}
-              onChange={(value) => (preferences.mode = value)}
+              onChange={(value) => (store.preferences.mode = value)}
             />
           </Form.Item>
           <Form.Item label="Theme">
             <Select
-              value={preferences.theme}
+              value={store.preferences.theme}
               options={[
                 { value: 'auto', label: 'Auto' },
                 { value: 'light', label: 'Light' },
                 { value: 'dark', label: 'Dark' },
               ]}
-              onChange={(value) => (preferences.theme = value)}
+              onChange={(value) => (store.preferences.theme = value)}
             />
           </Form.Item>
           <Form.Item label="Editor font size">
             <Select
-              value={preferences.editorFontSize}
+              value={store.preferences.editorFontSize}
               options={[
                 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 24, 32,
               ].map((i) => ({ value: i, label: `${i}px` }))}
-              onChange={(value) => (preferences.editorFontSize = value)}
+              onChange={(value) => (store.preferences.editorFontSize = value)}
             />
           </Form.Item>
         </Form>

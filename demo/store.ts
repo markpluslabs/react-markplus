@@ -7,6 +7,9 @@ export class Preferences {
   editorFontSize = 14;
 }
 
-const preferences = new Preferences();
+export class Store {
+  preferences = new Preferences();
+  preferencesModalOpen = false;
+}
 
-export default manage(preferences);
+export default manage(new Store());

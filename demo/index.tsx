@@ -1,12 +1,13 @@
+import { ConfigProvider } from 'antd';
 import localforage from 'localforage';
 import { autoRun } from 'manate';
 import React, { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import MarkdownPlus from '../src/library';
-import preferences from './preferences';
-import PreferencesModal from './preferencesModal';
+import PreferencesModal from './preferences-modal';
 import markdownUrl from './sample.md';
+import store from './store';
 
 const Root = () => {
   // load sample markdown
@@ -48,13 +49,13 @@ const Root = () => {
         'markdown-plus-preferences',
       );
       if (savedPreferences) {
-        Object.assign(preferences, JSON.parse(savedPreferences));
+        Object.assign(store.preferences, JSON.parse(savedPreferences));
       }
       // must be after loading, otherwise it will save the default preferences
-      preferencesSaver = autoRun(preferences, () => {
+      preferencesSaver = autoRun(store.preferences, () => {
         localforage.setItem(
           'markdown-plus-preferences',
-          JSON.stringify(preferences),
+          JSON.stringify(store.preferences),
         );
       });
       preferencesSaver.start();
@@ -67,13 +68,11 @@ const Root = () => {
     };
   }, []);
 
-  const [modalOpen, setModalOpen] = React.useState(false);
-
   return (
     <>
       <MarkdownPlus
         markdown={markdown}
-        {...preferences}
+        {...store.preferences}
         toolbar="show"
         toolBarItems={[
           'about',
@@ -84,15 +83,19 @@ const Root = () => {
             key="preferences-toolbar-item"
             title="Preferences"
             className="fa fa-cog"
-            onClick={() => setModalOpen(true)}
+            onClick={() => (store.preferencesModalOpen = true)}
           ></i>,
         ]}
       />
-      <PreferencesModal
-        preferences={preferences}
-        modalOpen={modalOpen}
-        setModalOpen={setModalOpen}
-      />
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#00b96b',
+          },
+        }}
+      >
+        <PreferencesModal store={store} />
+      </ConfigProvider>
     </>
   );
 };

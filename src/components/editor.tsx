@@ -27,7 +27,7 @@ import mermaid from 'mermaid/dist/mermaid.esm.mjs';
 import React, { useEffect, useRef } from 'react';
 
 import { Store } from '../store';
-import { syncEditor, syncPreview } from '../sync_scroll';
+import { syncEditor, syncPreview } from '../sync-scroll';
 
 const Editor = (props: { store: Store }) => {
   const { store } = props;
