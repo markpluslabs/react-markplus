@@ -61,6 +61,12 @@ const PromptModals = (props: { store: Store }) => {
         }}
       >
         <div style={{ textAlign: 'center' }}>
+          <p>
+            <img
+              src="https://chuntaoliu.com/markdown-plus/icon.svg"
+              width="64"
+            />
+          </p>
           <h2>Please enter an emoji code:</h2>
           <p>
             {`Examples: "smile", "whale", "santa", "panda_face", "dog", "truck"
@@ -107,6 +113,12 @@ const PromptModals = (props: { store: Store }) => {
         }}
       >
         <div style={{ textAlign: 'center' }}>
+          <p>
+            <img
+              src="https://chuntaoliu.com/markdown-plus/icon.svg"
+              width="64"
+            />
+          </p>
           <h2>Please enter a Font Awesome code:</h2>
           <p>
             {`Examples: "cloud", "flag", "car", "truck", "heart", "dollar" ...`}

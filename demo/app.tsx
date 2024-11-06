@@ -81,6 +81,8 @@ const App = (props: { store: Store }) => {
           '|',
           'print',
           '|',
+          'emoji',
+          'fontawesome',
           <i
             key="preferences-toolbar-item"
             title="Preferences"

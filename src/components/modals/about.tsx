@@ -2,7 +2,6 @@ import { Button, Modal, Space } from 'antd';
 import { auto } from 'manate/react';
 import React from 'react';
 
-import iconUrl from '../../../icon.svg';
 import store from '../../store';
 
 const AboutModal = (props: { modal: typeof store.modals.about }) => {
@@ -23,7 +22,7 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
     >
       <div style={{ textAlign: 'center' }}>
         <p>
-          <img src={iconUrl} width="64" />
+          <img src="https://chuntaoliu.com/markdown-plus/icon.svg" width="64" />
         </p>
         <h2>Markdown Plus</h2>
         <p>Version 3.0</p>

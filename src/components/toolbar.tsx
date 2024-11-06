@@ -1,7 +1,6 @@
 import { auto } from 'manate/react';
 import React, { cloneElement, ReactElement } from 'react';
 
-import iconUrl from '../../icon.svg';
 import { Store } from '../store';
 
 const Toolbar = (props: { store: Store }) => {
@@ -67,7 +66,7 @@ const Toolbar = (props: { store: Store }) => {
             case 'about': {
               reactElement = (
                 <img
-                  src={iconUrl}
+                  src="https://chuntaoliu.com/markdown-plus/icon.svg"
                   id="about-icon"
                   onClick={() => modals.about.open()}
                   title="About"
