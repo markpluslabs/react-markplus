@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 
 import MarkdownPlus from '../src/library';
 import preferences from './preferences';
-// import PreferencesModal from './preferencesModal';
+import PreferencesModal from './preferencesModal';
 import markdownUrl from './sample.md';
 
 const Root = () => {
@@ -67,7 +67,7 @@ const Root = () => {
     };
   }, []);
 
-  // const [modalOpen, setModalOpen] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
 
   return (
     <>
@@ -75,13 +75,24 @@ const Root = () => {
         markdown={markdown}
         {...preferences}
         toolbar="show"
-        toolBarItems={['about', '|', 'print']}
+        toolBarItems={[
+          'about',
+          '|',
+          'print',
+          '|',
+          <i
+            key="preferences-toolbar-item"
+            title="Preferences"
+            className="fa fa-cog"
+            onClick={() => setModalOpen(true)}
+          ></i>,
+        ]}
       />
-      {/* <PreferencesModal
+      <PreferencesModal
         preferences={preferences}
-        // modalOpen={modalOpen}
-        // setModalOpen={setModalOpen}
-      /> */}
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+      />
     </>
   );
 };
