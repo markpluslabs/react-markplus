@@ -9,16 +9,13 @@ const MarkdownPlus = (props: {
   mode?: 'editor' | 'preview' | 'both';
   toolbar?: 'show' | 'hide' | 'none';
   theme?: 'light' | 'dark' | 'auto';
-  editorFontSize?: number;
   toolBarItems?: (string | ReactElement)[];
 }) => {
-  const { markdown, mode, toolbar, theme, editorFontSize, toolBarItems } =
-    props;
+  const { markdown, mode, toolbar, theme, toolBarItems } = props;
   useEffect(() => {
     store.preferences.mode = mode ?? 'both';
     store.preferences.toolbar = toolbar ?? 'none';
     store.preferences.theme = theme ?? 'auto';
-    store.preferences.editorFontSize = editorFontSize ?? 14;
     store.preferences.toolBarItems = toolBarItems ?? [
       'about',
       '|',
@@ -48,7 +45,7 @@ const MarkdownPlus = (props: {
       '|',
       'print',
     ];
-  }, [mode, toolbar, theme, editorFontSize, toolBarItems]);
+  }, [mode, toolbar, theme, toolBarItems]);
   useEffect(() => {
     store.editor.dispatch({
       changes: {

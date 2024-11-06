@@ -79,13 +79,6 @@ const Editor = (props: { store: Store }) => {
     const cm = new EditorView({
       extensions: [
         store.editorTheme.of(githubLight),
-        store.editorFontSize.of(
-          EditorView.theme({
-            '&': {
-              fontSize: store.preferences.editorFontSize + 'px',
-            },
-          }),
-        ),
         EditorView.lineWrapping,
         highlightActiveLine(),
         history(),

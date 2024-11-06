@@ -18,17 +18,6 @@ const PreferencesModal = (props: { store: Store }) => {
   //     }
   //     // apply light/dark theme
   //     store.applyTheme();
-
-  //     // editor font size
-  //     store.editor.dispatch({
-  //       effects: store.editorFontSize.reconfigure(
-  //         EditorView.theme({
-  //           '&': {
-  //             fontSize: store.preferences.editorFontSize + 'px',
-  //           },
-  //         }),
-  //       ),
-  //     });
   //   });
   //   start();
   //   return () => stop();
@@ -88,15 +77,6 @@ const PreferencesModal = (props: { store: Store }) => {
                 { value: 'dark', label: 'Dark' },
               ]}
               onChange={(value) => (preferences.theme = value)}
-            />
-          </Form.Item>
-          <Form.Item label="Editor font size">
-            <Select
-              value={preferences.editorFontSize}
-              options={[
-                8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 24, 32,
-              ].map((i) => ({ value: i, label: `${i}px` }))}
-              onChange={(value) => (preferences.editorFontSize = value)}
             />
           </Form.Item>
         </Form>

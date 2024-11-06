@@ -21,14 +21,12 @@ class Preferences {
   public mode: 'editor' | 'preview' | 'both' = 'both';
   public toolbar: 'show' | 'hide' | 'none' = 'none';
   public theme: 'light' | 'dark' | 'auto' = 'auto';
-  public editorFontSize = 14;
   public toolBarItems: (string | ReactElement)[] = [];
 }
 
 export class Store {
   public editor: EditorView;
   public editorTheme = exclude(new Compartment());
-  public editorFontSize = exclude(new Compartment());
 
   public modals = {
     about: new Modal(),
