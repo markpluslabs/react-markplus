@@ -10,4 +10,3 @@
   - a few lines of code to embed mdp to their own app
 - Close most GitHub issues
 - Do not use element ids so that we can have multiple components in the same page.
-- the library should not depend on localforage. it's up to app to persist configs
