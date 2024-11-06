@@ -26,15 +26,17 @@ import MarkdownPlus from 'markdown-plus';
 
 ### markdown
 
-Initial markdown text to load into the editor:
+Initial markdown text to load into the editor.
 
 ```tsx
 <MarkdownPlus markdown="# Hello world!" />
 ```
 
+Default value is `''`.
+
 ### toolbar
 
-Show, hide or remove toolbar:
+Show, hide or remove toolbar.
 
 ```tsx
 <MarkdownPlus toolbar="show" />
@@ -42,18 +44,15 @@ Show, hide or remove toolbar:
 
 3 possible values:
 
-- `show`
-- `hide`
-- `none`
+- `show`: show toolbar.
+- `hide`: hide toolbar, show a gutter on top. Click the gutter to show toolbar.
+- `none`: no toolbar, no gutter.
 
-The difference between `hide` and `none` is:
-
-- `hide`: hide the toolbar but show a gutter on the top, click the gutter to toggle the toolbar
-- `none`: no toolbar and no gutter
+Default value: `none`.
 
 ### mode
 
-Display editor, preview or both"
+Display editor, preview or both.
 
 ```tsx
 <MarkdownPlus mode="both" />
@@ -65,8 +64,20 @@ Display editor, preview or both"
 - `editor`: show editor only
 - `preview`: show preview only
 
-## Tutorial
+Default value: `both`.
 
-TBD
+### theme
 
-For details, please check [demo](./demo/) folder.
+Overal theme: light, dark or auto:
+
+```tsx
+<MarkdownPlus theme="auto" />
+```
+
+3 possible values:
+
+- `light`: light theme
+- `dark`: dark theme
+- `auto`: same as system theme
+
+Default value: `auto`.

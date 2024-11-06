@@ -51,10 +51,13 @@ const MarkdownPlus = (props: {
       changes: {
         from: 0,
         to: store.editor.state.doc.length,
-        insert: markdown,
+        insert: markdown ?? '',
       },
     });
   }, [markdown]);
+  useEffect(() => {
+    store.applyTheme();
+  }, [theme]);
   return (
     <ConfigProvider
       theme={{

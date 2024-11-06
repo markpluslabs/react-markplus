@@ -1,6 +1,4 @@
-// import { EditorView } from '@codemirror/view';
 import { Button, Form, Modal, Select } from 'antd';
-// import { autoRun } from 'manate';
 import { auto } from 'manate/react';
 import React from 'react';
 
@@ -10,18 +8,6 @@ import { Store } from './store';
 const PreferencesModal = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
-  // const modal = store.modals.preferences;
-  // useEffect(() => {
-  //   const { start, stop } = autoRun(store, () => {
-  //     if (!store.editor) {
-  //       return;
-  //     }
-  //     // apply light/dark theme
-  //     store.applyTheme();
-  //   });
-  //   start();
-  //   return () => stop();
-  // }, []);
   return (
     <Modal
       open={store.preferencesModalOpen}
