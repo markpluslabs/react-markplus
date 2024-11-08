@@ -22,6 +22,44 @@ import MarkdownPlus from 'markdown-plus';
 <MarkdownPlus markdown="# Hello world!" />;
 ```
 
+## CSS
+
+You will need to add the following code to your `<html><head></head></body>`:
+
+```html
+<link rel="stylesheet" href="./node_modules/katex/dist/katex.css" />
+<link
+  rel="stylesheet"
+  href="./node_modules/@fortawesome/fontawesome-free/css/all.css"
+/>
+<link
+  rel="stylesheet"
+  href="./node_modules/github-markdown-css/github-markdown-light.css"
+  data-theme="light"
+/>
+<link
+  rel="stylesheet"
+  href="./node_modules/github-markdown-css/github-markdown-dark.css"
+  data-theme="dark"
+  disabled
+/>
+<link
+  rel="stylesheet"
+  href="./node_modules/highlight.js/styles/github.css"
+  data-theme="light"
+/>
+<link
+  rel="stylesheet"
+  href="./node_modules/highlight.js/styles/github-dark.css"
+  data-theme="dark"
+  disabled
+/>
+<link rel="stylesheet" href="./node_modules/markdown-plus/lib/index.css" />
+```
+
+Please note that, you may need to adjust the `href`.
+And if `./node_modules/` is not hosted, you may need to use parcel to build your html so that it will take care of all the css files.
+
 ## props
 
 ### markdown

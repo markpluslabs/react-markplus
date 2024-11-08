@@ -65,6 +65,8 @@ export class Store {
         el.setAttribute('disabled', '');
       }
     });
+
+    document.body.className = darkTheme ? 'dark' : 'light';
   }
 }
 

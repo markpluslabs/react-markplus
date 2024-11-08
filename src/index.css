@@ -1,0 +1,214 @@
+/*
+====================
+  start of layout
+====================
+*/
+#rows-grid {
+  display: grid;
+  grid-template-rows: 20px 6px 1fr;
+  height: 100%;
+}
+
+#cols-grid {
+  display: grid;
+  grid-template-columns: 1fr 6px 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+
+#left-panel {
+  height: 100%;
+  overflow: scroll;
+}
+
+#right-panel {
+  height: 100%;
+  overflow: scroll;
+  position: relative;
+}
+
+#row-gutter {
+  grid-column: 1/-1;
+  grid-row: 2;
+  cursor: pointer;
+}
+
+#col-gutter {
+  grid-row: 1/-1;
+  grid-column: 2;
+  cursor: col-resize;
+}
+
+#editor,
+.cm-editor {
+  height: 100%;
+}
+
+#preview {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+@media (max-width: 767px) {
+  #preview {
+    padding: 15px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+/*
+==================
+  end of layout
+==================
+*/
+
+/*
+==============================
+  start of light/dark theme
+==============================
+*/
+body.light #toolbar {
+  color: #666;
+  background-color: white;
+}
+body.dark #toolbar {
+  color: #f0f6fc;
+  background-color: #0d1117;
+}
+body.dark ::-webkit-scrollbar {
+  width: 12px;
+}
+body.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+body.dark ::-webkit-scrollbar-track {
+  background-color: rgba(50, 50, 50, 0.8);
+}
+body.dark * {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.6) rgba(50, 50, 50, 0.8);
+}
+/*
+============================
+  end of light/dark theme
+============================
+*/
+
+/* 
+====================
+  start of others
+====================
+*/
+.gutter {
+  background-color: #dddddd;
+}
+.gutter:hover {
+  background-color: #c4e1a4;
+}
+
+#toolbar {
+  overflow: hidden;
+  padding-left: 3px;
+}
+#toolbar .fa {
+  padding: 2px 5px;
+  border: 1px solid transparent;
+}
+#about-icon {
+  height: 20px;
+  vertical-align: top;
+}
+
+#toolbar .fa:hover,
+#about-icon:hover {
+  background-color: #999;
+  border-color: #ccc;
+  cursor: pointer;
+}
+
+.dividor {
+  font-style: normal;
+  color: #ddd;
+  margin: 0 6px;
+}
+
+/* toolbar cannot be select */
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* fix clicking anchor scroll issue */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  scroll-margin-top: 1px;
+}
+
+/* code highlight */
+pre code.hljs {
+  padding: 0;
+}
+
+/* custom container */
+.success,
+.info,
+.warning,
+.danger {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.success > p:last-child,
+.info > p:last-child,
+.warning > p:last-child,
+.danger > p:last-child {
+  margin-bottom: 0;
+}
+.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+.warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+}
+.danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+/* mermaid */
+pre.mermaid {
+  text-align: center;
+}
+/*
+==================
+  end of others
+==================
+*/
