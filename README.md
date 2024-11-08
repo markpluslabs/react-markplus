@@ -27,11 +27,6 @@ import MarkdownPlus from 'markdown-plus';
 You will need to add the following code to your `<html><head></head></body>`:
 
 ```html
-<link rel="stylesheet" href="./node_modules/katex/dist/katex.css" />
-<link
-  rel="stylesheet"
-  href="./node_modules/@fortawesome/fontawesome-free/css/all.css"
-/>
 <link
   rel="stylesheet"
   href="./node_modules/github-markdown-css/github-markdown-light.css"

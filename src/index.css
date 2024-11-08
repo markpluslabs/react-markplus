@@ -1,3 +1,6 @@
+@import '../node_modules/katex/dist/katex.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+
 /*
 ====================
   start of layout
@@ -75,6 +78,7 @@
   start of light/dark theme
 ==============================
 */
+/* todo: should not change body, should change the react component container */
 body.light #toolbar {
   color: #666;
   background-color: white;
