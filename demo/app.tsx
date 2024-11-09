@@ -24,26 +24,6 @@ const App = (props: { store: Store }) => {
     loadSampleData();
   }, []);
 
-  // // for printing
-  // useEffect(() => {
-  //   const beforePrintHandler = () => {
-  //     const element = document.getElementById('preview');
-  //     document.body.appendChild(element);
-  //     document.getElementById('root').style.display = 'none';
-  //   };
-  //   window.addEventListener('beforeprint', beforePrintHandler);
-  //   const afterPrintHandler = () => {
-  //     const element = document.getElementById('preview');
-  //     document.getElementById('root').style.display = 'block';
-  //     document.getElementById('right-panel').appendChild(element);
-  //   };
-  //   window.addEventListener('afterprint', afterPrintHandler);
-  //   return () => {
-  //     window.removeEventListener('beforeprint', beforePrintHandler);
-  //     window.removeEventListener('afterprint', afterPrintHandler);
-  //   };
-  // }, []);
-
   // load/save preferences
   useEffect(() => {
     let preferencesSaver: ReturnType<typeof autoRun>;
@@ -79,10 +59,9 @@ const App = (props: { store: Store }) => {
         toolBarItems={[
           'about',
           '|',
-          'print',
-          '|',
           'emoji',
           'fontawesome',
+          '|',
           <i
             key="preferences-toolbar-item"
             title="Preferences"

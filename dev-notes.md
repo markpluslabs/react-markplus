@@ -12,4 +12,3 @@
 - Do not use element ids so that we can have multiple components in the same page.
 - rename to MarkPlus? markplus.io
 - bug: dark theme, when preview content is short
-- bug: print css is broken

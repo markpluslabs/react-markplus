@@ -387,16 +387,6 @@ row 2 col 1 | row 2 col 2`.trim();
               );
               break;
             }
-            case 'print': {
-              reactElement = (
-                <i
-                  title="Print"
-                  className="fa fa-print"
-                  onClick={() => window.print()}
-                ></i>
-              );
-              break;
-            }
             default: {
               throw new Error(`Unknown toolbar item: ${item}`);
             }

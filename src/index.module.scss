@@ -104,13 +104,6 @@
         padding: 15px;
       }
     }
-
-    @media print {
-      * {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-    }
     /*
 ==================
   end of layout
