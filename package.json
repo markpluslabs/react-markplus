@@ -1,6 +1,6 @@
 {
   "name": "markdown-plus",
-  "version": "3.0.0-alpha.3",
+  "version": "3.0.0-alpha.4",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -25,7 +25,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "prepublishOnly": "rm -rf lib && parcel build src/index.css --dist-dir lib && tsc --skipLibCheck --declaration --sourceMap && rm -rf lib/demo && mv lib/src/* lib/ && rmdir lib/src",
+    "prepublishOnly": "rm -rf lib && tsc --skipLibCheck --declaration --sourceMap && rm -rf lib/demo && mv lib/src/* lib/ && rmdir lib/src",
     "postpublish": "rm -rf lib",
     "release": "rm -rf .parcel-cache docs && parcel build demo/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
     "serve": "rm -rf .parcel-cache temp && parcel demo/index.html --dist-dir temp"

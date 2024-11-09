@@ -92,16 +92,17 @@
       height: 100%;
     }
 
-    .preview {
+    .markdown-body {
       box-sizing: border-box;
       min-width: 200px;
       max-width: 980px;
       margin: 0 auto;
       padding: 45px;
+      min-height: 100%;
     }
 
     @media (max-width: 767px) {
-      .preview {
+      .markdown-body {
         padding: 15px;
       }
     }

@@ -9,6 +9,6 @@
 - Release a React library so that everyone can use it easily
   - a few lines of code to embed mdp to their own app
 - Close most GitHub issues
-- Do not use element ids so that we can have multiple components in the same page.
 - rename to MarkPlus? markplus.io
-- bug: dark theme, when preview content is short
+- querySelector, what if there are multiple editors in the same page?
+  - it may select the wrong element
