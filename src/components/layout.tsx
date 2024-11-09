@@ -1,5 +1,5 @@
 import { auto } from 'manate/react';
-import React, { useEffect } from 'react';
+import React, { createRef, useEffect } from 'react';
 import Split from 'split-grid';
 
 import * as styles from '../css/index.module.scss';
@@ -12,17 +12,19 @@ import Toolbar from './toolbar';
 const App = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
+  const colGutter = createRef<HTMLDivElement>();
   useEffect(() => {
+    if (!colGutter.current) return;
     Split({
       columnGutters: [
         {
           track: 1,
-          element: document.querySelector('.col-gutter')!,
+          element: colGutter.current,
         },
       ],
       snapOffset: 64,
     });
-  }, []);
+  }, [colGutter]);
   let gridTemplateRows = '0 0 1fr';
   if (preferences.toolbar === 'show') {
     gridTemplateRows = '20px 6px 1fr';
@@ -59,7 +61,11 @@ const App = (props: { store: Store }) => {
           <div className="left-panel">
             <Editor store={store} />
           </div>
-          <div className="gutter col-gutter" title="Resize"></div>
+          <div
+            className="gutter col-gutter"
+            title="Resize"
+            ref={colGutter}
+          ></div>
           <div className="right-panel">
             <Preview />
           </div>
