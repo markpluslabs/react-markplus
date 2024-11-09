@@ -155,7 +155,7 @@ export const syncPreview = debounce(() => {
     const editorScroll = getEditorScroll();
     setPreviewScroll(editorScroll);
   }
-}, 256);
+}, 128);
 
 export const syncEditor = debounce(() => {
   // sync left with right
@@ -163,4 +163,4 @@ export const syncEditor = debounce(() => {
     const previewScroll = getPreviewScroll();
     setEditorScroll(previewScroll);
   }
-}, 256);
+}, 128);

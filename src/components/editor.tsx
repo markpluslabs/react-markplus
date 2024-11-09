@@ -136,7 +136,7 @@ const Editor = (props: { store: Store }) => {
       mermaid.run({
         nodes: document.querySelectorAll('.preview pre.mermaid'),
       });
-    }, 512);
+    }, 256);
     return () => {
       store.editor.scrollDOM.removeEventListener('scroll', handleEditorScroll);
       store.editor.destroy();
