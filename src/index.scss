@@ -46,25 +46,25 @@
 ====================
 */
   height: 100%;
-  #rows-grid {
+  .rows-grid {
     display: grid;
     grid-template-rows: 20px 6px 1fr;
     height: 100%;
   }
 
-  #cols-grid {
+  .cols-grid {
     display: grid;
     grid-template-columns: 1fr 6px 1fr;
     height: 100%;
     overflow: hidden;
   }
 
-  #left-panel {
+  .left-panel {
     height: 100%;
     overflow: scroll;
   }
 
-  #right-panel {
+  .right-panel {
     height: 100%;
     overflow: scroll;
     position: relative;

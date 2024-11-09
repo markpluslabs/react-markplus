@@ -113,7 +113,7 @@ const Editor = (props: { store: Store }) => {
     const handlePreviewScroll = () => {
       syncEditor();
     };
-    const rightPanel = document.getElementById('right-panel')!;
+    const rightPanel = document.querySelector('.right-panel')!;
     rightPanel.addEventListener('scroll', handlePreviewScroll);
 
     // whenever user changes markdown

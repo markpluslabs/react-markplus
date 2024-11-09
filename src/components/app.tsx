@@ -42,7 +42,7 @@ const App = (props: { store: Store }) => {
   }
   return (
     <div className="markdown-plus" data-theme={theme}>
-      <div id="rows-grid" style={{ gridTemplateRows }}>
+      <div className="rows-grid" style={{ gridTemplateRows }}>
         <Toolbar store={store} />
         <div
           id="row-gutter"
@@ -55,12 +55,12 @@ const App = (props: { store: Store }) => {
               preferences.toolbar === 'hide' ? 'show' : 'hide')
           }
         ></div>
-        <div id="cols-grid" style={{ gridTemplateColumns }}>
-          <div id="left-panel">
+        <div className="cols-grid" style={{ gridTemplateColumns }}>
+          <div className="left-panel">
             <Editor store={store} />
           </div>
           <div id="col-gutter" className="gutter" title="Resize"></div>
-          <div id="right-panel">
+          <div className="right-panel">
             <Preview />
           </div>
         </div>

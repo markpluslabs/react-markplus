@@ -19,7 +19,7 @@ const Preview = () => {
       const linkElement = document.querySelector(
         window.location.hash,
       ) as HTMLElement;
-      const rightPanel = document.querySelector('#right-panel');
+      const rightPanel = document.querySelector('.right-panel');
       rightPanel.scrollTop = linkElement.offsetTop;
     };
     scrollToHash();
