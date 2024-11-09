@@ -143,7 +143,7 @@ const Editor = (props: { store: Store }) => {
       rightPanel.removeEventListener('scroll', handlePreviewScroll);
     };
   }, [store]);
-  return <div id="editor" ref={editorDiv}></div>;
+  return <div className="editor" ref={editorDiv}></div>;
 };
 
 export default auto(Editor);

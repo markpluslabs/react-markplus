@@ -70,19 +70,18 @@
     position: relative;
   }
 
-  #row-gutter {
+  .row-gutter {
     grid-column: 1/-1;
     grid-row: 2;
     cursor: pointer;
   }
 
-  #col-gutter {
+  .col-gutter {
     grid-row: 1/-1;
     grid-column: 2;
     cursor: col-resize;
   }
-
-  #editor,
+  .editor,
   .cm-editor {
     height: 100%;
   }

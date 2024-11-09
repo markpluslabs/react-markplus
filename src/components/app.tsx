@@ -16,7 +16,7 @@ const App = (props: { store: Store }) => {
       columnGutters: [
         {
           track: 1,
-          element: document.querySelector('#col-gutter')!,
+          element: document.querySelector('.col-gutter')!,
         },
       ],
       snapOffset: 64,
@@ -45,8 +45,7 @@ const App = (props: { store: Store }) => {
       <div className="rows-grid" style={{ gridTemplateRows }}>
         <Toolbar store={store} />
         <div
-          id="row-gutter"
-          className="gutter"
+          className="gutter row-gutter"
           title={
             preferences.toolbar === 'hide' ? 'Show toolbar' : 'Hide toolbar'
           }
@@ -59,7 +58,7 @@ const App = (props: { store: Store }) => {
           <div className="left-panel">
             <Editor store={store} />
           </div>
-          <div id="col-gutter" className="gutter" title="Resize"></div>
+          <div className="gutter col-gutter" title="Resize"></div>
           <div className="right-panel">
             <Preview />
           </div>
