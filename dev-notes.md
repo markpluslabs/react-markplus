@@ -10,8 +10,8 @@
   - a few lines of code to embed mdp to their own app
 - Close most GitHub issues
 - rename to MarkPlus? markplus.io
-- querySelector, what if there are multiple editors in the same page?
-  - it may select the wrong element
+- querySelector, go through them and make them as specific as possible
+- fix a parcel build warning
 
 ## Notes
 
