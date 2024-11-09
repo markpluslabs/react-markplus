@@ -8,7 +8,7 @@ import Editor from './editor';
 import Modals from './modals';
 import Toolbar from './toolbar';
 
-const App = (props: { store: Store }) => {
+const Layout = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
   const colGutter = createRef<HTMLDivElement>();
@@ -75,4 +75,4 @@ const App = (props: { store: Store }) => {
   );
 };
 
-export default auto(App);
+export default auto(Layout);

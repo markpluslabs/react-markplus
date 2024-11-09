@@ -12,3 +12,7 @@
 - rename to MarkPlus? markplus.io
 - querySelector, what if there are multiple editors in the same page?
   - it may select the wrong element
+
+## Notes
+
+- We use scoped CSS modules so that we could have multiple editors on the same page without confliction.

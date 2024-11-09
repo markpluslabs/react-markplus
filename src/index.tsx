@@ -1,7 +1,7 @@
 import { ConfigProvider } from 'antd';
 import React, { ReactElement, useEffect } from 'react';
 
-import App from './components/layout';
+import Layout from './components/layout';
 import store from './store';
 
 export const defaultToolBarItems = [
@@ -66,7 +66,7 @@ const MarkdownPlus = (props: {
         },
       }}
     >
-      <App store={store} />
+      <Layout store={store} />
     </ConfigProvider>
   );
 };

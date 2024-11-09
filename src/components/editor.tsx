@@ -26,6 +26,7 @@ import mde from 'markdown-extensible';
 import mermaid from 'mermaid/dist/mermaid.esm.mjs';
 import React, { useEffect, useRef } from 'react';
 
+import * as styles from '../css/index.module.scss';
 import { Store } from '../store';
 import { syncEditor, syncPreview } from '../sync-scroll';
 
@@ -56,22 +57,13 @@ const Editor = (props: { store: Store }) => {
         run: () => true,
       },
       {
-        key: 'Mod-,',
-        run: () => {
-          const preferencesIcon = document.querySelector(
-            'i.fa-cog',
-          ) as HTMLElement;
-          if (preferencesIcon) {
-            preferencesIcon.click();
-            return true;
-          }
-          return false;
-        },
-      },
-      {
         key: 'Mod-b',
         run: () => {
-          (document.querySelector('i.fa-bold') as HTMLElement).click();
+          document
+            .querySelector<HTMLElement>(
+              `.${styles['markdown-plus']} .toolbar i.fa-bold`,
+            )
+            ?.click();
           return true;
         },
       },
@@ -113,17 +105,21 @@ const Editor = (props: { store: Store }) => {
     const handlePreviewScroll = () => {
       syncEditor();
     };
-    const rightPanel = document.querySelector('.right-panel')!;
+    const rightPanel = document.querySelector(
+      `.${styles['markdown-plus']} .right-panel`,
+    )!;
     rightPanel.addEventListener('scroll', handlePreviewScroll);
 
     // whenever user changes markdown
     mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
     const lazyChange = debounce(() => {
       const markdown = store.editor.state.doc.toString();
-      document.querySelector('.preview')!.innerHTML = mde.render(markdown);
+      document.querySelector<HTMLElement>(
+        `.${styles['markdown-plus']} .preview`,
+      ).innerHTML = mde.render(markdown);
       // Chart.js
       document
-        .querySelectorAll('.preview .chartjs')
+        .querySelectorAll(`.${styles['markdown-plus']} .preview .chartjs`)
         .forEach((element: HTMLCanvasElement) => {
           try {
             new Chart(element, JSON.parse(element.textContent));
@@ -134,7 +130,9 @@ const Editor = (props: { store: Store }) => {
 
       // mermaid
       mermaid.run({
-        nodes: document.querySelectorAll('.preview pre.mermaid'),
+        nodes: document.querySelectorAll(
+          `.${styles['markdown-plus']} .preview pre.mermaid`,
+        ),
       });
     }, 256);
     return () => {
