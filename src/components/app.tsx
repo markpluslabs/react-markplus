@@ -34,8 +34,14 @@ const App = (props: { store: Store }) => {
   } else if (preferences.mode === 'preview') {
     gridTemplateColumns = '0 0 1fr';
   }
+  let theme = preferences.theme;
+  if (theme === 'auto') {
+    theme = window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  }
   return (
-    <div className="markdown-plus" data-theme="dark">
+    <div className="markdown-plus" data-theme={theme}>
       <div id="rows-grid" style={{ gridTemplateRows }}>
         <Toolbar store={store} />
         <div
