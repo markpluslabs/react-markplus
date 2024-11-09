@@ -58,7 +58,7 @@ const Toolbar = (props: { store: Store }) => {
     });
   };
   return (
-    <div id="toolbar" className="noselect">
+    <div className="toolbar">
       {store.preferences.toolBarItems.map((item, index) => {
         let reactElement: ReactElement;
         if (typeof item === 'string') {

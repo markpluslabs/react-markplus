@@ -8,13 +8,13 @@
 */
 /* todo: should not change body, should change the react component container */
 .markdown-plus[data-theme='light'] {
-  #toolbar {
+  .toolbar {
     color: #666;
     background-color: white;
   }
 }
 .markdown-plus[data-theme='dark'] {
-  #toolbar {
+  .toolbar {
     color: #f0f6fc !important;
     background-color: #0d1117 !important;
   }
@@ -125,11 +125,19 @@
     background-color: #c4e1a4;
   }
 
-  #toolbar {
+  .toolbar {
     overflow: hidden;
     padding-left: 3px;
+
+    /* toolbar cannot be selected */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
-  #toolbar .fa {
+  .toolbar .fa {
     padding: 2px 5px;
     border: 1px solid transparent;
   }
@@ -138,7 +146,7 @@
     vertical-align: top;
   }
 
-  #toolbar .fa:hover,
+  .toolbar .fa:hover,
   #about-icon:hover {
     background-color: #999;
     border-color: #ccc;
@@ -149,16 +157,6 @@
     font-style: normal;
     color: #ddd;
     margin: 0 6px;
-  }
-
-  /* toolbar cannot be select */
-  .noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   /* fix clicking anchor scroll issue */
