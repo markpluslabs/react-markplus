@@ -51,7 +51,7 @@ const scrollPreview = (scrollTop: number): void => {
 };
 
 const getEditorScroll = (): IScroll => {
-  const lineMarkers = document.querySelectorAll('#preview > [data-sl]');
+  const lineMarkers = document.querySelectorAll('.preview > [data-sl]');
   const lines: number[] = [];
   lineMarkers.forEach((element: HTMLElement) => {
     lines.push(parseInt(element.dataset.sl, 10));
@@ -81,12 +81,12 @@ const getEditorScroll = (): IScroll => {
 const setPreviewScroll = (editorScroll: IScroll): void => {
   let lastPosition = 0;
   let nextPosition =
-    document.querySelector<HTMLElement>('#preview').offsetHeight -
-    (document.querySelector('.right-panel') as HTMLElement).offsetHeight; // maximum scroll
+    document.querySelector<HTMLElement>('.preview').offsetHeight -
+    document.querySelector<HTMLElement>('.right-panel').offsetHeight; // maximum scroll
 
   if (editorScroll.lastMarker) {
     const lastMarkerElement = document.querySelector<HTMLElement>(
-      `#preview > [data-sl="${editorScroll.lastMarker}"]`,
+      `.preview > [data-sl="${editorScroll.lastMarker}"]`,
     );
     if (lastMarkerElement) {
       lastPosition = lastMarkerElement.offsetTop;
@@ -95,7 +95,7 @@ const setPreviewScroll = (editorScroll: IScroll): void => {
 
   if (editorScroll.nextMarker) {
     const nextMarkerElement = document.querySelector<HTMLElement>(
-      `#preview > [data-sl="${editorScroll.nextMarker}"]`,
+      `.preview > [data-sl="${editorScroll.nextMarker}"]`,
     );
     if (nextMarkerElement) {
       nextPosition = nextMarkerElement.offsetTop;
@@ -112,10 +112,10 @@ const getPreviewScroll = (): IScroll => {
   let lastScroll = 0;
   let nextLine = store.editor.state.doc.toString().split('\n').length; // number of lines of markdown
   let nextScroll =
-    document.getElementById('preview').offsetHeight -
-    (document.querySelector('.right-panel') as HTMLElement).offsetHeight; // maximum scroll
+    document.querySelector<HTMLElement>('.preview').offsetHeight -
+    document.querySelector<HTMLElement>('.right-panel').offsetHeight; // maximum scroll
   const lineMarkers = document.querySelectorAll<HTMLElement>(
-    '#preview > [data-sl]',
+    '.preview > [data-sl]',
   );
   for (let i = 0; i < lineMarkers.length; i++) {
     const lineMarker = lineMarkers[i];

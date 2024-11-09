@@ -24,7 +24,7 @@ const Preview = () => {
     };
     scrollToHash();
   }, []);
-  return <article className="markdown-body" id="preview"></article>;
+  return <article className="markdown-body preview"></article>;
 };
 
 export default auto(Preview);

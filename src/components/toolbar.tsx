@@ -67,7 +67,7 @@ const Toolbar = (props: { store: Store }) => {
               reactElement = (
                 <img
                   src="https://chuntaoliu.com/markdown-plus/icon.svg"
-                  id="about-icon"
+                  className="about-icon"
                   onClick={() => modals.about.open()}
                   title="About"
                 />

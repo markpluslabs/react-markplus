@@ -120,10 +120,10 @@ const Editor = (props: { store: Store }) => {
     mermaid.initialize({ startOnLoad: false });
     const lazyChange = debounce(() => {
       const markdown = store.editor.state.doc.toString();
-      document.getElementById('preview')!.innerHTML = mde.render(markdown);
+      document.querySelector('.preview')!.innerHTML = mde.render(markdown);
       // Chart.js
       document
-        .querySelectorAll('#preview .chartjs')
+        .querySelectorAll('.preview .chartjs')
         .forEach((element: HTMLCanvasElement) => {
           try {
             new Chart(element, JSON.parse(element.textContent));
@@ -134,7 +134,7 @@ const Editor = (props: { store: Store }) => {
 
       // mermaid
       mermaid.run({
-        nodes: document.querySelectorAll('#preview pre.mermaid'),
+        nodes: document.querySelectorAll('.preview pre.mermaid'),
       });
     }, 512);
     return () => {
