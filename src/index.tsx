@@ -1,8 +1,36 @@
 import { ConfigProvider } from 'antd';
 import React, { ReactElement, useEffect } from 'react';
 
-import App from './components/app';
+import App from './components/layout';
 import store from './store';
+
+export const defaultToolBarItems = [
+  'about',
+  '|',
+  'bold',
+  'italic',
+  'strikethrough',
+  'underline',
+  'mark',
+  '|',
+  'emoji',
+  'fontawesome',
+  '|',
+  'quote',
+  'unordered-list',
+  'ordered-list',
+  'unchecked-list',
+  'checked-list',
+  '|',
+  'link',
+  'image',
+  'code',
+  'table',
+  '|',
+  'math',
+  'mermaid',
+  'chartjs',
+];
 
 const MarkdownPlus = (props: {
   markdown?: string;
@@ -16,33 +44,7 @@ const MarkdownPlus = (props: {
     store.preferences.mode = mode ?? 'both';
     store.preferences.toolbar = toolbar ?? 'none';
     store.preferences.theme = theme ?? 'auto';
-    store.preferences.toolBarItems = toolBarItems ?? [
-      'about',
-      '|',
-      'bold',
-      'italic',
-      'strikethrough',
-      'underline',
-      'mark',
-      '|',
-      'emoji',
-      'fontawesome',
-      '|',
-      'quote',
-      'unordered-list',
-      'ordered-list',
-      'unchecked-list',
-      'checked-list',
-      '|',
-      'link',
-      'image',
-      'code',
-      'table',
-      '|',
-      'math',
-      'mermaid',
-      'chartjs',
-    ];
+    store.preferences.toolBarItems = toolBarItems ?? defaultToolBarItems;
   }, [mode, toolbar, theme, toolBarItems]);
   useEffect(() => {
     store.editor.dispatch({
