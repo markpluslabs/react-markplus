@@ -3,6 +3,7 @@ import localforage from 'localforage';
 import { autoRun } from 'manate';
 import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
+import waitFor from 'wait-for-async';
 
 import MarkdownPlus, { defaultToolBarItems } from '../src';
 import PreferencesModal from './preferences-modal';
@@ -50,6 +51,29 @@ const App = (props: { store: Store }) => {
       }
     };
   }, [preferences]);
+
+  // scroll to hash
+  useEffect(() => {
+    const scrollToHash = async () => {
+      if (window.location.hash.length === 0) {
+        return;
+      }
+      const r = await waitFor({
+        interval: 100,
+        times: 30,
+        condition: () => document.querySelector(window.location.hash) !== null,
+      });
+      if (!r) {
+        return;
+      }
+      const linkElement = document.querySelector<HTMLElement>(
+        window.location.hash,
+      );
+      const rightPanel = document.querySelector('.right-panel');
+      rightPanel.scrollTop = linkElement.offsetTop;
+    };
+    scrollToHash();
+  }, []);
 
   return (
     <>

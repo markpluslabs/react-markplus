@@ -6,7 +6,6 @@ import * as styles from '../css/index.module.scss';
 import { Store } from '../store';
 import Editor from './editor';
 import Modals from './modals';
-import Preview from './preview';
 import Toolbar from './toolbar';
 
 const App = (props: { store: Store }) => {
@@ -67,7 +66,7 @@ const App = (props: { store: Store }) => {
             ref={colGutter}
           ></div>
           <div className="right-panel">
-            <Preview />
+            <article className="markdown-body preview"></article>
           </div>
         </div>
       </div>
