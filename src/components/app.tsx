@@ -35,7 +35,7 @@ const App = (props: { store: Store }) => {
     gridTemplateColumns = '0 0 1fr';
   }
   return (
-    <>
+    <div className="markdown-plus" data-theme="dark">
       <div id="rows-grid" style={{ gridTemplateRows }}>
         <Toolbar store={store} />
         <div
@@ -60,7 +60,7 @@ const App = (props: { store: Store }) => {
         </div>
       </div>
       <Modals store={store} />
-    </>
+    </div>
   );
 };
 
