@@ -1,6 +1,7 @@
 @import '../../node_modules/katex/dist/katex.css';
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
 @import './github-markdown.scss';
+@import './highlightjs.scss';
 /*
 ==============================
   start of light/dark theme
@@ -163,11 +164,6 @@
     h5,
     h6 {
       scroll-margin-top: 1px;
-    }
-
-    /* code highlight */
-    pre code.hljs {
-      padding: 0;
     }
 
     /* custom container */

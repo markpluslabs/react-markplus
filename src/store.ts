@@ -49,22 +49,6 @@ export class Store {
         darkTheme ? githubDark : githubLight,
       ),
     });
-
-    // github-markdown-css & highlight.js themes
-    document.querySelectorAll('[data-theme="light"]').forEach((el) => {
-      if (darkTheme) {
-        el.setAttribute('disabled', '');
-      } else {
-        el.removeAttribute('disabled');
-      }
-    });
-    document.querySelectorAll('[data-theme="dark"]').forEach((el) => {
-      if (darkTheme) {
-        el.removeAttribute('disabled');
-      } else {
-        el.setAttribute('disabled', '');
-      }
-    });
   }
 }
 
