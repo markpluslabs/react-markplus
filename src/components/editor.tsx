@@ -117,7 +117,7 @@ const Editor = (props: { store: Store }) => {
     rightPanel.addEventListener('scroll', handlePreviewScroll);
 
     // whenever user changes markdown
-    mermaid.initialize({ startOnLoad: false });
+    mermaid.initialize({ startOnLoad: false, theme: 'neutral' });
     const lazyChange = debounce(() => {
       const markdown = store.editor.state.doc.toString();
       document.querySelector('.preview')!.innerHTML = mde.render(markdown);
