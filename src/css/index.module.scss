@@ -1,12 +1,11 @@
-@import '../node_modules/katex/dist/katex.css';
-@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
-
+@import '../../node_modules/katex/dist/katex.css';
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import './github-markdown.scss';
 /*
 ==============================
   start of light/dark theme
 ==============================
 */
-/* todo: should not change body, should change the react component container */
 .markdown-plus[data-theme='light'] {
   :global {
     .toolbar {

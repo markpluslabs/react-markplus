@@ -50,7 +50,7 @@ export class Store {
       ),
     });
 
-    // preview and toolbar theme
+    // github-markdown-css & highlight.js themes
     document.querySelectorAll('[data-theme="light"]').forEach((el) => {
       if (darkTheme) {
         el.setAttribute('disabled', '');
