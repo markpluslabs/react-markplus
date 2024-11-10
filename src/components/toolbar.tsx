@@ -215,7 +215,7 @@ const Toolbar = (props: { store: Store }) => {
                       changes: {
                         from: mainSelection.from,
                         to: mainSelection.to,
-                        insert: `[${text}](https://github.com/tylerlong/markplus/)`,
+                        insert: `[${text}](https://github.com/markpluslabs/react-markplus/)`,
                       },
                     });
                   }}

@@ -29,11 +29,11 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
         <p>
           Copyright © 2015 - 2024{' '}
           <a
-            href="https://github.com/tylerlong/"
+            href="https://github.com/markpluslabs/"
             target="_blank"
             rel="noreferrer"
           >
-            Tyler Liu
+            MarkPlus Labs
           </a>
         </p>
         <Space>
@@ -46,7 +46,7 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
           </a>
           |
           <a
-            href="https://github.com/tylerlong/markplus/"
+            href="https://github.com/markpluslabs/react-markplus/"
             target="_blank"
             rel="noreferrer"
           >

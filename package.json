@@ -12,13 +12,13 @@
     "react markdown editor",
     "react editor"
   ],
-  "homepage": "https://github.com/tylerlong/markplus/",
+  "homepage": "https://github.com/markpluslabs/react-markplus",
   "bugs": {
-    "url": "https://github.com/tylerlong/markplus/issues"
+    "url": "https://github.com/markpluslabs/react-markplus/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tylerlong/markplus.git"
+    "url": "git+https://github.com/markpluslabs/react-markplus.git"
   },
   "license": "MIT",
   "author": "Tyler Liu",
