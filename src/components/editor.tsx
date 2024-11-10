@@ -22,7 +22,7 @@ import Chart from 'chart.js/auto';
 import debounce from 'debounce';
 import { exclude } from 'manate';
 import { auto } from 'manate/react';
-import mde from 'markdown-extensible';
+import markplusEngine from 'markplus-engine';
 import mermaid from 'mermaid/dist/mermaid.esm.mjs';
 import React, { useEffect, useRef } from 'react';
 
@@ -116,7 +116,7 @@ const Editor = (props: { store: Store }) => {
       const markdown = store.editor.state.doc.toString();
       document.querySelector<HTMLElement>(
         `.${styles['markplus']} .right-panel .preview`,
-      ).innerHTML = mde.render(markdown);
+      ).innerHTML = markplusEngine.render(markdown);
       // Chart.js
       document
         .querySelectorAll(

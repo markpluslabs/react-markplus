@@ -23,12 +23,12 @@
   "license": "MIT",
   "author": "Tyler Liu",
   "type": "module",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "prepublishOnly": "rm -rf lib && tsc --skipLibCheck --declaration --sourceMap && rm -rf lib/demo && mv lib/src/* lib/ && rmdir lib/src",
-    "postpublish": "rm -rf lib",
+    "prepublishOnly": "rm -rf lib && tsc --skipLibCheck --declaration --sourceMap",
+    "postpublish": "find . -type f ( -name '*.js' -o -name '*.d.ts' ) -delete",
     "release": "rm -rf .parcel-cache docs && parcel build demo/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
     "serve": "rm -rf .parcel-cache temp && parcel demo/index.html --dist-dir temp"
   },
@@ -46,7 +46,7 @@
     "github-markdown-css": "^5.7.0",
     "katex": "^0.16.11",
     "manate": "^0.9.11",
-    "markdown-extensible": "^0.2.8",
+    "markplus-engine": "^0.1.2",
     "mermaid": "^11.4.0",
     "split-grid": "^1.0.11",
     "wait-for-async": "^0.7.0"

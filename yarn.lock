@@ -4459,26 +4459,6 @@ manate@^0.9.11:
   resolved "https://registry.yarnpkg.com/manate/-/manate-0.9.11.tgz#ad99810c70956299fdfc0fa7f689913bc6ddf33f"
   integrity sha512-4Db8j0FFFD+heLFZshVuEOQEA537fM1mGpD15sh2TTC8N/HPC2bknuH5/uGvHziISoc+2fVWJeBCWxH59adAiw==
 
-markdown-extensible@^0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/markdown-extensible/-/markdown-extensible-0.2.8.tgz#9ba9bfa06a16d922949daf3f6103102a6fc1faed"
-  integrity sha512-JQkhxPemj83rnrAt6bRvGWsb8Cd9nPZ8PLkN9avQjK72e1q6KpJHw9GO2Z+2rOEkOzow1kQeQjQRVEpg+exj/g==
-  dependencies:
-    "@sindresorhus/slugify" "^2.2.1"
-    highlight.js "^11.10.0"
-    katex "^0.16.11"
-    markdown-it "^14.1.0"
-    markdown-it-anchor "^9.2.0"
-    markdown-it-container "^4.0.0"
-    markdown-it-deflist "^3.0.0"
-    markdown-it-emoji "^3.0.0"
-    markdown-it-footnote "^4.0.0"
-    markdown-it-ins "^4.0.0"
-    markdown-it-mark "^4.0.0"
-    markdown-it-regex "^0.2.0"
-    markdown-it-sub "^2.0.0"
-    markdown-it-sup "^2.0.0"
-
 markdown-it-anchor@^9.2.0:
   version "9.2.0"
   resolved "https://registry.yarnpkg.com/markdown-it-anchor/-/markdown-it-anchor-9.2.0.tgz#89375d9a2a79336403ab7c4fd36b1965cc45e5c8"
@@ -4545,6 +4525,26 @@ marked@^13.0.2:
   version "13.0.3"
   resolved "https://registry.yarnpkg.com/marked/-/marked-13.0.3.tgz#5c5b4a5d0198060c7c9bc6ef9420a7fed30f822d"
   integrity sha512-rqRix3/TWzE9rIoFGIn8JmsVfhiuC8VIQ8IdX5TfzmeBucdY05/0UlzKaw0eVtpcN/OdVFpBk7CjKGo9iHJ/zA==
+
+markplus-engine@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/markplus-engine/-/markplus-engine-0.1.2.tgz#3e787f28179bd4283b728efb83092eb9c9ac6c49"
+  integrity sha512-JDRAqXt0jNEBlkny00/z1pfgAXgCGg1YMo1XOPrVWHPocrwRkUIt7PMR+xlZiJqifkQwpTE65WaPZVaseLvHdg==
+  dependencies:
+    "@sindresorhus/slugify" "^2.2.1"
+    highlight.js "^11.10.0"
+    katex "^0.16.11"
+    markdown-it "^14.1.0"
+    markdown-it-anchor "^9.2.0"
+    markdown-it-container "^4.0.0"
+    markdown-it-deflist "^3.0.0"
+    markdown-it-emoji "^3.0.0"
+    markdown-it-footnote "^4.0.0"
+    markdown-it-ins "^4.0.0"
+    markdown-it-mark "^4.0.0"
+    markdown-it-regex "^0.2.0"
+    markdown-it-sub "^2.0.0"
+    markdown-it-sup "^2.0.0"
 
 mdn-data@2.0.14:
   version "2.0.14"
