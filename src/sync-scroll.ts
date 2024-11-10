@@ -60,7 +60,7 @@ const scrollPreview = (scrollTop: number): void => {
 
 const getEditorScroll = (): IScroll => {
   const lineMarkers = document.querySelectorAll(
-    `.${styles['markdown-plus']} .preview > [data-sl]`,
+    `.${styles['markdown-plus']} .right-panel .preview > [data-sl]`,
   );
   const lines: number[] = [];
   lineMarkers.forEach((element: HTMLElement) => {
@@ -91,15 +91,16 @@ const getEditorScroll = (): IScroll => {
 const setPreviewScroll = (editorScroll: IScroll): void => {
   let lastPosition = 0;
   let nextPosition =
-    document.querySelector<HTMLElement>(`.${styles['markdown-plus']} .preview`)
-      .offsetHeight -
+    document.querySelector<HTMLElement>(
+      `.${styles['markdown-plus']} .right-panel .preview`,
+    ).offsetHeight -
     document.querySelector<HTMLElement>(
       `.${styles['markdown-plus']} .right-panel`,
     ).offsetHeight; // maximum scroll
 
   if (editorScroll.lastMarker) {
     const lastMarkerElement = document.querySelector<HTMLElement>(
-      `.${styles['markdown-plus']} .preview > [data-sl="${editorScroll.lastMarker}"]`,
+      `.${styles['markdown-plus']} .right-panel .preview > [data-sl="${editorScroll.lastMarker}"]`,
     );
     if (lastMarkerElement) {
       lastPosition = lastMarkerElement.offsetTop;
@@ -108,7 +109,7 @@ const setPreviewScroll = (editorScroll: IScroll): void => {
 
   if (editorScroll.nextMarker) {
     const nextMarkerElement = document.querySelector<HTMLElement>(
-      `.${styles['markdown-plus']} .preview > [data-sl="${editorScroll.nextMarker}"]`,
+      `.${styles['markdown-plus']} .right-panel .preview > [data-sl="${editorScroll.nextMarker}"]`,
     );
     if (nextMarkerElement) {
       nextPosition = nextMarkerElement.offsetTop;

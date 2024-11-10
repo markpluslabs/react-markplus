@@ -115,11 +115,13 @@ const Editor = (props: { store: Store }) => {
     const lazyChange = debounce(() => {
       const markdown = store.editor.state.doc.toString();
       document.querySelector<HTMLElement>(
-        `.${styles['markdown-plus']} .preview`,
+        `.${styles['markdown-plus']} .right-panel .preview`,
       ).innerHTML = mde.render(markdown);
       // Chart.js
       document
-        .querySelectorAll(`.${styles['markdown-plus']} .preview .chartjs`)
+        .querySelectorAll(
+          `.${styles['markdown-plus']} .right-panel .preview .chartjs`,
+        )
         .forEach((element: HTMLCanvasElement) => {
           try {
             new Chart(element, JSON.parse(element.textContent));
@@ -131,7 +133,7 @@ const Editor = (props: { store: Store }) => {
       // mermaid
       mermaid.run({
         nodes: document.querySelectorAll(
-          `.${styles['markdown-plus']} .preview pre.mermaid`,
+          `.${styles['markdown-plus']} .right-panel .preview pre.mermaid`,
         ),
       });
     }, 256);

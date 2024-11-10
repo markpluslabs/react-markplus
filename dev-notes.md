@@ -10,7 +10,9 @@
   - a few lines of code to embed mdp to their own app
 - Close most GitHub issues
 - rename to MarkPlus? markplus.io
-- querySelector, go through them and make them as specific as possible
+
+## Pending
+
 - fix a parcel sass build warning:
   - pending here: https://github.com/parcel-bundler/parcel/issues/9857
 
