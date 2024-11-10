@@ -1,10 +1,10 @@
 # MarkPlus
 
-<img src="https://chuntaoliu.com/markplus/icon.svg" alt="icon" width="256" height="256"/>
+<img src="https://markpluslabs.github.io/react-markplus/icon.svg" alt="icon" width="256" height="256"/>
 
 A React markdown editor and previewer.
 
-## [Online Demo](https://chuntaoliu.com/markplus/)
+## [Online Demo](https://markpluslabs.github.io/react-markplus/)
 
 ![MarkPlus](screenshot.png)
 

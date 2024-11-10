@@ -22,7 +22,10 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
     >
       <div style={{ textAlign: 'center' }}>
         <p>
-          <img src="https://chuntaoliu.com/markplus/icon.svg" width="64" />
+          <img
+            src="https://markpluslabs.github.io/react-markplus/icon.svg"
+            width="64"
+          />
         </p>
         <h2>MarkPlus</h2>
         <p>A React markdown editor and previewer.</p>
@@ -38,7 +41,7 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
         </p>
         <Space>
           <a
-            href="https://chuntaoliu.com/markplus/"
+            href="https://markpluslabs.github.io/react-markplus/"
             target="_blank"
             rel="noreferrer"
           >

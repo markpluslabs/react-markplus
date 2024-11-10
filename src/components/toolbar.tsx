@@ -66,7 +66,7 @@ const Toolbar = (props: { store: Store }) => {
             case 'about': {
               reactElement = (
                 <img
-                  src="https://chuntaoliu.com/markplus/icon.svg"
+                  src="https://markpluslabs.github.io/react-markplus/icon.svg"
                   className="about-icon"
                   onClick={() => modals.about.open()}
                   title="About"
@@ -240,7 +240,7 @@ const Toolbar = (props: { store: Store }) => {
                       changes: {
                         from: mainSelection.from,
                         to: mainSelection.to,
-                        insert: `![${text}](https://chuntaoliu.com/markplus/icon.svg)`,
+                        insert: `![${text}](https://markpluslabs.github.io/react-markplus/icon.svg)`,
                       },
                     });
                   }}

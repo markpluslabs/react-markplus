@@ -62,7 +62,10 @@ const PromptModals = (props: { store: Store }) => {
       >
         <div style={{ textAlign: 'center' }}>
           <p>
-            <img src="https://chuntaoliu.com/markplus/icon.svg" width="64" />
+            <img
+              src="https://markpluslabs.github.io/react-markplus/icon.svg"
+              width="64"
+            />
           </p>
           <h2>Please enter an emoji code:</h2>
           <p>
@@ -111,7 +114,10 @@ const PromptModals = (props: { store: Store }) => {
       >
         <div style={{ textAlign: 'center' }}>
           <p>
-            <img src="https://chuntaoliu.com/markplus/icon.svg" width="64" />
+            <img
+              src="https://markpluslabs.github.io/react-markplus/icon.svg"
+              width="64"
+            />
           </p>
           <h2>Please enter a Font Awesome code:</h2>
           <p>

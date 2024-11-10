@@ -2,7 +2,7 @@
 
 A React markdown editor and previewer.
 
-<img src="https://chuntaoliu.com/markplus/icon.svg" alt="icon" width="256" height="256"/>
+<img src="https://markpluslabs.github.io/react-markplus/icon.svg" alt="icon" width="256" height="256"/>
 
 ## Table of Contents
 
