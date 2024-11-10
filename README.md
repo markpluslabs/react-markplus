@@ -22,9 +22,7 @@ import MarkdownPlus from 'markdown-plus';
 <MarkdownPlus markdown="# Hello world!" />;
 ```
 
-## props
-
-### markdown
+## markdown
 
 Initial markdown text to load into the editor.
 
@@ -34,7 +32,7 @@ Initial markdown text to load into the editor.
 
 Default value is `''`.
 
-### toolbar
+## toolbar
 
 Show, hide or remove toolbar.
 
@@ -50,7 +48,7 @@ Show, hide or remove toolbar.
 
 Default value: `none`.
 
-### mode
+## mode
 
 Display editor, preview or both.
 
@@ -69,7 +67,7 @@ Display editor, preview or both.
 
 Default value: `both`.
 
-### theme
+## theme
 
 Overall theme: light, dark or auto:
 
@@ -141,6 +139,46 @@ For your own custom toobar items, please specify a `ReactElement`.
   - insert some mermaid charts
 - `'chartjs'`
   - insert some Chart.js charts
+
+## Default toolbar items
+
+```tsx
+import { defaultToolbarItems } from 'markdown-plus';
+```
+
+Its value is:
+
+```tsx
+[
+  'about',
+  '|',
+  'bold',
+  'italic',
+  'strikethrough',
+  'underline',
+  'mark',
+  '|',
+  'emoji',
+  'fontawesome',
+  '|',
+  'quote',
+  'unordered-list',
+  'ordered-list',
+  'unchecked-list',
+  'checked-list',
+  '|',
+  'link',
+  'image',
+  'code',
+  'table',
+  '|',
+  'math',
+  'mermaid',
+  'chartjs',
+];
+```
+
+You may add or remote items from it to customize your own toolbar.
 
 ## Custom toolbar item
 
