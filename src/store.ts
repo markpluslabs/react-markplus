@@ -21,7 +21,7 @@ class Preferences {
   public mode: 'editor' | 'preview' | 'both' = 'both';
   public toolbar: 'show' | 'hide' | 'none' = 'none';
   public theme: 'light' | 'dark' | 'auto' = 'auto';
-  public toolBarItems: (string | ReactElement)[] = [];
+  public toolbarItems: (string | ReactElement)[] = [];
 }
 
 export class Store {
@@ -30,7 +30,6 @@ export class Store {
 
   public modals = {
     about: new Modal(),
-    preferences: new Modal(),
     emoji: new Modal(),
     fontAwesome: new Modal(),
   };

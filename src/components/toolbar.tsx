@@ -59,7 +59,7 @@ const Toolbar = (props: { store: Store }) => {
   };
   return (
     <div className="toolbar">
-      {store.preferences.toolBarItems.map((item, index) => {
+      {store.preferences.toolbarItems.map((item, index) => {
         let reactElement: ReactElement;
         if (typeof item === 'string') {
           switch (item) {
@@ -373,16 +373,6 @@ row 2 col 1 | row 2 col 2`.trim();
 }`,
                     )
                   }
-                ></i>
-              );
-              break;
-            }
-            case 'preferences': {
-              reactElement = (
-                <i
-                  title="Preferences"
-                  className="fa fa-cog"
-                  onClick={() => modals.preferences.open()}
                 ></i>
               );
               break;

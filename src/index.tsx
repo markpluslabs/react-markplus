@@ -4,7 +4,7 @@ import React, { ReactElement, useEffect } from 'react';
 import Layout from './components/layout';
 import store from './store';
 
-export const defaultToolBarItems = [
+export const defaultToolbarItems = [
   'about',
   '|',
   'bold',
@@ -37,15 +37,15 @@ const MarkdownPlus = (props: {
   mode?: 'editor' | 'preview' | 'both';
   toolbar?: 'show' | 'hide' | 'none';
   theme?: 'light' | 'dark' | 'auto';
-  toolBarItems?: (string | ReactElement)[];
+  toolbarItems?: (string | ReactElement)[];
 }) => {
-  const { markdown, mode, toolbar, theme, toolBarItems } = props;
+  const { markdown, mode, toolbar, theme, toolbarItems } = props;
   useEffect(() => {
     store.preferences.mode = mode ?? 'both';
     store.preferences.toolbar = toolbar ?? 'none';
     store.preferences.theme = theme ?? 'auto';
-    store.preferences.toolBarItems = toolBarItems ?? defaultToolBarItems;
-  }, [mode, toolbar, theme, toolBarItems]);
+    store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
+  }, [mode, toolbar, theme, toolbarItems]);
   useEffect(() => {
     store.editor.dispatch({
       changes: {

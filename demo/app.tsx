@@ -5,7 +5,7 @@ import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
 import waitFor from 'wait-for-async';
 
-import MarkdownPlus, { defaultToolBarItems } from '../src';
+import MarkdownPlus, { defaultToolbarItems } from '../src';
 import PreferencesModal from './preferences-modal';
 import markdownUrl from './sample.md';
 import { Store } from './store';
@@ -94,11 +94,11 @@ const App = (props: { store: Store }) => {
       <MarkdownPlus
         markdown={markdown}
         {...preferences}
-        toolBarItems={[
-          ...defaultToolBarItems,
+        toolbarItems={[
+          ...defaultToolbarItems,
           '|',
           <i
-            key="preferences-toolbar-item"
+            key="preferences"
             title="Preferences"
             className="fa fa-cog"
             onClick={() => (store.preferencesModalOpen = true)}
