@@ -13,7 +13,6 @@
 - querySelector, go through them and make them as specific as possible
 - fix a parcel sass build warning:
   - pending here: https://github.com/parcel-bundler/parcel/issues/9857
-- demo app: if toolbar is none, how to bring up the preferences menu?
 
 ## Notes
 

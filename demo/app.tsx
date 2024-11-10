@@ -75,6 +75,20 @@ const App = (props: { store: Store }) => {
     scrollToHash();
   }, []);
 
+  // open preferences modal with cmd + ,
+  useEffect(() => {
+    const keyUpListener = (event: KeyboardEvent) => {
+      if (event.metaKey && event.key === ',') {
+        event.preventDefault();
+        document.querySelector<HTMLElement>('.toolbar .fa-cog')?.click();
+      }
+    };
+    window.addEventListener('keydown', keyUpListener);
+    return () => {
+      window.removeEventListener('keydown', keyUpListener);
+    };
+  }, []);
+
   return (
     <>
       <MarkdownPlus
