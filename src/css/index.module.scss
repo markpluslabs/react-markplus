@@ -1,7 +1,8 @@
+@use './github-markdown.scss';
+@use './highlightjs.scss';
+
 @import '../../node_modules/katex/dist/katex.css';
 @import '../../node_modules/@fortawesome/fontawesome-free/css/all.css';
-@import './github-markdown.scss';
-@import './highlightjs.scss';
 
 .markdown-plus {
   /*
