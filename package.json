@@ -1,22 +1,24 @@
 {
-  "name": "markdown-plus",
-  "version": "3.0.0-alpha.4",
+  "name": "mark-plus",
+  "version": "0.1.0",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
     "editor",
-    "markdown plus",
+    "markplus",
+    "mark plus",
+    "markplus.io",
     "react markdown",
     "react markdown editor",
     "react editor"
   ],
-  "homepage": "https://github.com/tylerlong/markdown-plus/",
+  "homepage": "https://github.com/tylerlong/markplus/",
   "bugs": {
-    "url": "https://github.com/tylerlong/markdown-plus/issues"
+    "url": "https://github.com/tylerlong/markplus/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tylerlong/markdown-plus.git"
+    "url": "git+https://github.com/tylerlong/markplus.git"
   },
   "license": "MIT",
   "author": "Tyler Liu",

@@ -43,7 +43,7 @@ const Layout = (props: { store: Store }) => {
       : 'light';
   }
   return (
-    <div className={styles['markdown-plus']} data-theme={theme}>
+    <div className={styles['markplus']} data-theme={theme}>
       <div className="rows-grid" style={{ gridTemplateRows }}>
         <Toolbar store={store} />
         <div

@@ -5,7 +5,7 @@ import { auto } from 'manate/react';
 import React, { useEffect } from 'react';
 import waitFor from 'wait-for-async';
 
-import MarkdownPlus, { defaultToolbarItems } from '../src';
+import MarkPlus, { defaultToolbarItems } from '../src';
 import PreferencesModal from './preferences-modal';
 import markdownUrl from './sample.md';
 import { Store } from './store';
@@ -30,7 +30,7 @@ const App = (props: { store: Store }) => {
     let preferencesSaver: ReturnType<typeof autoRun>;
     const main = async () => {
       const savedPreferences = await localforage.getItem<string>(
-        'markdown-plus-preferences',
+        'markplus-preferences',
       );
       if (savedPreferences) {
         Object.assign(preferences, JSON.parse(savedPreferences));
@@ -38,7 +38,7 @@ const App = (props: { store: Store }) => {
       // must be after loading, otherwise it will save the default preferences
       preferencesSaver = autoRun(preferences, () => {
         localforage.setItem(
-          'markdown-plus-preferences',
+          'markplus-preferences',
           JSON.stringify(preferences),
         );
       });
@@ -91,7 +91,7 @@ const App = (props: { store: Store }) => {
 
   return (
     <>
-      <MarkdownPlus
+      <MarkPlus
         markdown={markdown}
         {...preferences}
         toolbarItems={[

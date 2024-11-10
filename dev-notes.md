@@ -9,7 +9,6 @@
 - Release a React library so that everyone can use it easily
   - a few lines of code to embed mdp to their own app
 - Close most GitHub issues
-- rename to MarkPlus? markplus.io
 
 ## Pending
 

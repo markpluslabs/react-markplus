@@ -22,10 +22,9 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
     >
       <div style={{ textAlign: 'center' }}>
         <p>
-          <img src="https://chuntaoliu.com/markdown-plus/icon.svg" width="64" />
+          <img src="https://chuntaoliu.com/markplus/icon.svg" width="64" />
         </p>
-        <h2>Markdown Plus</h2>
-        <p>Version 3.0</p>
+        <h2>MarkPlus</h2>
         <p>A React markdown editor and previewer.</p>
         <p>
           Copyright © 2015 - 2024{' '}
@@ -39,7 +38,7 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
         </p>
         <Space>
           <a
-            href="https://chuntaoliu.com/markdown-plus/"
+            href="https://chuntaoliu.com/markplus/"
             target="_blank"
             rel="noreferrer"
           >
@@ -47,7 +46,7 @@ const AboutModal = (props: { modal: typeof store.modals.about }) => {
           </a>
           |
           <a
-            href="https://github.com/tylerlong/markdown-plus/"
+            href="https://github.com/tylerlong/markplus/"
             target="_blank"
             rel="noreferrer"
           >

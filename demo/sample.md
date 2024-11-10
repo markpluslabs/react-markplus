@@ -1,8 +1,8 @@
-# Markdown Plus
+# MarkPlus
 
 A React markdown editor and previewer.
 
-<img src="https://chuntaoliu.com/markdown-plus/icon.svg" alt="icon" width="256" height="256"/>
+<img src="https://chuntaoliu.com/markplus/icon.svg" alt="icon" width="256" height="256"/>
 
 ## Table of Contents
 
@@ -185,7 +185,7 @@ If you find the markdown syntax too limited, you can try some <span style="color
 
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png"/></p>
 
-<a href="https://github.com/tylerlong/markdown-plus/" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1000;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/tylerlong/markplus/" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1000;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 
 ## Chart.js
 

@@ -61,7 +61,7 @@ const Editor = (props: { store: Store }) => {
         run: () => {
           document
             .querySelector<HTMLElement>(
-              `.${styles['markdown-plus']} .toolbar i.fa-bold`,
+              `.${styles['markplus']} .toolbar i.fa-bold`,
             )
             ?.click();
           return true;
@@ -106,7 +106,7 @@ const Editor = (props: { store: Store }) => {
       syncEditor();
     };
     const rightPanel = document.querySelector(
-      `.${styles['markdown-plus']} .right-panel`,
+      `.${styles['markplus']} .right-panel`,
     )!;
     rightPanel.addEventListener('scroll', handlePreviewScroll);
 
@@ -115,12 +115,12 @@ const Editor = (props: { store: Store }) => {
     const lazyChange = debounce(() => {
       const markdown = store.editor.state.doc.toString();
       document.querySelector<HTMLElement>(
-        `.${styles['markdown-plus']} .right-panel .preview`,
+        `.${styles['markplus']} .right-panel .preview`,
       ).innerHTML = mde.render(markdown);
       // Chart.js
       document
         .querySelectorAll(
-          `.${styles['markdown-plus']} .right-panel .preview .chartjs`,
+          `.${styles['markplus']} .right-panel .preview .chartjs`,
         )
         .forEach((element: HTMLCanvasElement) => {
           try {
@@ -133,7 +133,7 @@ const Editor = (props: { store: Store }) => {
       // mermaid
       mermaid.run({
         nodes: document.querySelectorAll(
-          `.${styles['markdown-plus']} .right-panel .preview pre.mermaid`,
+          `.${styles['markplus']} .right-panel .preview pre.mermaid`,
         ),
       });
     }, 256);

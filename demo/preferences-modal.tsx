@@ -30,7 +30,7 @@ const PreferencesModal = (props: { store: Store }) => {
         <p>
           <img src={iconUrl} width="64" />
         </p>
-        <h2>Markdown Plus Preferences</h2>
+        <h2>MarkPlus Preferences</h2>
         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 12 }} labelWrap>
           <Form.Item label="Toolbar">
             <Select

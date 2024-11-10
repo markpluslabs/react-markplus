@@ -32,7 +32,7 @@ export const defaultToolbarItems = [
   'chartjs',
 ];
 
-const MarkdownPlus = (props: {
+const MarkPlus = (props: {
   markdown?: string;
   mode?: 'editor' | 'preview' | 'both';
   toolbar?: 'show' | 'hide' | 'none';
@@ -71,4 +71,4 @@ const MarkdownPlus = (props: {
   );
 };
 
-export default MarkdownPlus;
+export default MarkPlus;

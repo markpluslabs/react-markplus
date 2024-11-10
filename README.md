@@ -1,25 +1,25 @@
-# Markdown Plus
+# MarkPlus
 
-<img src="https://chuntaoliu.com/markdown-plus/icon.svg" alt="icon" width="256" height="256"/>
+<img src="https://chuntaoliu.com/markplus/icon.svg" alt="icon" width="256" height="256"/>
 
 A React markdown editor and previewer.
 
-## [Online Demo](https://chuntaoliu.com/markdown-plus/)
+## [Online Demo](https://chuntaoliu.com/markplus/)
 
-![Markdown Plus](screenshot.png)
+![MarkPlus](screenshot.png)
 
 ## Installation
 
 ```
-yarn add markdown-plus
+yarn add mark-plus
 ```
 
 ## Usage
 
 ```tsx
-import MarkdownPlus from 'markdown-plus';
+import MarkPlus from 'mark-plus';
 
-<MarkdownPlus markdown="# Hello world!" />;
+<MarkPlus markdown="# Hello world!" />;
 ```
 
 ## markdown
@@ -27,7 +27,7 @@ import MarkdownPlus from 'markdown-plus';
 Initial markdown text to load into the editor.
 
 ```tsx
-<MarkdownPlus markdown="# Hello world!" />
+<MarkPlus markdown="# Hello world!" />
 ```
 
 Default value is `''`.
@@ -37,7 +37,7 @@ Default value is `''`.
 Show, hide or remove toolbar.
 
 ```tsx
-<MarkdownPlus toolbar="show" />
+<MarkPlus toolbar="show" />
 ```
 
 3 possible values:
@@ -53,7 +53,7 @@ Default value: `none`.
 Display editor, preview or both.
 
 ```tsx
-<MarkdownPlus mode="both" />
+<MarkPlus mode="both" />
 ```
 
 3 possible values:
@@ -72,7 +72,7 @@ Default value: `both`.
 Overall theme: light, dark or auto:
 
 ```tsx
-<MarkdownPlus theme="auto" />
+<MarkPlus theme="auto" />
 ```
 
 3 possible values:
@@ -88,7 +88,7 @@ Default value: `auto`.
 You may configure the toolbar freely.
 
 ```tsx
-<MarkdownPlus toolbarItems={['about', '|', 'bold', 'italic']} />
+<MarkPlus toolbarItems={['about', '|', 'bold', 'italic']} />
 ```
 
 A toolbar item could be either a string or a `ReactElement`.
@@ -98,7 +98,7 @@ For your own custom toobar items, please specify a `ReactElement`.
 ## Included toolbar Items
 
 - `'about'`
-  - show a modal about Markdown Plus
+  - show a modal about MarkPlus
 - `'|'`
   - a vertical separator
 - `'bold'`
@@ -143,7 +143,7 @@ For your own custom toobar items, please specify a `ReactElement`.
 ## Default toolbar items
 
 ```tsx
-import { defaultToolbarItems } from 'markdown-plus';
+import { defaultToolbarItems } from 'mark-plus';
 ```
 
 Its value is:
@@ -185,7 +185,7 @@ You may add or remote items from it to customize your own toolbar.
 Here is a sample to create an insert a customer toolbar item:
 
 ```tsx
-<MarkdownPlus
+<MarkPlus
   toolbarItems={[
     'about',
     '|',

@@ -66,7 +66,7 @@ const Toolbar = (props: { store: Store }) => {
             case 'about': {
               reactElement = (
                 <img
-                  src="https://chuntaoliu.com/markdown-plus/icon.svg"
+                  src="https://chuntaoliu.com/markplus/icon.svg"
                   className="about-icon"
                   onClick={() => modals.about.open()}
                   title="About"
@@ -215,7 +215,7 @@ const Toolbar = (props: { store: Store }) => {
                       changes: {
                         from: mainSelection.from,
                         to: mainSelection.to,
-                        insert: `[${text}](https://github.com/tylerlong/markdown-plus/)`,
+                        insert: `[${text}](https://github.com/tylerlong/markplus/)`,
                       },
                     });
                   }}
@@ -240,7 +240,7 @@ const Toolbar = (props: { store: Store }) => {
                       changes: {
                         from: mainSelection.from,
                         to: mainSelection.to,
-                        insert: `![${text}](https://chuntaoliu.com/markdown-plus/icon.svg)`,
+                        insert: `![${text}](https://chuntaoliu.com/markplus/icon.svg)`,
                       },
                     });
                   }}
