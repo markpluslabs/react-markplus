@@ -11,13 +11,13 @@ A React markdown editor and previewer.
 ## Installation
 
 ```
-yarn add mark-plus
+yarn add react-markplus
 ```
 
 ## Usage
 
 ```tsx
-import MarkPlus from 'mark-plus';
+import MarkPlus from 'react-markplus';
 
 <MarkPlus markdown="# Hello world!" />;
 ```
@@ -143,7 +143,7 @@ For your own custom toobar items, please specify a `ReactElement`.
 ## Default toolbar items
 
 ```tsx
-import { defaultToolbarItems } from 'mark-plus';
+import { defaultToolbarItems } from 'react-markplus';
 ```
 
 Its value is:
