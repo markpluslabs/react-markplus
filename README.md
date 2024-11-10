@@ -22,39 +22,6 @@ import MarkdownPlus from 'markdown-plus';
 <MarkdownPlus markdown="# Hello world!" />;
 ```
 
-## CSS
-
-You will need to add the following code to your `<html><head></head></body>`:
-
-```html
-<link
-  rel="stylesheet"
-  href="./node_modules/github-markdown-css/github-markdown-light.css"
-  data-theme="light"
-/>
-<link
-  rel="stylesheet"
-  href="./node_modules/github-markdown-css/github-markdown-dark.css"
-  data-theme="dark"
-  disabled
-/>
-<link
-  rel="stylesheet"
-  href="./node_modules/highlight.js/styles/github.css"
-  data-theme="light"
-/>
-<link
-  rel="stylesheet"
-  href="./node_modules/highlight.js/styles/github-dark.css"
-  data-theme="dark"
-  disabled
-/>
-<link rel="stylesheet" href="./node_modules/markdown-plus/lib/index.css" />
-```
-
-Please note that, you may need to adjust the `href`.
-And if `./node_modules/` is not hosted, you may need to use parcel to build your html so that it will take care of all the css files.
-
 ## props
 
 ### markdown
@@ -77,7 +44,7 @@ Show, hide or remove toolbar.
 
 3 possible values:
 
-- `show`: show toolbar.
+- `show`: show toolbar, show a gutter below toolbar. Click the gutter to hide toolbar.
 - `hide`: hide toolbar, show a gutter on top. Click the gutter to show toolbar.
 - `none`: no toolbar, no gutter.
 
@@ -94,14 +61,17 @@ Display editor, preview or both.
 3 possible values:
 
 - `both`: show both editor and preview
+  - there is a vertical gutter between editor and preview, you may drag the gutter to adjust sizes of them.
 - `editor`: show editor only
 - `preview`: show preview only
+  - Use this mode if you don't need any editing feature.
+  - in this mode this library is a markdown renderer.
 
 Default value: `both`.
 
 ### theme
 
-Overal theme: light, dark or auto:
+Overall theme: light, dark or auto:
 
 ```tsx
 <MarkdownPlus theme="auto" />
@@ -114,3 +84,81 @@ Overal theme: light, dark or auto:
 - `auto`: same as system theme
 
 Default value: `auto`.
+
+## toolbarItems
+
+You may configure the toolbar freely.
+
+```tsx
+<MarkdownPlus toolbarItems={['about', '|', 'bold', 'italic']} />
+```
+
+A toolbar item could be either a string or a `ReactElement`.
+For toolbar items included with library, you may just specify a string.
+For your own custom toobar items, please specify a `ReactElement`.
+
+## Included toolbar Items
+
+- `'about'`
+  - show a modal about Markdown Plus
+- `'|'`
+  - a vertical separator
+- `'bold'`
+  - make text bold
+- `'italic'`
+  - make text italic
+- `'strikethrough'`
+  - make text strokethrough
+- `'underline'`
+  - make text underlined
+- `'mark'`
+  - make text marked
+- `'emoji'`
+  - show a modal to insert emojis
+- `'fontawesome'`
+  - show a modal to insert fontawesome icons
+- `'quote'`
+  - quote text
+- `'unordered-list'`
+  - create unordered list item
+- `'ordered-list'`
+  - create ordered list item
+- `'unchecked-list'`
+  - create unchecked task list item
+- `'checked-list'`
+  - create checked task list item
+- `'link'`
+  - insert a link
+- `'image'`
+  - insert a image
+- `'code'`
+  - insert a code snippet
+- `'table'`
+  - insert a table
+- `'math'`
+  - insert some math formulas
+- `'mermaid'`
+  - insert some mermaid charts
+- `'chartjs'`
+  - insert some Chart.js charts
+
+## Custom toolbar item
+
+Here is a sample to create an insert a customer toolbar item:
+
+```tsx
+<MarkdownPlus
+  toolbarItems={[
+    'about',
+    '|',
+    <i
+      key="preferences"
+      title="Preferences"
+      className="fa fa-cog"
+      onClick={() => {
+        console.log('Todo: display a preferences modal');
+      }}
+    ></i>,
+  ]}
+/>
+```
