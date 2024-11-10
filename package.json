@@ -27,8 +27,8 @@
   "types": "src/index.d.ts",
   "scripts": {
     "lint": "tsc --skipLibCheck --noEmit && eslint . --fix && prettier --write . && sort-package-json",
-    "prepublishOnly": "rm -rf lib && tsc --skipLibCheck --declaration --sourceMap",
-    "postpublish": "find . -type f ( -name '*.js' -o -name '*.d.ts' ) -delete",
+    "prepublishOnly": "tsc --skipLibCheck --declaration --sourceMap",
+    "postpublish": "find ./src ./demo -type f \\( -name '*.js' -o -name '*.d.ts' -o -name '*.js.map' \\) -delete",
     "release": "rm -rf .parcel-cache docs && parcel build demo/index.html --dist-dir docs --public-url ./ && gh-pages -d docs && rm -rf docs",
     "serve": "rm -rf .parcel-cache temp && parcel demo/index.html --dist-dir temp"
   },
@@ -46,7 +46,7 @@
     "github-markdown-css": "^5.7.0",
     "katex": "^0.16.11",
     "manate": "^0.9.11",
-    "markplus-engine": "^0.1.2",
+    "markplus-engine": "^0.1.3",
     "mermaid": "^11.4.0",
     "split-grid": "^1.0.11",
     "wait-for-async": "^0.7.0"
@@ -75,10 +75,6 @@
     "yarn-upgrade-all": "^0.7.4"
   },
   "parcel-namer-hashless": {},
-  "targets": {
-    "main": false,
-    "types": false
-  },
   "yarn-upgrade-all": {
     "ignore": [
       "postcss-modules"

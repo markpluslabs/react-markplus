@@ -4526,10 +4526,10 @@ marked@^13.0.2:
   resolved "https://registry.yarnpkg.com/marked/-/marked-13.0.3.tgz#5c5b4a5d0198060c7c9bc6ef9420a7fed30f822d"
   integrity sha512-rqRix3/TWzE9rIoFGIn8JmsVfhiuC8VIQ8IdX5TfzmeBucdY05/0UlzKaw0eVtpcN/OdVFpBk7CjKGo9iHJ/zA==
 
-markplus-engine@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/markplus-engine/-/markplus-engine-0.1.2.tgz#3e787f28179bd4283b728efb83092eb9c9ac6c49"
-  integrity sha512-JDRAqXt0jNEBlkny00/z1pfgAXgCGg1YMo1XOPrVWHPocrwRkUIt7PMR+xlZiJqifkQwpTE65WaPZVaseLvHdg==
+markplus-engine@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/markplus-engine/-/markplus-engine-0.1.3.tgz#830f6d908e9579d022bd9be2ad17d1cdd78e5d7a"
+  integrity sha512-28pgVtv0/Mjn6xtQ3B9l+q2UTnEFlgsij5QDQjaTKF53BnZqAWSOYlodjEYQZGrSfBlxCgXKENrh5GtNokY6DA==
   dependencies:
     "@sindresorhus/slugify" "^2.2.1"
     highlight.js "^11.10.0"
