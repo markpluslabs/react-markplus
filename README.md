@@ -182,7 +182,7 @@ You may add or remote items from it to customize your own toolbar.
 
 ## Custom toolbar item
 
-Here is a sample to create an insert a customer toolbar item:
+Here is a sample to create and insert a custom toolbar item:
 
 ```tsx
 <MarkPlus
