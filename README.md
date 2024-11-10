@@ -6,8 +6,6 @@ A React markdown editor and previewer.
 
 ## [Online Demo](https://markpluslabs.github.io/react-markplus/)
 
-![MarkPlus](screenshot.png)
-
 ## Installation
 
 ```
