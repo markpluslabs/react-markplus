@@ -2,7 +2,7 @@ import { manage } from 'manate';
 
 export class Preferences {
   mode: 'both' | 'editor' | 'preview' = 'both';
-  toolbar: 'show' | 'hide' | 'none' = 'none';
+  toolbar: 'show' | 'hide' | 'none' = 'show';
   theme: 'auto' | 'light' | 'dark' = 'auto';
 }
 

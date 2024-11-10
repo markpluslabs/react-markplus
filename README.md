@@ -46,7 +46,7 @@ Show, hide or remove toolbar.
 - `hide`: hide toolbar, show a gutter on top. Click the gutter to show toolbar.
 - `none`: no toolbar, no gutter.
 
-Default value: `none`.
+Default value: `show`.
 
 ## mode
 

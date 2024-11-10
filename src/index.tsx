@@ -42,7 +42,7 @@ const MarkPlus = (props: {
   const { markdown, mode, toolbar, theme, toolbarItems } = props;
   useEffect(() => {
     store.preferences.mode = mode ?? 'both';
-    store.preferences.toolbar = toolbar ?? 'none';
+    store.preferences.toolbar = toolbar ?? 'show';
     store.preferences.theme = theme ?? 'auto';
     store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
   }, [mode, toolbar, theme, toolbarItems]);

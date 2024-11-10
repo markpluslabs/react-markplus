@@ -19,7 +19,7 @@ class Modal {
 
 class Preferences {
   public mode: 'editor' | 'preview' | 'both' = 'both';
-  public toolbar: 'show' | 'hide' | 'none' = 'none';
+  public toolbar: 'show' | 'hide' | 'none' = 'show';
   public theme: 'light' | 'dark' | 'auto' = 'auto';
   public toolbarItems: (string | ReactElement)[] = [];
 }
