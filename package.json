@@ -1,6 +1,6 @@
 {
   "name": "react-markplus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -75,6 +75,10 @@
     "yarn-upgrade-all": "^0.7.4"
   },
   "parcel-namer-hashless": {},
+  "targets": {
+    "types": false,
+    "main": false
+  },
   "yarn-upgrade-all": {
     "ignore": [
       "postcss-modules"
