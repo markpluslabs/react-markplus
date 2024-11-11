@@ -4,6 +4,9 @@ import React, { ReactElement, useEffect } from 'react';
 import Layout from './components/layout';
 import store from './store';
 
+import 'katex/dist/katex.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 export const defaultToolbarItems = [
   'about',
   '|',
