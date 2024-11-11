@@ -4,7 +4,7 @@ import { githubDark, githubLight } from '@uiw/codemirror-theme-github';
 import { exclude, manage } from 'manate';
 import { ReactElement } from 'react';
 
-class Modal {
+export class ModalState {
   public isOpen = false;
 
   public open() {
@@ -29,9 +29,9 @@ export class Store {
   public editorTheme = exclude(new Compartment());
 
   public modals = {
-    about: new Modal(),
-    emoji: new Modal(),
-    fontAwesome: new Modal(),
+    about: new ModalState(),
+    emoji: new ModalState(),
+    fontAwesome: new ModalState(),
   };
 
   public preferences = new Preferences();

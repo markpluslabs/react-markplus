@@ -2,9 +2,9 @@ import { Button, Modal, Space } from 'antd';
 import { auto } from 'manate/react';
 import React from 'react';
 
-import store from '../../store';
+import { ModalState } from '../../store';
 
-const AboutModal = (props: { modal: typeof store.modals.about }) => {
+const AboutModal = (props: { modal: ModalState }) => {
   const { modal } = props;
   return (
     <Modal
