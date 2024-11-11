@@ -4454,10 +4454,10 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
-manate@^0.9.11:
-  version "0.9.11"
-  resolved "https://registry.yarnpkg.com/manate/-/manate-0.9.11.tgz#ad99810c70956299fdfc0fa7f689913bc6ddf33f"
-  integrity sha512-4Db8j0FFFD+heLFZshVuEOQEA537fM1mGpD15sh2TTC8N/HPC2bknuH5/uGvHziISoc+2fVWJeBCWxH59adAiw==
+manate@^0.9.13:
+  version "0.9.13"
+  resolved "https://registry.yarnpkg.com/manate/-/manate-0.9.13.tgz#d32cf28f1abd9e4f6b2b5d476b8a13f052e5be8b"
+  integrity sha512-L+/e0OegVqNA0dgqkrVLb/Ko8uYDJf5T/JFTJjT1+Ihvf7MBc2pNCEx5UjDJ1CzTbdcyQ5Hn2tDgAcRxmlN/Yg==
 
 markdown-it-anchor@^9.2.0:
   version "9.2.0"
@@ -4890,6 +4890,11 @@ picocolors@^1.0.0, picocolors@^1.1.0:
   resolved "https://registry.npmjs.org/picocolors/-/picocolors-1.1.0.tgz#5358b76a78cde483ba5cef6a9dc9671440b27d59"
   integrity sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==
 
+picocolors@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
+  integrity sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==
+
 picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
@@ -4989,13 +4994,13 @@ postcss-value-parser@^4.1.0, postcss-value-parser@^4.2.0:
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz#723c09920836ba6d3e5af019f92bc0971c02e514"
   integrity sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==
 
-postcss@^8.4.47:
-  version "8.4.47"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.47.tgz#5bf6c9a010f3e724c503bf03ef7947dcb0fea365"
-  integrity sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==
+postcss@^8.4.48:
+  version "8.4.48"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.48.tgz#765f3f8abaa2a2b065cdddbc57ad4cb5a76e515f"
+  integrity sha512-GCRK8F6+Dl7xYniR5a4FYbpBzU8XnZVeowqsQFYdcXuSbChgiks7qybSkbvnaeqv0G0B+dd9/jJgH8kkLDQeEA==
   dependencies:
     nanoid "^3.3.7"
-    picocolors "^1.1.0"
+    picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
 posthtml-parser@^0.10.1:

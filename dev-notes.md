@@ -20,3 +20,9 @@
 ## Notes
 
 - We use scoped CSS modules so that we could have multiple editors on the same page without confliction.
+
+# ## useMemo vs useRef
+
+You cannot read/write useRef object during rendering. So do not useRef and pass it to children components. Since you will be reading it for rendering.
+
+useMemo doesn't have this restriction.
