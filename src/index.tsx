@@ -1,11 +1,14 @@
 import { ConfigProvider } from 'antd';
-import React, { ReactElement, useEffect } from 'react';
+import React, { ReactElement, useEffect, useMemo } from 'react';
 
 import Layout from './components/layout';
-import store from './store';
 
 import 'katex/dist/katex.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+
+import { manage } from 'manate';
+
+import { Store } from './store';
 
 export const defaultToolbarItems = [
   'about',
@@ -43,24 +46,25 @@ const MarkPlus = (props: {
   toolbarItems?: (string | ReactElement)[];
 }) => {
   const { markdown, mode, toolbar, theme, toolbarItems } = props;
+  const store = useMemo(() => {
+    return manage(new Store());
+  }, []);
   useEffect(() => {
     store.preferences.mode = mode ?? 'both';
     store.preferences.toolbar = toolbar ?? 'show';
     store.preferences.theme = theme ?? 'auto';
     store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
-  }, [mode, toolbar, theme, toolbarItems]);
+    store.applyTheme();
+  }, [mode, toolbar, theme, toolbarItems, store]);
   useEffect(() => {
-    store.editor.dispatch({
+    store.editor?.dispatch({
       changes: {
         from: 0,
         to: store.editor.state.doc.length,
         insert: markdown ?? '',
       },
     });
-  }, [markdown]);
-  useEffect(() => {
-    store.applyTheme();
-  }, [theme]);
+  }, [markdown, store.editor]);
   return (
     <ConfigProvider
       theme={{

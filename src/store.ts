@@ -1,10 +1,11 @@
 import { Compartment } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
 import { githubDark, githubLight } from '@uiw/codemirror-theme-github';
-import { exclude, manage } from 'manate';
+import { exclude } from 'manate';
 import { ReactElement } from 'react';
 
 export class ModalState {
+  constructor(private store: Store) {}
   public isOpen = false;
 
   public open() {
@@ -13,7 +14,7 @@ export class ModalState {
 
   public close() {
     this.isOpen = false;
-    store.editor?.focus();
+    this.store.editor?.focus();
   }
 }
 
@@ -29,9 +30,9 @@ export class Store {
   public editorTheme = exclude(new Compartment());
 
   public modals = {
-    about: new ModalState(),
-    emoji: new ModalState(),
-    fontAwesome: new ModalState(),
+    about: new ModalState(this),
+    emoji: new ModalState(this),
+    fontAwesome: new ModalState(this),
   };
 
   public preferences = new Preferences();
@@ -50,7 +51,3 @@ export class Store {
     });
   }
 }
-
-const store = manage(new Store());
-
-export default store;
