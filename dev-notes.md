@@ -9,6 +9,8 @@
 - Release a React library so that everyone can use it easily
   - a few lines of code to embed mdp to their own app
 - Close most GitHub issues
+- bug: all components share the same store object
+- bug: all components have the same className
 
 ## Pending
 

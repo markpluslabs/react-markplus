@@ -28,7 +28,7 @@ import React, { useEffect, useRef } from 'react';
 
 import * as styles from '../css/index.module.scss';
 import { Store } from '../store';
-import { syncEditor, syncPreview } from '../sync-scroll';
+import { generateScrollMethods } from '../sync-scroll';
 
 const Editor = (props: { store: Store }) => {
   const { store } = props;
@@ -97,6 +97,7 @@ const Editor = (props: { store: Store }) => {
 
     store.editor = exclude(cm);
 
+    const { syncEditor, syncPreview } = generateScrollMethods(store);
     const handleEditorScroll = () => {
       syncPreview();
     };
