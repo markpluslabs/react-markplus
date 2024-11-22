@@ -91,7 +91,7 @@ You may configure the toolbar freely.
 
 A toolbar item could be either a string or a `ReactElement`.
 For toolbar items included with library, you may just specify a string.
-For your own custom toobar items, please specify a `ReactElement`.
+For your own custom toolbar items, please specify a `ReactElement`.
 
 ## Included toolbar Items
 
