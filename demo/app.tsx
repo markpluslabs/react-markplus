@@ -36,7 +36,7 @@ const App = (props: { store: Store }) => {
         Object.assign(preferences, JSON.parse(savedPreferences));
       }
       // must be after loading, otherwise it will save the default preferences
-      preferencesSaver = autoRun(preferences, () => {
+      preferencesSaver = autoRun(() => {
         localforage.setItem(
           'markplus-preferences',
           JSON.stringify(preferences),

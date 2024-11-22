@@ -4601,10 +4601,10 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
-manate@^2.0.0-beta.2:
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/manate/-/manate-2.0.0-beta.2.tgz#50acf3432c87db04bbc236a086566f03a739f742"
-  integrity sha512-O7cuPn+RsFRAdGA17IkJwfVz0KfqyZrF20MAaCza7SZunWo6zaA/z5u6vCS8jDG5Grw30epKyhEqANxCgwAcSw==
+manate@^2.0.0-beta.3:
+  version "2.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/manate/-/manate-2.0.0-beta.3.tgz#91ee2d80ffdda67f944666e83653f6c475ea5a61"
+  integrity sha512-NlyMsjBSAw1qOzdLhDPi1OLb3ykNfRVLKiJnwrTJnGETROspeWS/kowhBU6t7PrP0m3mbbnAKfaGPSLwiu+XHA==
 
 markdown-it-anchor@^9.2.0:
   version "9.2.0"
