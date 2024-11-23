@@ -26,7 +26,6 @@ import markplusEngine from 'markplus-engine';
 import mermaid from 'mermaid/dist/mermaid.esm.mjs';
 import React, { useEffect, useRef } from 'react';
 
-import * as styles from '../css/index.module.scss';
 import { Store } from '../store';
 import { generateScrollMethods } from '../sync-scroll';
 
@@ -60,9 +59,7 @@ const Editor = (props: { store: Store }) => {
         key: 'Mod-b',
         run: () => {
           document
-            .querySelector<HTMLElement>(
-              `.${styles['markplus']} .toolbar i.fa-bold`,
-            )
+            .querySelector<HTMLElement>(`#${store.uid} .toolbar i.fa-bold`)
             ?.click();
           return true;
         },
@@ -106,9 +103,7 @@ const Editor = (props: { store: Store }) => {
     const handlePreviewScroll = () => {
       syncEditor();
     };
-    const rightPanel = document.querySelector(
-      `.${styles['markplus']} .right-panel`,
-    )!;
+    const rightPanel = document.querySelector(`#${store.uid} .right-panel`)!;
     rightPanel.addEventListener('scroll', handlePreviewScroll);
 
     // whenever user changes markdown
@@ -116,13 +111,11 @@ const Editor = (props: { store: Store }) => {
     const lazyChange = debounce(() => {
       const markdown = store.editor.state.doc.toString();
       document.querySelector<HTMLElement>(
-        `.${styles['markplus']} .right-panel .preview`,
+        `#${store.uid} .right-panel .preview`,
       ).innerHTML = markplusEngine.render(markdown);
       // Chart.js
       document
-        .querySelectorAll(
-          `.${styles['markplus']} .right-panel .preview .chartjs`,
-        )
+        .querySelectorAll(`#${store.uid} .right-panel .preview .chartjs`)
         .forEach((element: HTMLCanvasElement) => {
           try {
             new Chart(element, JSON.parse(element.textContent));
@@ -134,7 +127,7 @@ const Editor = (props: { store: Store }) => {
       // mermaid
       mermaid.run({
         nodes: document.querySelectorAll(
-          `.${styles['markplus']} .right-panel .preview pre.mermaid`,
+          `#${store.uid} .right-panel .preview pre.mermaid`,
         ),
       });
     }, 256);

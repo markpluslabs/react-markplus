@@ -2,7 +2,6 @@ import { auto } from 'manate/react';
 import React, { createRef, useEffect } from 'react';
 import Split from 'split-grid';
 
-import * as styles from '../css/index.module.scss';
 import { Store } from '../store';
 import Editor from './editor';
 import Modals from './modals';
@@ -43,7 +42,7 @@ const Layout = (props: { store: Store }) => {
       : 'light';
   }
   return (
-    <div className={styles['markplus']} data-theme={theme}>
+    <div id={store.uid} className="markplus" data-theme={theme}>
       <div className="rows-grid" style={{ gridTemplateRows }}>
         <Toolbar store={store} />
         <div

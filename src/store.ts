@@ -5,39 +5,42 @@ import { exclude } from 'manate';
 import { ReactElement } from 'react';
 
 export class ModalState {
-  constructor(private store: Store) {}
-  public isOpen = false;
+  isOpen = false;
 
-  public open() {
+  constructor(private store: Store) {}
+
+  open() {
     this.isOpen = true;
   }
 
-  public close() {
+  close() {
     this.isOpen = false;
     this.store.editor?.focus();
   }
 }
 
 class Preferences {
-  public mode: 'editor' | 'preview' | 'both' = 'both';
-  public toolbar: 'show' | 'hide' | 'none' = 'show';
-  public theme: 'light' | 'dark' | 'auto' = 'auto';
-  public toolbarItems: (string | ReactElement)[] = [];
+  mode: 'editor' | 'preview' | 'both' = 'both';
+  toolbar: 'show' | 'hide' | 'none' = 'show';
+  theme: 'light' | 'dark' | 'auto' = 'auto';
+  toolbarItems: (string | ReactElement)[] = [];
 }
 
+let counter = 0;
 export class Store {
-  public editor: EditorView;
-  public editorTheme = exclude(new Compartment());
+  uid = `markplus-${counter++}`;
+  editor: EditorView;
+  editorTheme = exclude(new Compartment());
 
-  public modals = {
+  modals = {
     about: new ModalState(this),
     emoji: new ModalState(this),
     fontAwesome: new ModalState(this),
   };
 
-  public preferences = new Preferences();
+  preferences = new Preferences();
 
-  public applyTheme() {
+  applyTheme() {
     const darkTheme =
       this.preferences.theme === 'dark' ||
       (this.preferences.theme === 'auto' &&

@@ -3,6 +3,7 @@ import React, { ReactElement, useEffect, useMemo } from 'react';
 
 import Layout from './components/layout';
 
+import './css/index.scss';
 import 'katex/dist/katex.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
