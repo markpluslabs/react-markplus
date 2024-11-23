@@ -30,6 +30,20 @@ Initial markdown text to load into the editor.
 
 Default value is `''`.
 
+## onChange
+
+A callback function to be invoked automatically when markdown text changed.
+
+```tsx
+<MarkPlus
+  onChange={(markdown) => {
+    console.log('markdown text changed to:', markdown);
+  }}
+/>
+```
+
+Default value is `() => {}`.
+
 ## toolbar
 
 Show, hide or remove toolbar.

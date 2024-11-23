@@ -31,6 +31,7 @@ export class Store {
   uid = `markplus-${counter++}`;
   editor: EditorView;
   editorTheme = exclude(new Compartment());
+  onChange: (markdown: string) => void = () => {};
 
   modals = {
     about: new ModalState(this),

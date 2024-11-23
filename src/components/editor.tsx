@@ -36,6 +36,7 @@ const Editor = (props: { store: Store }) => {
     const contentChangeListener = EditorView.updateListener.of(
       (update: ViewUpdate) => {
         if (update.docChanged) {
+          store.onChange(store.editor.state.doc.toString());
           lazyChange();
         }
       },

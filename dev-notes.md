@@ -13,6 +13,7 @@
 - remove manate from dep
 - remove as many deps as possible
 - add more toolbal items, but by default do not show so many
+- provide a way for user to get latest preview html text
 
 ## useMemo vs useRef
 

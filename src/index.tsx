@@ -45,6 +45,7 @@ const MarkPlus = (props: {
   toolbar?: 'show' | 'hide' | 'none';
   theme?: 'light' | 'dark' | 'auto';
   toolbarItems?: (string | ReactElement)[];
+  onChange?: (markdown: string) => void;
 }) => {
   const { markdown, mode, toolbar, theme, toolbarItems } = props;
   const store = useMemo(() => {
@@ -55,8 +56,9 @@ const MarkPlus = (props: {
     store.preferences.toolbar = toolbar ?? 'show';
     store.preferences.theme = theme ?? 'auto';
     store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
+    store.onChange = props.onChange;
     store.applyTheme();
-  }, [mode, toolbar, theme, toolbarItems, store]);
+  }, [mode, toolbar, theme, toolbarItems, store, props.onChange]);
   useEffect(() => {
     store.editor?.dispatch({
       changes: {

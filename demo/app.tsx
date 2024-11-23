@@ -93,6 +93,9 @@ const App = (props: { store: Store }) => {
     <>
       <MarkPlus
         markdown={markdown}
+        onChange={(markdown) => {
+          console.log('markdown changed to:', markdown);
+        }}
         {...preferences}
         toolbarItems={[
           ...defaultToolbarItems,
