@@ -11,6 +11,9 @@
     .cm-editor {
       background-color: #fff;
       color: #1f2328;
+      .cm-content {
+        caret-color: #1f2328;
+      }
     }
     .toolbar {
       color: #666;
@@ -21,6 +24,9 @@
     .cm-editor {
       background-color: #0d1117;
       color: #f0f6fc;
+      .cm-content {
+        caret-color: #f0f6fc;
+      }
     }
     .toolbar {
       color: #f0f6fc !important;
