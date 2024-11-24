@@ -132,9 +132,12 @@ const Editor = (props: { store: Store }) => {
         ),
       });
 
-      store.onPreviewChange(
-        document.querySelector('.right-panel .preview')!.outerHTML,
-      );
+      // todo: remove this? user should generate html instead
+      setTimeout(() => {
+        store.onPreviewChange(
+          document.querySelector('.right-panel .preview')!.outerHTML,
+        );
+      }, 1000); // because it takes time for mermaid and chart.js to render
     }, 256);
     return () => {
       store.editor.scrollDOM.removeEventListener('scroll', handleEditorScroll);
