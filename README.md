@@ -4,7 +4,11 @@
 
 A React markdown editor and previewer.
 
-## [Online Demo](https://markpluslabs.github.io/react-markplus/)
+## Demos
+
+- [Demo for Markdown authors](https://markpluslabs.github.io/react-markplus/)
+- [Demo for React developers](https://markpluslabs.github.io/react-markplus-demo/)
+  - [source code](https://github.com/markpluslabs/react-markplus-demo/blob/main/src/app.tsx)
 
 ## Installation
 
