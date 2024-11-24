@@ -96,6 +96,9 @@ const App = (props: { store: Store }) => {
         onChange={(markdown) => {
           console.log('markdown changed to:', markdown);
         }}
+        onPreviewChange={(html) => {
+          console.log('preview changed to:', html);
+        }}
         {...preferences}
         toolbarItems={[
           ...defaultToolbarItems,

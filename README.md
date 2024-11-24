@@ -32,12 +32,26 @@ Default value is `''`.
 
 ## onChange
 
-A callback function to be invoked automatically when markdown text changed.
+A callback function to be invoked automatically when markdown text changes.
 
 ```tsx
 <MarkPlus
   onChange={(markdown) => {
     console.log('markdown text changed to:', markdown);
+  }}
+/>
+```
+
+Default value is `() => {}`.
+
+## onPreviewChange
+
+A callback function to be invoked automatidally when preview html changes.
+
+```tsx
+<MarkPlus
+  onPreviewChange={(html) => {
+    console.log('preview html changed to:', html);
   }}
 />
 ```

@@ -131,6 +131,10 @@ const Editor = (props: { store: Store }) => {
           `#${store.uid} .right-panel .preview pre.mermaid`,
         ),
       });
+
+      store.onPreviewChange(
+        document.querySelector('.right-panel .preview')!.outerHTML,
+      );
     }, 256);
     return () => {
       store.editor.scrollDOM.removeEventListener('scroll', handleEditorScroll);
