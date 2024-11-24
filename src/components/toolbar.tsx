@@ -75,7 +75,7 @@ const Toolbar = (props: { store: Store }) => {
               break;
             }
             case '|': {
-              reactElement = <i className="dividor">|</i>;
+              reactElement = <span className="dividor">|</span>;
               break;
             }
             case 'bold': {

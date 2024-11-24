@@ -143,7 +143,7 @@
     -ms-user-select: none;
     user-select: none;
   }
-  .toolbar .fa {
+  .toolbar i {
     padding: 2px 5px;
     border: 1px solid transparent;
   }
@@ -152,7 +152,7 @@
     vertical-align: top;
   }
 
-  .toolbar .fa:hover,
+  .toolbar i:hover,
   .about-icon:hover {
     background-color: #999;
     border-color: #ccc;
@@ -161,8 +161,8 @@
 
   .dividor {
     font-style: normal;
-    color: #ddd;
-    margin: 0 6px;
+    color: #999;
+    margin: 0 8px;
   }
 
   /* fix clicking anchor scroll issue */
