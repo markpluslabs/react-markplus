@@ -59,7 +59,6 @@ const MarkPlus = (props: {
     store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
     store.onChange = props.onChange ?? (() => {});
     store.onPreviewChange = props.onPreviewChange ?? (() => {});
-    store.applyTheme();
   }, [
     mode,
     toolbar,

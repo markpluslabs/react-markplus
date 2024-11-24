@@ -34,12 +34,10 @@
   },
   "dependencies": {
     "@codemirror/commands": "^6.7.1",
-    "@codemirror/lang-markdown": "^6.3.1",
     "@codemirror/language": "^6.10.3",
     "@codemirror/state": "^6.4.1",
     "@codemirror/view": "^6.35.0",
     "@fortawesome/fontawesome-free": "^6.7.1",
-    "@uiw/codemirror-theme-github": "^4.23.6",
     "antd": "^5.22.2",
     "chart.js": "^4.4.6",
     "debounce": "^2.2.0",

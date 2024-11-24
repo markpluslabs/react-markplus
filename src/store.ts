@@ -1,7 +1,4 @@
-import { Compartment } from '@codemirror/state';
 import { EditorView } from '@codemirror/view';
-import { githubDark, githubLight } from '@uiw/codemirror-theme-github';
-import { exclude } from 'manate';
 import { ReactElement } from 'react';
 
 export class ModalState {
@@ -30,7 +27,6 @@ let counter = 0;
 export class Store {
   uid = `markplus-${counter++}`;
   editor: EditorView;
-  editorTheme = exclude(new Compartment());
   onChange: (markdown: string) => void = () => {};
   onPreviewChange: (html: string) => void = () => {};
 
@@ -41,18 +37,4 @@ export class Store {
   };
 
   preferences = new Preferences();
-
-  applyTheme() {
-    const darkTheme =
-      this.preferences.theme === 'dark' ||
-      (this.preferences.theme === 'auto' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches);
-
-    // editor theme
-    this.editor.dispatch({
-      effects: this.editorTheme.reconfigure(
-        darkTheme ? githubDark : githubLight,
-      ),
-    });
-  }
 }

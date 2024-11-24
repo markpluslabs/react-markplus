@@ -5,7 +5,6 @@ import {
   indentLess,
   indentMore,
 } from '@codemirror/commands';
-import { markdown } from '@codemirror/lang-markdown';
 import {
   defaultHighlightStyle,
   syntaxHighlighting,
@@ -17,7 +16,6 @@ import {
   keymap,
   ViewUpdate,
 } from '@codemirror/view';
-import { githubLight } from '@uiw/codemirror-theme-github';
 import Chart from 'chart.js/auto';
 import debounce from 'debounce';
 import { exclude } from 'manate';
@@ -68,7 +66,6 @@ const Editor = (props: { store: Store }) => {
     ]);
     const cm = new EditorView({
       extensions: [
-        store.editorTheme.of(githubLight),
         EditorView.lineWrapping,
         highlightActiveLine(),
         history(),
@@ -76,7 +73,6 @@ const Editor = (props: { store: Store }) => {
           ...defaultKeymap,
           ...historyKeymap,
         ] as unknown as KeyBinding[]), // todo: type casting is unnecessary in the future
-        markdown(),
         syntaxHighlighting(defaultHighlightStyle),
         customKeymap,
         contentChangeListener,
