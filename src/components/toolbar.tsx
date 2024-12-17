@@ -335,44 +335,12 @@ row 2 col 1 | row 2 col 2`.trim();
               );
               break;
             }
-            case 'mermaid': {
+            case 'flowchart': {
               reactElement = (
                 <i
-                  title="Mermaid chart"
+                  title="flowchart"
                   className="fa fa-diagram-project"
-                  onClick={() => insertFence('mermaid', 'graph LR\nA-->B')}
-                ></i>
-              );
-              break;
-            }
-            case 'chartjs': {
-              reactElement = (
-                <i
-                  title="Chart.js chart"
-                  className="fa fa-chart-column"
-                  onClick={() =>
-                    insertFence(
-                      'chartjs',
-                      `{
-  "type": "bar",
-  "data": {
-    "labels": [
-      "last year",
-      "this year"
-    ],
-    "datasets": [
-      {
-        "label": "# of Rainy Days",
-        "data": [
-          60,
-          30
-        ]
-      }
-    ]
-  }
-}`,
-                    )
-                  }
+                  onClick={() => insertFence('flowchart', 'A -> B')}
                 ></i>
               );
               break;

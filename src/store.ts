@@ -28,7 +28,6 @@ export class Store {
   uid = `markplus-${counter++}`;
   editor: EditorView;
   onChange: (markdown: string) => void = () => {};
-  onPreviewChange: (html: string) => void = () => {};
 
   modals = {
     about: new ModalState(this),

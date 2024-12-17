@@ -3,16 +3,15 @@
 ## Todo
 
 - Write Playwright tests
-- Replace mermaid with lightweight alternatives
 - Make an app for ebook authoring
 - Create a VS Code extension
 - Create a Chrome extension for GitHub markdown rendering
 - Create a browser extension for email authoring
-- Close most GitHub issues
 - refactor store data structure
 - remove manate from dep
 - remove as many deps as possible
 - add more toolbal items, but by default do not show so many
+- replace parcel with packle
 
 ## useMemo vs useRef
 

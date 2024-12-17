@@ -35,8 +35,7 @@ export const defaultToolbarItems = [
   'table',
   '|',
   'math',
-  'mermaid',
-  'chartjs',
+  'flowchart',
 ];
 
 const MarkPlus = (props: {
@@ -46,7 +45,6 @@ const MarkPlus = (props: {
   theme?: 'light' | 'dark' | 'auto';
   toolbarItems?: (string | ReactElement)[];
   onChange?: (markdown: string) => void;
-  onPreviewChange?: (html: string) => void;
 }) => {
   const { markdown, mode, toolbar, theme, toolbarItems } = props;
   const store = useMemo(() => {
@@ -58,16 +56,7 @@ const MarkPlus = (props: {
     store.preferences.theme = theme ?? 'auto';
     store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
     store.onChange = props.onChange ?? (() => {});
-    store.onPreviewChange = props.onPreviewChange ?? (() => {});
-  }, [
-    mode,
-    toolbar,
-    theme,
-    toolbarItems,
-    store,
-    props.onChange,
-    props.onPreviewChange,
-  ]);
+  }, [mode, toolbar, theme, toolbarItems, store, props.onChange]);
   useEffect(() => {
     store.editor?.dispatch({
       changes: {

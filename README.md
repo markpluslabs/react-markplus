@@ -48,19 +48,11 @@ A callback function to be invoked automatically when markdown text changes.
 
 Default value is `() => {}`.
 
-## onPreviewChange
+## ❌ onPreviewChange
 
 A callback function to be invoked automatidally when preview html changes.
 
-```tsx
-<MarkPlus
-  onPreviewChange={(html) => {
-    console.log('preview html changed to:', html);
-  }}
-/>
-```
-
-Default value is `() => {}`.
+This has been **removed** from the library. Because you are supposed to generate preview using [markplus-engine](https://github.com/markpluslabs/markplus-engine).
 
 ## toolbar
 
@@ -165,10 +157,8 @@ For your own custom toolbar items, please specify a `ReactElement`.
   - insert a table
 - `'math'`
   - insert some math formulas
-- `'mermaid'`
-  - insert some mermaid charts
-- `'chartjs'`
-  - insert some Chart.js charts
+- `flowchart`
+  - insert some flowcharts
 
 ## Default toolbar items
 
@@ -203,8 +193,7 @@ Its value is:
   'table',
   '|',
   'math',
-  'mermaid',
-  'chartjs',
+  'flowchart',
 ];
 ```
 

@@ -143,18 +143,13 @@ Math block:
 
 [Math Syntax](https://www.mediawiki.org/wiki/Extension:Math/Syntax)
 
-## Mermaid charts
+## flowcharts
 
-```mermaid
-graph TD
-A[Christmas] -->|Get money| B(Go shopping)
-B --> C{Let me think}
-C -->|One| D[Laptop]
-C -->|Two| E[iPhone]
-C -->|Three| F[Car]
+```flowchart
+A -> B
 ```
 
-[Mermaid documentation](https://mermaid.js.org/intro/)
+[flowchart documentation](https://github.com/markpluslabs/markplus-charts/blob/main/syntax.md)
 
 ## Custom Container
 
@@ -186,44 +181,3 @@ If you find the markdown syntax too limited, you can try some <span style="color
 <p style="text-align:center;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png"/></p>
 
 <a href="https://github.com/markpluslabs/react-markplus/" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1000;" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
-
-## Chart.js
-
-[Documentation for charts](https://www.chartjs.org/docs/latest/)
-
-```chartjs
-{
-  "type": "bar",
-  "data": {
-    "labels": [
-      "Red",
-      "Blue",
-      "Yellow",
-      "Green",
-      "Purple",
-      "Orange"
-    ],
-    "datasets": [
-      {
-        "label": "# of Votes",
-        "data": [
-          12,
-          19,
-          3,
-          5,
-          2,
-          3
-        ],
-        "borderWidth": 1
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "y": {
-        "beginAtZero": true
-      }
-    }
-  }
-}
-```
