@@ -9,4 +9,13 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.md'],
   base: './',
+  build: {
+    rollupOptions: {
+      output: {
+        entryFileNames: '[name].js', // Remove hash for entry files
+        chunkFileNames: '[name].js', // Remove hash for chunks
+        assetFileNames: '[name][extname]', // Remove hash for assets (e.g., CSS, images)
+      },
+    },
+  },
 });
