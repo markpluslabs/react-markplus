@@ -11,7 +11,7 @@
 - remove manate from dep
 - remove as many deps as possible
 - add more toolbal items, but by default do not show so many
-- replace parcel with packle
+- try packle
 
 ## useMemo vs useRef
 
