@@ -16,6 +16,10 @@
   "bugs": {
     "url": "https://github.com/markpluslabs/react-markplus/issues"
   },
+  "scripts": {
+    "serve": "yarn vite",
+    "release": "yarn vite build && gh-pages -d demo/dist && rm -rf demo/dist"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/markpluslabs/react-markplus.git"
