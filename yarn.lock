@@ -299,10 +299,19 @@
   dependencies:
     "@marijn/find-cluster-break" "^1.0.0"
 
-"@codemirror/view@^6.23.0", "@codemirror/view@^6.27.0", "@codemirror/view@^6.36.0":
+"@codemirror/view@^6.23.0", "@codemirror/view@^6.27.0":
   version "6.36.0"
   resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.36.0.tgz#4f4a24002a58ab4e478b5497cd8316f642d7a2f6"
   integrity sha512-aMePDnkNNKE8dSOo1w689xYa3dijREbRajiRcgjSGc2TWN7MTdE+9pm5fxwdz0C4D9Di1VZomrn2M+xDe7tTVg==
+  dependencies:
+    "@codemirror/state" "^6.5.0"
+    style-mod "^4.1.0"
+    w3c-keyname "^2.2.4"
+
+"@codemirror/view@^6.36.1":
+  version "6.36.1"
+  resolved "https://registry.yarnpkg.com/@codemirror/view/-/view-6.36.1.tgz#3c543b8fd72c96b30c4b2b1464d1ebce7e0c5c4b"
+  integrity sha512-miD1nyT4m4uopZaDdO2uXU/LLHliKNYL9kB1C1wJHrunHLm/rpkb5QVSokqgw9hFqEZakrdlb/VGWX8aYZTslQ==
   dependencies:
     "@codemirror/state" "^6.5.0"
     style-mod "^4.1.0"
@@ -2679,10 +2688,10 @@ make-dir@^3.0.2:
   dependencies:
     semver "^6.0.0"
 
-manate@^2.0.0-beta.3:
-  version "2.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/manate/-/manate-2.0.0-beta.3.tgz#91ee2d80ffdda67f944666e83653f6c475ea5a61"
-  integrity sha512-NlyMsjBSAw1qOzdLhDPi1OLb3ykNfRVLKiJnwrTJnGETROspeWS/kowhBU6t7PrP0m3mbbnAKfaGPSLwiu+XHA==
+manate@^2.0.0-beta.6:
+  version "2.0.0-beta.6"
+  resolved "https://registry.yarnpkg.com/manate/-/manate-2.0.0-beta.6.tgz#751787ed47f909b65ec1f562735829c1370d6176"
+  integrity sha512-f7NAeT6L+lHYqnxs5l79KZj4++alPECcF8C+pUZnnstRqoOS1U89ayBO+E8XemPEKhKBZR93H85J4D5nJkXrTA==
 
 markdown-it-anchor@^9.2.0:
   version "9.2.0"
@@ -4167,10 +4176,10 @@ varint@^6.0.0:
   resolved "https://registry.yarnpkg.com/varint/-/varint-6.0.0.tgz#9881eb0ce8feaea6512439d19ddf84bf551661d0"
   integrity sha512-cXEIW6cfr15lFv563k4GuVuW/fiwjknytD37jIOLSdSWuOI6WnO/oKwmP2FQTU2l01LP8/M5TSAJpzUaGe3uWg==
 
-vite@^6.0.3:
-  version "6.0.3"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-6.0.3.tgz#cc01f403e326a9fc1e064235df8a6de084c8a491"
-  integrity sha512-Cmuo5P0ENTN6HxLSo6IHsjCLn/81Vgrp81oaiFFMRa8gGDj5xEjIcEpf2ZymZtZR8oU0P2JX5WuUp/rlXcHkAw==
+vite@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-6.0.4.tgz#fe7cfaedff7c701d5582be5c4ed6a2150538ea9d"
+  integrity sha512-zwlH6ar+6o6b4Wp+ydhtIKLrGM/LoqZzcdVmkGAFun0KHTzIzjh+h0kungEx7KJg/PYnC80I4TII9WkjciSR6Q==
   dependencies:
     esbuild "^0.24.0"
     postcss "^8.4.49"

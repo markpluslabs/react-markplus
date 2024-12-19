@@ -33,13 +33,13 @@
     "@codemirror/commands": "^6.7.1",
     "@codemirror/language": "^6.10.7",
     "@codemirror/state": "^6.5.0",
-    "@codemirror/view": "^6.36.0",
+    "@codemirror/view": "^6.36.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "antd": "^5.22.5",
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.8.1",
     "katex": "^0.16.18",
-    "manate": "^2.0.0-beta.3",
+    "manate": "^2.0.0-beta.6",
     "markplus-engine": "^0.1.9",
     "split-grid": "^1.0.11",
     "wait-for-async": "^0.7.0"
@@ -63,7 +63,7 @@
     "sort-package-json": "^2.12.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "vite": "^6.0.3",
+    "vite": "^6.0.4",
     "yarn-upgrade-all": "^0.7.4"
   },
   "yarn-upgrade-all": {
