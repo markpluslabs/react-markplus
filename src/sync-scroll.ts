@@ -1,4 +1,3 @@
-import { EditorView } from '@codemirror/view';
 import debounce from 'debounce';
 
 import { Store } from './store.js';
@@ -31,13 +30,14 @@ export const generateScrollMethods = (store: Store) => {
   const scrollEditor = (targetLineNumber: number): void => {
     scrollSide('left', () => {
       animate(
-        (lineNumber) =>
-          store.editor.dispatch({
-            effects: EditorView.scrollIntoView(
-              store.editor.state.doc.line(lineNumber).from,
-              { y: 'start' },
-            ),
-          }),
+        (lineNumber) => {
+          const line = store.editor.state.doc.line(lineNumber);
+          const dom = store.editor.scrollDOM;
+          const lineCoords = store.editor.coordsAtPos(line.from);
+          if (lineCoords) {
+            dom.scrollTop += lineCoords.top - dom.getBoundingClientRect().top;
+          }
+        },
         store.editor.state.doc.lineAt(
           store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from,
         ).number,
