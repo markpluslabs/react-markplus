@@ -6,7 +6,8 @@
     "declaration": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "@types"]
   },
-  "files": ["src/index.tsx", "@types/index.d.ts"]
+  "files": ["src/index.tsx"]
 }

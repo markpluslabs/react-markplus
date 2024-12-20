@@ -68,8 +68,8 @@ const App = (props: { store: Store }) => {
       }
       const linkElement = document.querySelector<HTMLElement>(
         window.location.hash,
-      );
-      const rightPanel = document.querySelector('.right-panel');
+      )!;
+      const rightPanel = document.querySelector('.right-panel')!;
       rightPanel.scrollTop = linkElement.offsetTop;
     };
     scrollToHash();
@@ -93,9 +93,6 @@ const App = (props: { store: Store }) => {
     <>
       <MarkPlus
         markdown={markdown}
-        onChange={(markdown) => {
-          console.log('markdown changed to:', markdown);
-        }}
         {...preferences}
         toolbarItems={[
           ...defaultToolbarItems,
