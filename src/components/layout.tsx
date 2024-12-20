@@ -1,11 +1,11 @@
-import { auto } from 'manate/react';
+import { auto } from 'manate/react.js';
 import React, { createRef, useEffect } from 'react';
 import Split from 'split-grid';
 
-import { Store } from '../store';
-import Editor from './editor';
-import Modals from './modals';
-import Toolbar from './toolbar';
+import { Store } from '../store.js';
+import Editor from './editor.js';
+import Modals from './modals/index.js';
+import Toolbar from './toolbar.js';
 
 const Layout = (props: { store: Store }) => {
   const { store } = props;

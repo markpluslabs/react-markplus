@@ -1,6 +1,6 @@
 {
   "name": "react-markplus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -18,7 +18,9 @@
   },
   "scripts": {
     "serve": "yarn vite",
-    "release": "yarn vite build && gh-pages -d demo/dist && rm -rf demo/dist"
+    "release": "yarn vite build && gh-pages -d demo/dist && rm -rf demo/dist",
+    "prepublishOnly": "yarn tsc",
+    "postpublish": "rm -rf lib"
   },
   "repository": {
     "type": "git",
@@ -27,8 +29,8 @@
   "license": "MIT",
   "author": "Tyler Liu",
   "type": "module",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "dependencies": {
     "@codemirror/commands": "^6.7.1",
     "@codemirror/language": "^6.10.7",

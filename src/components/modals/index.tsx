@@ -1,9 +1,9 @@
-import { auto } from 'manate/react';
+import { auto } from 'manate/react.js';
 import React from 'react';
 
-import { Store } from '../../store';
-import AboutModal from './about';
-import PromptModals from './prompt';
+import { Store } from '../../store.js';
+import AboutModal from './about.js';
+import PromptModals from './prompt.js';
 
 const Modals = (props: { store: Store }) => {
   const { store } = props;

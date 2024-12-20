@@ -1,7 +1,7 @@
 import { ConfigProvider } from 'antd';
 import React, { ReactElement, useEffect, useMemo } from 'react';
 
-import Layout from './components/layout';
+import Layout from './components/layout.js';
 
 import './css/index.scss';
 import 'katex/dist/katex.css';
@@ -9,7 +9,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 import { manage } from 'manate';
 
-import { Store } from './store';
+import { Store } from './store.js';
 
 export const defaultToolbarItems = [
   'about',

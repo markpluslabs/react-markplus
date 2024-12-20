@@ -1,8 +1,8 @@
 import { EditorView } from '@codemirror/view';
 import debounce from 'debounce';
 
-import { Store } from './store';
-import { animate } from './utils';
+import { Store } from './store.js';
+import { animate } from './utils.js';
 
 type IScroll = {
   lastMarker: number;

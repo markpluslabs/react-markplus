@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types", "@types"],
+    "outDir": "lib",
     "jsx": "react",
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "declaration": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "skipLibCheck": true
+  },
+  "files": ["src/index.tsx", "@types/index.d.ts"]
 }

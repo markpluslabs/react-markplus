@@ -1,2 +1,2 @@
---ignore-dir=temp
+--ignore-dir=lib
 --ignore-file=match:/^yarn\.lock$/

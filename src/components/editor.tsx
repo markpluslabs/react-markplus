@@ -18,12 +18,12 @@ import {
 } from '@codemirror/view';
 import debounce from 'debounce';
 import { exclude } from 'manate';
-import { auto } from 'manate/react';
+import { auto } from 'manate/react.js';
 import markplusEngine from 'markplus-engine';
 import React, { useEffect, useRef } from 'react';
 
-import { Store } from '../store';
-import { generateScrollMethods } from '../sync-scroll';
+import { Store } from '../store.js';
+import { generateScrollMethods } from '../sync-scroll.js';
 
 const Editor = (props: { store: Store }) => {
   const { store } = props;

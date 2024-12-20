@@ -1,8 +1,8 @@
 import { Input, InputRef, Modal } from 'antd';
-import { auto } from 'manate/react';
+import { auto } from 'manate/react.js';
 import React, { useRef, useState } from 'react';
 
-import { Store } from '../../store';
+import { Store } from '../../store.js';
 
 const PromptModals = (props: { store: Store }) => {
   const { store } = props;

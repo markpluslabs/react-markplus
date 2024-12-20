@@ -1,7 +1,7 @@
-import { auto } from 'manate/react';
+import { auto } from 'manate/react.js';
 import React, { cloneElement, ReactElement } from 'react';
 
-import { Store } from '../store';
+import { Store } from '../store.js';
 
 const Toolbar = (props: { store: Store }) => {
   const { store } = props;
