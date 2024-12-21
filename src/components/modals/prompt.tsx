@@ -1,16 +1,16 @@
-import { Input, InputRef, Modal } from 'antd';
-import { auto } from 'manate/react.js';
-import React, { useRef, useState } from 'react';
+import { Input, InputRef, Modal } from "antd";
+import { auto } from "manate/react.js";
+import React, { useRef, useState } from "react";
 
-import { Store } from '../../store.js';
+import { Store } from "../../store.ts";
 
 const PromptModals = (props: { store: Store }) => {
   const { store } = props;
   const { modals } = store;
   const emojiInput = useRef<InputRef>(null);
   const faInput = useRef<InputRef>(null);
-  const [emojiValue, setEmojiValue] = useState('');
-  const [faValue, setFaValue] = useState('');
+  const [emojiValue, setEmojiValue] = useState("");
+  const [faValue, setFaValue] = useState("");
   const handleEmojiOK = () => {
     modals.emoji.close();
     const value = emojiValue.trim();
@@ -26,7 +26,7 @@ const PromptModals = (props: { store: Store }) => {
         selection: { anchor: mainSelection.head + value.length + 2 },
       });
     }
-    setEmojiValue('');
+    setEmojiValue("");
   };
   const handleFaOK = () => {
     modals.fontAwesome.close();
@@ -43,7 +43,7 @@ const PromptModals = (props: { store: Store }) => {
         selection: { anchor: mainSelection.head + value.length + 5 },
       });
     }
-    setFaValue('');
+    setFaValue("");
   };
   return (
     <>
@@ -60,7 +60,7 @@ const PromptModals = (props: { store: Store }) => {
           }
         }}
       >
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: "center" }}>
           <p>
             <img
               src="https://markpluslabs.github.io/react-markplus/icon.svg"
@@ -73,7 +73,7 @@ const PromptModals = (props: { store: Store }) => {
 ...`}
           </p>
           <p>
-            For a complete list, please check{' '}
+            For a complete list, please check{" "}
             <a
               href="https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md"
               target="_blank"
@@ -90,7 +90,7 @@ const PromptModals = (props: { store: Store }) => {
               onChange={(e) => setEmojiValue(e.target.value)}
               placeholder="smile"
               onKeyUp={(e) => {
-                if (e.key === 'Enter') {
+                if (e.key === "Enter") {
                   handleEmojiOK();
                 }
               }}
@@ -112,7 +112,7 @@ const PromptModals = (props: { store: Store }) => {
           }
         }}
       >
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: "center" }}>
           <p>
             <img
               src="https://markpluslabs.github.io/react-markplus/icon.svg"
@@ -124,7 +124,7 @@ const PromptModals = (props: { store: Store }) => {
             {`Examples: "cloud", "flag", "car", "truck", "heart", "dollar" ...`}
           </p>
           <p>
-            For a complete list, please check{' '}
+            For a complete list, please check{" "}
             <a
               href="https://github.com/gluons/Font-Awesome-Icon-Chars/blob/master/character-list/character-list.yaml"
               target="_blank"
@@ -141,7 +141,7 @@ const PromptModals = (props: { store: Store }) => {
               value={faValue}
               onChange={(e) => setFaValue(e.target.value)}
               onKeyUp={(e) => {
-                if (e.key === 'Enter') {
+                if (e.key === "Enter") {
                   handleFaOK();
                 }
               }}

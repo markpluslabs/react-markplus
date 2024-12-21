@@ -1,5 +1,5 @@
-import { EditorView } from '@codemirror/view';
-import { ReactElement } from 'react';
+import { EditorView } from "@codemirror/view";
+import { ReactElement } from "react";
 
 export class ModalState {
   isOpen = false;
@@ -17,16 +17,16 @@ export class ModalState {
 }
 
 class Preferences {
-  mode: 'editor' | 'preview' | 'both' = 'both';
-  toolbar: 'show' | 'hide' | 'none' = 'show';
-  theme: 'light' | 'dark' | 'auto' = 'auto';
+  mode: "editor" | "preview" | "both" = "both";
+  toolbar: "show" | "hide" | "none" = "show";
+  theme: "light" | "dark" | "auto" = "auto";
   toolbarItems: (string | ReactElement)[] = [];
 }
 
 let counter = 0;
 export class Store {
   uid = `markplus-${counter++}`;
-  editor: EditorView;
+  editor!: EditorView;
   onChange: (markdown: string) => void = () => {};
 
   modals = {

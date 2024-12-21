@@ -1,21 +1,21 @@
-import { ConfigProvider } from 'antd';
-import localforage from 'localforage';
-import { autoRun } from 'manate';
-import { auto } from 'manate/react';
-import React, { useEffect } from 'react';
-import waitFor from 'wait-for-async';
+import { ConfigProvider } from "antd";
+import localforage from "localforage";
+import { autoRun } from "manate";
+import { auto } from "manate/react";
+import React, { useEffect } from "react";
+import waitFor from "wait-for-async";
 
-import MarkPlus, { defaultToolbarItems } from '../src';
-import PreferencesModal from './preferences-modal';
-import markdownUrl from './sample.md';
-import { Store } from './store';
+import MarkPlus, { defaultToolbarItems } from "../src/index.tsx";
+import PreferencesModal from "./preferences-modal.tsx";
+import markdownUrl from "./sample.md";
+import { Store } from "./store.ts";
 
 const App = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
 
   // load sample markdown
-  const [markdown, setMarkdown] = React.useState('');
+  const [markdown, setMarkdown] = React.useState("");
   useEffect(() => {
     const loadSampleData = async () => {
       const r = await fetch(markdownUrl);
@@ -30,7 +30,7 @@ const App = (props: { store: Store }) => {
     let preferencesSaver: ReturnType<typeof autoRun>;
     const main = async () => {
       const savedPreferences = await localforage.getItem<string>(
-        'markplus-preferences',
+        "markplus-preferences"
       );
       if (savedPreferences) {
         Object.assign(preferences, JSON.parse(savedPreferences));
@@ -38,8 +38,8 @@ const App = (props: { store: Store }) => {
       // must be after loading, otherwise it will save the default preferences
       preferencesSaver = autoRun(() => {
         localforage.setItem(
-          'markplus-preferences',
-          JSON.stringify(preferences),
+          "markplus-preferences",
+          JSON.stringify(preferences)
         );
       });
       preferencesSaver.start();
@@ -67,9 +67,9 @@ const App = (props: { store: Store }) => {
         return;
       }
       const linkElement = document.querySelector<HTMLElement>(
-        window.location.hash,
+        window.location.hash
       )!;
-      const rightPanel = document.querySelector('.right-panel')!;
+      const rightPanel = document.querySelector(".right-panel")!;
       rightPanel.scrollTop = linkElement.offsetTop;
     };
     scrollToHash();
@@ -78,14 +78,14 @@ const App = (props: { store: Store }) => {
   // open preferences modal with cmd + ,
   useEffect(() => {
     const keyUpListener = (event: KeyboardEvent) => {
-      if (event.metaKey && event.key === ',') {
+      if (event.metaKey && event.key === ",") {
         event.preventDefault();
-        document.querySelector<HTMLElement>('.toolbar .fa-cog')?.click();
+        document.querySelector<HTMLElement>(".toolbar .fa-cog")?.click();
       }
     };
-    window.addEventListener('keydown', keyUpListener);
+    addEventListener("keydown", keyUpListener);
     return () => {
-      window.removeEventListener('keydown', keyUpListener);
+      removeEventListener("keydown", keyUpListener);
     };
   }, []);
 
@@ -96,7 +96,7 @@ const App = (props: { store: Store }) => {
         {...preferences}
         toolbarItems={[
           ...defaultToolbarItems,
-          '|',
+          "|",
           <i
             key="preferences"
             title="Preferences"
@@ -108,7 +108,7 @@ const App = (props: { store: Store }) => {
       <ConfigProvider
         theme={{
           token: {
-            colorPrimary: '#00b96b',
+            colorPrimary: "#00b96b",
           },
         }}
       >

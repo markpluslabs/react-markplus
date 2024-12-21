@@ -1,8 +1,8 @@
-import { Button, Modal, Space } from 'antd';
-import { auto } from 'manate/react.js';
-import React from 'react';
+import { Button, Modal, Space } from "antd";
+import { auto } from "manate/react.js";
+import React from "react";
 
-import { ModalState } from '../../store.js';
+import { ModalState } from "../../store.ts";
 
 const AboutModal = (props: { modal: ModalState }) => {
   const { modal } = props;
@@ -10,7 +10,7 @@ const AboutModal = (props: { modal: ModalState }) => {
     <Modal
       open={modal.isOpen}
       footer={
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: "center" }}>
           <Button type="primary" size="large" onClick={() => modal.close()}>
             Close
           </Button>
@@ -20,7 +20,7 @@ const AboutModal = (props: { modal: ModalState }) => {
       maskClosable={true}
       centered={true}
     >
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: "center" }}>
         <p>
           <img
             src="https://markpluslabs.github.io/react-markplus/icon.svg"
@@ -30,7 +30,7 @@ const AboutModal = (props: { modal: ModalState }) => {
         <h2>MarkPlus</h2>
         <p>A React markdown editor and previewer.</p>
         <p>
-          Copyright © 2015 - 2024{' '}
+          Copyright © 2015 - 2024{" "}
           <a
             href="https://github.com/markpluslabs/"
             target="_blank"

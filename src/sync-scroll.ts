@@ -1,7 +1,7 @@
-import debounce from 'debounce';
+import debounce from "debounce";
 
-import { Store } from './store.js';
-import { animate } from './utils.js';
+import { Store } from "./store.ts";
+import { animate } from "./utils.ts";
 
 type IScroll = {
   lastMarker: number;
@@ -10,17 +10,19 @@ type IScroll = {
 };
 
 export const generateScrollMethods = (store: Store) => {
-  let scrollingSide = null;
-  let timeoutHandle = null;
+  let scrollingSide: string | null = null;
+  let timeoutHandle: number | null = null;
   const scrollSide = (
-    side: 'left' | 'right',
-    howToScroll: () => void,
+    side: "left" | "right",
+    howToScroll: () => void
   ): void => {
     if (scrollingSide !== null && scrollingSide !== side) {
       return; // the other side hasn't finished scrolling
     }
     scrollingSide = side;
-    clearTimeout(timeoutHandle);
+    if (timeoutHandle) {
+      clearTimeout(timeoutHandle);
+    }
     timeoutHandle = setTimeout(() => {
       scrollingSide = null;
     }, 512);
@@ -28,7 +30,7 @@ export const generateScrollMethods = (store: Store) => {
   };
 
   const scrollEditor = (targetLineNumber: number): void => {
-    scrollSide('left', () => {
+    scrollSide("left", () => {
       animate(
         (lineNumber) => {
           const line = store.editor.state.doc.line(lineNumber);
@@ -39,39 +41,39 @@ export const generateScrollMethods = (store: Store) => {
           }
         },
         store.editor.state.doc.lineAt(
-          store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from,
+          store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from
         ).number,
         targetLineNumber,
-        128,
+        128
       );
     });
   };
 
   const scrollPreview = (scrollTop: number): void => {
-    const rightPanel = document.querySelector(`#${store.uid} .right-panel`);
-    scrollSide('right', () => {
+    const rightPanel = document.querySelector(`#${store.uid} .right-panel`)!;
+    scrollSide("right", () => {
       animate(
         (i) => (rightPanel.scrollTop = i),
         rightPanel.scrollTop,
         scrollTop,
-        128,
+        128
       );
     });
   };
 
   const getEditorScroll = (): IScroll => {
     const lineMarkers = document.querySelectorAll(
-      `#${store.uid} .right-panel .preview > [data-sl]`,
-    );
+      `#${store.uid} .right-panel .preview > [data-sl]`
+    ) as NodeListOf<HTMLElement>;
     const lines: number[] = [];
     lineMarkers.forEach((element: HTMLElement) => {
-      lines.push(parseInt(element.dataset.sl, 10));
+      lines.push(parseInt(element.dataset.sl!, 10));
     });
     const currentLine = store.editor.state.doc.lineAt(
-      store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from,
+      store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from
     ).number;
-    let lastMarker: number;
-    let nextMarker: number;
+    let lastMarker: number | null = null;
+    let nextMarker: number | null = null;
     for (let i = 0; i < lines.length; i++) {
       if (lines[i] < currentLine) {
         lastMarker = lines[i];
@@ -86,20 +88,21 @@ export const generateScrollMethods = (store: Store) => {
     }
     // returns two neighboring markers' lines, and current scroll percentage between two markers
     const r = { lastMarker: lastMarker, nextMarker: nextMarker, percentage };
-    return r;
+    return r as IScroll;
   };
 
   const setPreviewScroll = (editorScroll: IScroll): void => {
     let lastPosition = 0;
     let nextPosition =
-      document.querySelector<HTMLElement>(`#${store.uid} .right-panel .preview`)
-        .offsetHeight -
-      document.querySelector<HTMLElement>(`#${store.uid} .right-panel`)
+      document.querySelector<HTMLElement>(
+        `#${store.uid} .right-panel .preview`
+      )!.offsetHeight -
+      document.querySelector<HTMLElement>(`#${store.uid} .right-panel`)!
         .offsetHeight; // maximum scroll
 
     if (editorScroll.lastMarker) {
       const lastMarkerElement = document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.lastMarker}"]`,
+        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.lastMarker}"]`
       );
       if (lastMarkerElement) {
         lastPosition = lastMarkerElement.offsetTop;
@@ -108,7 +111,7 @@ export const generateScrollMethods = (store: Store) => {
 
     if (editorScroll.nextMarker) {
       const nextMarkerElement = document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.nextMarker}"]`,
+        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.nextMarker}"]`
       );
       if (nextMarkerElement) {
         nextPosition = nextMarkerElement.offsetTop;
@@ -121,26 +124,26 @@ export const generateScrollMethods = (store: Store) => {
 
   const getPreviewScroll = (): IScroll => {
     const rightPanel = document.querySelector<HTMLElement>(
-      `#${store.uid} .right-panel`,
-    );
+      `#${store.uid} .right-panel`
+    )!;
     const preview = document.querySelector<HTMLElement>(
-      `#${store.uid} .right-panel .preview`,
-    );
+      `#${store.uid} .right-panel .preview`
+    )!;
     const scroll = rightPanel.scrollTop;
     let lastLine = 1; // editor line starts with 1
     let lastScroll = 0;
-    let nextLine = store.editor.state.doc.toString().split('\n').length; // number of lines of markdown
+    let nextLine = store.editor.state.doc.toString().split("\n").length; // number of lines of markdown
     let nextScroll = preview.offsetHeight - rightPanel.offsetHeight; // maximum scroll
     const lineMarkers = document.querySelectorAll<HTMLElement>(
-      `#${store.uid} .right-panel .preview > [data-sl]`,
+      `#${store.uid} .right-panel .preview > [data-sl]`
     );
     for (let i = 0; i < lineMarkers.length; i++) {
       const lineMarker = lineMarkers[i];
       if (lineMarker.offsetTop < scroll) {
-        lastLine = parseInt(lineMarker.dataset.sl, 10);
+        lastLine = parseInt(lineMarker.dataset.sl!, 10);
         lastScroll = lineMarker.offsetTop;
       } else {
-        nextLine = parseInt(lineMarker.dataset.sl, 10);
+        nextLine = parseInt(lineMarker.dataset.sl!, 10);
         nextScroll = lineMarker.offsetTop;
         break;
       }
@@ -168,7 +171,7 @@ export const generateScrollMethods = (store: Store) => {
 
   const syncPreview = debounce(() => {
     // sync right with left
-    if (scrollingSide !== 'left') {
+    if (scrollingSide !== "left") {
       const editorScroll = getEditorScroll();
       setPreviewScroll(editorScroll);
     }
@@ -176,7 +179,7 @@ export const generateScrollMethods = (store: Store) => {
 
   const syncEditor = debounce(() => {
     // sync left with right
-    if (scrollingSide !== 'right') {
+    if (scrollingSide !== "right") {
       const previewScroll = getPreviewScroll();
       setEditorScroll(previewScroll);
     }

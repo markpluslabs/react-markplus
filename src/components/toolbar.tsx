@@ -1,7 +1,7 @@
-import { auto } from 'manate/react.js';
-import React, { cloneElement, ReactElement } from 'react';
+import { auto } from "manate/react.js";
+import React, { cloneElement, ReactElement } from "react";
 
-import { Store } from '../store.js';
+import { Store } from "../store.ts";
 
 const Toolbar = (props: { store: Store }) => {
   const { store } = props;
@@ -24,7 +24,7 @@ const Toolbar = (props: { store: Store }) => {
         to: mainSelection.to,
         insert: `${modifier}${editor.state.sliceDoc(
           mainSelection.from,
-          mainSelection.to,
+          mainSelection.to
         )}${modifier}`,
       },
     });
@@ -61,9 +61,9 @@ const Toolbar = (props: { store: Store }) => {
     <div className="toolbar">
       {store.preferences.toolbarItems.map((item, index) => {
         let reactElement: ReactElement;
-        if (typeof item === 'string') {
+        if (typeof item === "string") {
           switch (item) {
-            case 'about': {
+            case "about": {
               reactElement = (
                 <img
                   src="https://markpluslabs.github.io/react-markplus/icon.svg"
@@ -74,61 +74,61 @@ const Toolbar = (props: { store: Store }) => {
               );
               break;
             }
-            case '|': {
+            case "|": {
               reactElement = <span className="dividor">|</span>;
               break;
             }
-            case 'bold': {
+            case "bold": {
               reactElement = (
                 <i
                   title="Bold"
                   className={`fa fa-bold`}
-                  onClick={() => stylingClicked('**')}
+                  onClick={() => stylingClicked("**")}
                 ></i>
               );
               break;
             }
-            case 'italic': {
+            case "italic": {
               reactElement = (
                 <i
                   title="Italic"
                   className={`fa fa-italic`}
-                  onClick={() => stylingClicked('*')}
+                  onClick={() => stylingClicked("*")}
                 ></i>
               );
               break;
             }
-            case 'strikethrough': {
+            case "strikethrough": {
               reactElement = (
                 <i
                   title="Strikethrough"
                   className={`fa fa-strikethrough`}
-                  onClick={() => stylingClicked('~~')}
+                  onClick={() => stylingClicked("~~")}
                 ></i>
               );
               break;
             }
-            case 'underline': {
+            case "underline": {
               reactElement = (
                 <i
                   title="Underline"
                   className={`fa fa-underline`}
-                  onClick={() => stylingClicked('++')}
+                  onClick={() => stylingClicked("++")}
                 ></i>
               );
               break;
             }
-            case 'mark': {
+            case "mark": {
               reactElement = (
                 <i
                   title="Mark"
                   className={`fa fa-marker`}
-                  onClick={() => stylingClicked('==')}
+                  onClick={() => stylingClicked("==")}
                 ></i>
               );
               break;
             }
-            case 'emoji': {
+            case "emoji": {
               reactElement = (
                 <i
                   title="Emoji"
@@ -138,7 +138,7 @@ const Toolbar = (props: { store: Store }) => {
               );
               break;
             }
-            case 'fontawesome': {
+            case "fontawesome": {
               reactElement = (
                 <i
                   title="Font awesome"
@@ -148,57 +148,57 @@ const Toolbar = (props: { store: Store }) => {
               );
               break;
             }
-            case 'quote': {
+            case "quote": {
               reactElement = (
                 <i
-                  title={'Quote'}
+                  title={"Quote"}
                   className={`fa fa-quote-left`}
-                  onClick={() => listClicked('> ')}
+                  onClick={() => listClicked("> ")}
                 ></i>
               );
               break;
             }
-            case 'unordered-list': {
+            case "unordered-list": {
               reactElement = (
                 <i
-                  title={'Unordered list'}
+                  title={"Unordered list"}
                   className={`fa fa-list-ul`}
-                  onClick={() => listClicked('- ')}
+                  onClick={() => listClicked("- ")}
                 ></i>
               );
               break;
             }
-            case 'ordered-list': {
+            case "ordered-list": {
               reactElement = (
                 <i
-                  title={'Ordered list'}
+                  title={"Ordered list"}
                   className={`fa fa-list-ol`}
-                  onClick={() => listClicked('1. ')}
+                  onClick={() => listClicked("1. ")}
                 ></i>
               );
               break;
             }
-            case 'unchecked-list': {
+            case "unchecked-list": {
               reactElement = (
                 <i
-                  title={'Unchecked list'}
+                  title={"Unchecked list"}
                   className={`fa fa-regular fa-square`}
-                  onClick={() => listClicked('- [ ] ')}
+                  onClick={() => listClicked("- [ ] ")}
                 ></i>
               );
               break;
             }
-            case 'checked-list': {
+            case "checked-list": {
               reactElement = (
                 <i
-                  title={'Checked list'}
+                  title={"Checked list"}
                   className={`fa fa-regular fa-check-square`}
-                  onClick={() => listClicked('- [x] ')}
+                  onClick={() => listClicked("- [x] ")}
                 ></i>
               );
               break;
             }
-            case 'link': {
+            case "link": {
               reactElement = (
                 <i
                   title="Link"
@@ -209,8 +209,8 @@ const Toolbar = (props: { store: Store }) => {
                     const text =
                       editor.state.sliceDoc(
                         mainSelection.from,
-                        mainSelection.to,
-                      ) || 'link';
+                        mainSelection.to
+                      ) || "link";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
@@ -223,7 +223,7 @@ const Toolbar = (props: { store: Store }) => {
               );
               break;
             }
-            case 'image': {
+            case "image": {
               reactElement = (
                 <i
                   title="Image"
@@ -234,8 +234,8 @@ const Toolbar = (props: { store: Store }) => {
                     const text =
                       editor.state.sliceDoc(
                         mainSelection.from,
-                        mainSelection.to,
-                      ) || 'image';
+                        mainSelection.to
+                      ) || "image";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
@@ -248,7 +248,7 @@ const Toolbar = (props: { store: Store }) => {
               );
               break;
             }
-            case 'code': {
+            case "code": {
               reactElement = (
                 <i
                   title="Code"
@@ -259,7 +259,7 @@ const Toolbar = (props: { store: Store }) => {
                     const text =
                       editor.state.sliceDoc(
                         mainSelection.from,
-                        mainSelection.to,
+                        mainSelection.to
                       ) || "console.log('Hello, world!');";
                     editor.dispatch({
                       changes: {
@@ -273,7 +273,7 @@ const Toolbar = (props: { store: Store }) => {
               );
               break;
             }
-            case 'table': {
+            case "table": {
               reactElement = (
                 <i
                   title="Table"
@@ -310,7 +310,7 @@ row 2 col 1 | row 2 col 2`.trim();
               );
               break;
             }
-            case 'math': {
+            case "math": {
               reactElement = (
                 <i
                   title="Math"
@@ -321,8 +321,8 @@ row 2 col 1 | row 2 col 2`.trim();
                     const text =
                       editor.state.sliceDoc(
                         mainSelection.from,
-                        mainSelection.to,
-                      ) || 'E = mc^2';
+                        mainSelection.to
+                      ) || "E = mc^2";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
@@ -335,12 +335,12 @@ row 2 col 1 | row 2 col 2`.trim();
               );
               break;
             }
-            case 'flowchart': {
+            case "flowchart": {
               reactElement = (
                 <i
                   title="flowchart"
                   className="fa fa-diagram-project"
-                  onClick={() => insertFence('flowchart', 'A -> B')}
+                  onClick={() => insertFence("flowchart", "A -> B")}
                 ></i>
               );
               break;

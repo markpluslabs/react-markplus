@@ -2,8 +2,8 @@ import { ConfigProvider } from "antd";
 import { manage } from "manate";
 import React, { ReactElement, useEffect, useMemo } from "react";
 
-import Layout from "./components/layout.js";
-import { Store } from "./store.js";
+import Layout from "./components/layout.tsx";
+import { Store } from "./store.ts";
 
 export const defaultToolbarItems = [
   "about",

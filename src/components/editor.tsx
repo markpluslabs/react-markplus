@@ -18,12 +18,12 @@ import {
 } from "@codemirror/view";
 import debounce from "debounce";
 import { exclude } from "manate";
-import { auto } from "manate/react.js";
+import { auto } from "manate/react";
 import markplusEngine from "markplus-engine";
 import React, { useEffect, useRef } from "react";
 
-import { Store } from "../store.js";
-import { generateScrollMethods } from "../sync-scroll.js";
+import { Store } from "../store.ts";
+import { generateScrollMethods } from "../sync-scroll.ts";
 
 const Editor = (props: { store: Store }) => {
   const { store } = props;
@@ -80,8 +80,10 @@ const Editor = (props: { store: Store }) => {
 
     // auto focus after change text
     const dispatch = cm.dispatch.bind(cm);
-    cm.dispatch = (tr) => {
-      dispatch(tr);
+    // deno-lint-ignore no-explicit-any
+    cm.dispatch = (...args: any[]) => {
+      dispatch(...args);
+      const tr = args[0];
       if (tr.changes && tr.changes.insert) {
         cm.focus();
       }
@@ -107,7 +109,7 @@ const Editor = (props: { store: Store }) => {
       const preview = await markplusEngine.render(markdown);
       document.querySelector<HTMLElement>(
         `#${store.uid} .right-panel .preview`
-      ).innerHTML = preview;
+      )!.innerHTML = preview;
     }, 256);
     return () => {
       store.editor.scrollDOM.removeEventListener("scroll", handleEditorScroll);

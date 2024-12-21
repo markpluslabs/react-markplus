@@ -1,9 +1,9 @@
-import { Button, Form, Modal, Select } from 'antd';
-import { auto } from 'manate/react';
-import React from 'react';
+import { Button, Form, Modal, Select } from "antd";
+import { auto } from "manate/react";
+import React from "react";
 
-import iconUrl from '../icon.svg';
-import { Store } from './store';
+import iconUrl from "../icon.svg";
+import { Store } from "./store.ts";
 
 const PreferencesModal = (props: { store: Store }) => {
   const { store } = props;
@@ -12,7 +12,7 @@ const PreferencesModal = (props: { store: Store }) => {
     <Modal
       open={store.preferencesModalOpen}
       footer={
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: "center" }}>
           <Button
             type="primary"
             size="large"
@@ -26,7 +26,7 @@ const PreferencesModal = (props: { store: Store }) => {
       maskClosable={true}
       centered={true}
     >
-      <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: "center" }}>
         <p>
           <img src={iconUrl} width="64" />
         </p>
@@ -36,9 +36,9 @@ const PreferencesModal = (props: { store: Store }) => {
             <Select
               value={preferences.toolbar}
               options={[
-                { value: 'show', label: 'Show' },
-                { value: 'hide', label: 'Hide' },
-                { value: 'none', label: 'None' },
+                { value: "show", label: "Show" },
+                { value: "hide", label: "Hide" },
+                { value: "none", label: "None" },
               ]}
               onChange={(value) => (preferences.toolbar = value)}
             />
@@ -47,9 +47,9 @@ const PreferencesModal = (props: { store: Store }) => {
             <Select
               value={preferences.mode}
               options={[
-                { value: 'both', label: 'Both' },
-                { value: 'editor', label: 'Editor' },
-                { value: 'preview', label: 'Preview' },
+                { value: "both", label: "Both" },
+                { value: "editor", label: "Editor" },
+                { value: "preview", label: "Preview" },
               ]}
               onChange={(value) => (preferences.mode = value)}
             />
@@ -58,9 +58,9 @@ const PreferencesModal = (props: { store: Store }) => {
             <Select
               value={preferences.theme}
               options={[
-                { value: 'auto', label: 'Auto' },
-                { value: 'light', label: 'Light' },
-                { value: 'dark', label: 'Dark' },
+                { value: "auto", label: "Auto" },
+                { value: "light", label: "Light" },
+                { value: "dark", label: "Dark" },
               ]}
               onChange={(value) => (preferences.theme = value)}
             />
