@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "fmt": "deno fmt src/index.tsx",
+    "check": "deno check src/index.tsx",
+    "lint": "deno lint src/index.tsx"
+  }
+}

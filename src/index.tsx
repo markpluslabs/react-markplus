@@ -1,42 +1,42 @@
-import { ConfigProvider } from 'antd';
-import { manage } from 'manate';
-import React, { ReactElement, useEffect, useMemo } from 'react';
+import { ConfigProvider } from "antd";
+import { manage } from "manate";
+import React, { ReactElement, useEffect, useMemo } from "react";
 
-import Layout from './components/layout.js';
-import { Store } from './store.js';
+import Layout from "./components/layout.js";
+import { Store } from "./store.js";
 
 export const defaultToolbarItems = [
-  'about',
-  '|',
-  'bold',
-  'italic',
-  'strikethrough',
-  'underline',
-  'mark',
-  '|',
-  'emoji',
-  'fontawesome',
-  '|',
-  'quote',
-  'unordered-list',
-  'ordered-list',
-  'unchecked-list',
-  'checked-list',
-  '|',
-  'link',
-  'image',
-  'code',
-  'table',
-  '|',
-  'math',
-  'flowchart',
+  "about",
+  "|",
+  "bold",
+  "italic",
+  "strikethrough",
+  "underline",
+  "mark",
+  "|",
+  "emoji",
+  "fontawesome",
+  "|",
+  "quote",
+  "unordered-list",
+  "ordered-list",
+  "unchecked-list",
+  "checked-list",
+  "|",
+  "link",
+  "image",
+  "code",
+  "table",
+  "|",
+  "math",
+  "flowchart",
 ];
 
 const MarkPlus = (props: {
   markdown?: string;
-  mode?: 'editor' | 'preview' | 'both';
-  toolbar?: 'show' | 'hide' | 'none';
-  theme?: 'light' | 'dark' | 'auto';
+  mode?: "editor" | "preview" | "both";
+  toolbar?: "show" | "hide" | "none";
+  theme?: "light" | "dark" | "auto";
   toolbarItems?: (string | ReactElement)[];
   onChange?: (markdown: string) => void;
 }) => {
@@ -45,9 +45,9 @@ const MarkPlus = (props: {
     return manage(new Store());
   }, []);
   useEffect(() => {
-    store.preferences.mode = mode ?? 'both';
-    store.preferences.toolbar = toolbar ?? 'show';
-    store.preferences.theme = theme ?? 'auto';
+    store.preferences.mode = mode ?? "both";
+    store.preferences.toolbar = toolbar ?? "show";
+    store.preferences.theme = theme ?? "auto";
     store.preferences.toolbarItems = toolbarItems ?? defaultToolbarItems;
     store.onChange = props.onChange ?? (() => {});
   }, [mode, toolbar, theme, toolbarItems, store, props.onChange]);
@@ -56,7 +56,7 @@ const MarkPlus = (props: {
       changes: {
         from: 0,
         to: store.editor.state.doc.length,
-        insert: markdown ?? '',
+        insert: markdown ?? "",
       },
     });
   }, [markdown, store.editor]);
@@ -64,7 +64,7 @@ const MarkPlus = (props: {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: '#00b96b',
+          colorPrimary: "#00b96b",
         },
       }}
     >

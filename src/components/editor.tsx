@@ -4,26 +4,26 @@ import {
   historyKeymap,
   indentLess,
   indentMore,
-} from '@codemirror/commands';
+} from "@codemirror/commands";
 import {
   defaultHighlightStyle,
   syntaxHighlighting,
-} from '@codemirror/language';
+} from "@codemirror/language";
 import {
   EditorView,
   highlightActiveLine,
   KeyBinding,
   keymap,
   ViewUpdate,
-} from '@codemirror/view';
-import debounce from 'debounce';
-import { exclude } from 'manate';
-import { auto } from 'manate/react.js';
-import markplusEngine from 'markplus-engine';
-import React, { useEffect, useRef } from 'react';
+} from "@codemirror/view";
+import debounce from "debounce";
+import { exclude } from "manate";
+import { auto } from "manate/react.js";
+import markplusEngine from "markplus-engine";
+import React, { useEffect, useRef } from "react";
 
-import { Store } from '../store.js';
-import { generateScrollMethods } from '../sync-scroll.js';
+import { Store } from "../store.js";
+import { generateScrollMethods } from "../sync-scroll.js";
 
 const Editor = (props: { store: Store }) => {
   const { store } = props;
@@ -35,27 +35,25 @@ const Editor = (props: { store: Store }) => {
           store.onChange(store.editor.state.doc.toString());
           lazyChange();
         }
-      },
+      }
     );
 
     // Define the custom key binding
     const customKeymap = keymap.of([
       {
-        key: 'Tab',
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        key: "Tab",
         run: indentMore as any,
       },
       {
-        key: 'Shift-Tab',
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        key: "Shift-Tab",
         run: indentLess as any,
       },
       {
-        key: 'Mod-s',
+        key: "Mod-s",
         run: () => true,
       },
       {
-        key: 'Mod-b',
+        key: "Mod-b",
         run: () => {
           document
             .querySelector<HTMLElement>(`#${store.uid} .toolbar i.fa-bold`)
@@ -95,26 +93,26 @@ const Editor = (props: { store: Store }) => {
     const handleEditorScroll = () => {
       syncPreview();
     };
-    store.editor.scrollDOM.addEventListener('scroll', handleEditorScroll);
+    store.editor.scrollDOM.addEventListener("scroll", handleEditorScroll);
 
     const handlePreviewScroll = () => {
       syncEditor();
     };
     const rightPanel = document.querySelector(`#${store.uid} .right-panel`)!;
-    rightPanel.addEventListener('scroll', handlePreviewScroll);
+    rightPanel.addEventListener("scroll", handlePreviewScroll);
 
     // whenever user changes markdown
     const lazyChange = debounce(async () => {
       const markdown = store.editor.state.doc.toString();
       const preview = await markplusEngine.render(markdown);
       document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview`,
+        `#${store.uid} .right-panel .preview`
       ).innerHTML = preview;
     }, 256);
     return () => {
-      store.editor.scrollDOM.removeEventListener('scroll', handleEditorScroll);
+      store.editor.scrollDOM.removeEventListener("scroll", handleEditorScroll);
       store.editor.destroy();
-      rightPanel.removeEventListener('scroll', handlePreviewScroll);
+      rightPanel.removeEventListener("scroll", handlePreviewScroll);
     };
   }, [store]);
   return <div className="editor" ref={editorDiv}></div>;
