@@ -7,7 +7,6 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "skipLibCheck": true,
-    "typeRoots": ["node_modules/@types", "@types"]
   },
   "files": ["src/index.tsx"]
 }
