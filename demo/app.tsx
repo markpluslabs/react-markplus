@@ -7,7 +7,6 @@ import waitFor from "wait-for-async";
 
 import MarkPlus, { defaultToolbarItems } from "../src/index.tsx";
 import PreferencesModal from "./preferences-modal.tsx";
-import markdownUrl from "./sample.md";
 import { Store } from "./store.ts";
 
 const App = (props: { store: Store }) => {
@@ -18,7 +17,7 @@ const App = (props: { store: Store }) => {
   const [markdown, setMarkdown] = React.useState("");
   useEffect(() => {
     const loadSampleData = async () => {
-      const r = await fetch(markdownUrl);
+      const r = await fetch("sample.md");
       const text = await r.text();
       setMarkdown(text);
     };
@@ -55,20 +54,18 @@ const App = (props: { store: Store }) => {
   // scroll to hash
   useEffect(() => {
     const scrollToHash = async () => {
-      if (window.location.hash.length === 0) {
+      if (location.hash.length === 0) {
         return;
       }
       const r = await waitFor({
         interval: 100,
         times: 30,
-        condition: () => document.querySelector(window.location.hash) !== null,
+        condition: () => document.querySelector(location.hash) !== null,
       });
       if (!r) {
         return;
       }
-      const linkElement = document.querySelector<HTMLElement>(
-        window.location.hash
-      )!;
+      const linkElement = document.querySelector<HTMLElement>(location.hash)!;
       const rightPanel = document.querySelector(".right-panel")!;
       rightPanel.scrollTop = linkElement.offsetTop;
     };

@@ -2,7 +2,6 @@ import { Button, Form, Modal, Select } from "antd";
 import { auto } from "manate/react";
 import React from "react";
 
-import iconUrl from "../icon.svg";
 import { Store } from "./store.ts";
 
 const PreferencesModal = (props: { store: Store }) => {
@@ -28,7 +27,7 @@ const PreferencesModal = (props: { store: Store }) => {
     >
       <div style={{ textAlign: "center" }}>
         <p>
-          <img src={iconUrl} width="64" />
+          <img src="icon.svg" width="64" />
         </p>
         <h2>MarkPlus Preferences</h2>
         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 12 }} labelWrap>
