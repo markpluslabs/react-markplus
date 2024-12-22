@@ -1,8 +1,9 @@
 {
   "tasks": {
-    "fmt": "deno fmt src demo",
-    "check": "deno check src demo",
-    "lint": "deno lint src demo"
+    "fmt": "deno fmt src/*.ts src/*.tsx demo/*.ts demo/*.tsx",
+    "check": "deno check src/*.ts src/*.tsx demo/*.ts demo/*.tsx",
+    "lint": "deno lint src/*.ts src/*.tsx demo/*.ts demo/*.tsx",
+    "compile": "deno --allow-env --allow-read --allow-run compile.ts"
   },
   "compilerOptions": {
     "lib": ["dom", "esnext"]
