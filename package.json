@@ -1,6 +1,6 @@
 {
   "name": "react-markplus",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -19,7 +19,7 @@
   "scripts": {
     "serve": "yarn vite",
     "release": "yarn vite build && gh-pages -d demo/dist && rm -rf demo/dist",
-    "prepublishOnly": "yarn tsc",
+    "prepublishOnly": "deno task compile",
     "postpublish": "rm -rf lib"
   },
   "repository": {
