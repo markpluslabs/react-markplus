@@ -1,9 +1,9 @@
-import { manage } from 'manate';
+import { manage } from "manate";
 
 export class Preferences {
-  mode: 'both' | 'editor' | 'preview' = 'both';
-  toolbar: 'show' | 'hide' | 'none' = 'show';
-  theme: 'auto' | 'light' | 'dark' = 'auto';
+  mode: "both" | "editor" | "preview" = "both";
+  toolbar: "show" | "hide" | "none" = "show";
+  theme: "auto" | "light" | "dark" = "auto";
 }
 
 export class Store {

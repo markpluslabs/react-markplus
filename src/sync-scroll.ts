@@ -14,7 +14,7 @@ export const generateScrollMethods = (store: Store) => {
   let timeoutHandle: number | null = null;
   const scrollSide = (
     side: "left" | "right",
-    howToScroll: () => void
+    howToScroll: () => void,
   ): void => {
     if (scrollingSide !== null && scrollingSide !== side) {
       return; // the other side hasn't finished scrolling
@@ -25,7 +25,7 @@ export const generateScrollMethods = (store: Store) => {
     }
     timeoutHandle = setTimeout(() => {
       scrollingSide = null;
-    }, 512);
+    }, 512) as unknown as number;
     howToScroll();
   };
 
@@ -41,10 +41,10 @@ export const generateScrollMethods = (store: Store) => {
           }
         },
         store.editor.state.doc.lineAt(
-          store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from
+          store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from,
         ).number,
         targetLineNumber,
-        128
+        128,
       );
     });
   };
@@ -56,21 +56,21 @@ export const generateScrollMethods = (store: Store) => {
         (i) => (rightPanel.scrollTop = i),
         rightPanel.scrollTop,
         scrollTop,
-        128
+        128,
       );
     });
   };
 
   const getEditorScroll = (): IScroll => {
     const lineMarkers = document.querySelectorAll(
-      `#${store.uid} .right-panel .preview > [data-sl]`
+      `#${store.uid} .right-panel .preview > [data-sl]`,
     ) as NodeListOf<HTMLElement>;
     const lines: number[] = [];
     lineMarkers.forEach((element: HTMLElement) => {
       lines.push(parseInt(element.dataset.sl!, 10));
     });
     const currentLine = store.editor.state.doc.lineAt(
-      store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from
+      store.editor.lineBlockAtHeight(store.editor.scrollDOM.scrollTop).from,
     ).number;
     let lastMarker: number | null = null;
     let nextMarker: number | null = null;
@@ -93,16 +93,15 @@ export const generateScrollMethods = (store: Store) => {
 
   const setPreviewScroll = (editorScroll: IScroll): void => {
     let lastPosition = 0;
-    let nextPosition =
-      document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview`
-      )!.offsetHeight -
+    let nextPosition = document.querySelector<HTMLElement>(
+      `#${store.uid} .right-panel .preview`,
+    )!.offsetHeight -
       document.querySelector<HTMLElement>(`#${store.uid} .right-panel`)!
         .offsetHeight; // maximum scroll
 
     if (editorScroll.lastMarker) {
       const lastMarkerElement = document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.lastMarker}"]`
+        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.lastMarker}"]`,
       );
       if (lastMarkerElement) {
         lastPosition = lastMarkerElement.offsetTop;
@@ -111,23 +110,23 @@ export const generateScrollMethods = (store: Store) => {
 
     if (editorScroll.nextMarker) {
       const nextMarkerElement = document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.nextMarker}"]`
+        `#${store.uid} .right-panel .preview > [data-sl="${editorScroll.nextMarker}"]`,
       );
       if (nextMarkerElement) {
         nextPosition = nextMarkerElement.offsetTop;
       }
     }
-    const scrollTop =
-      lastPosition + (nextPosition - lastPosition) * editorScroll.percentage; // right scroll according to left percentage
+    const scrollTop = lastPosition +
+      (nextPosition - lastPosition) * editorScroll.percentage; // right scroll according to left percentage
     scrollPreview(scrollTop);
   };
 
   const getPreviewScroll = (): IScroll => {
     const rightPanel = document.querySelector<HTMLElement>(
-      `#${store.uid} .right-panel`
+      `#${store.uid} .right-panel`,
     )!;
     const preview = document.querySelector<HTMLElement>(
-      `#${store.uid} .right-panel .preview`
+      `#${store.uid} .right-panel .preview`,
     )!;
     const scroll = rightPanel.scrollTop;
     let lastLine = 1; // editor line starts with 1
@@ -135,7 +134,7 @@ export const generateScrollMethods = (store: Store) => {
     let nextLine = store.editor.state.doc.toString().split("\n").length; // number of lines of markdown
     let nextScroll = preview.offsetHeight - rightPanel.offsetHeight; // maximum scroll
     const lineMarkers = document.querySelectorAll<HTMLElement>(
-      `#${store.uid} .right-panel .preview > [data-sl]`
+      `#${store.uid} .right-panel .preview > [data-sl]`,
     );
     for (let i = 0; i < lineMarkers.length; i++) {
       const lineMarker = lineMarkers[i];

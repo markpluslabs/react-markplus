@@ -1,8 +1,8 @@
 {
   "tasks": {
-    "fmt": "deno fmt src/index.tsx demo/index.tsx",
-    "check": "deno check src/index.tsx demo/index.tsx",
-    "lint": "deno lint src/index.tsx demo/index.tsx"
+    "fmt": "deno fmt src demo",
+    "check": "deno check src demo",
+    "lint": "deno lint src demo"
   },
   "compilerOptions": {
     "lib": ["dom", "esnext"]

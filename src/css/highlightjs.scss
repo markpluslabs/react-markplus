@@ -5,7 +5,7 @@
     display: block;
   }
 
-  &[data-theme='dark'] {
+  &[data-theme="dark"] {
     .markdown-body pre code.hljs {
       color: #c9d1d9;
       background: #151b23;
@@ -86,7 +86,7 @@
     }
   }
 
-  &[data-theme='light'] {
+  &[data-theme="light"] {
     .markdown-body pre code.hljs {
       color: #24292e;
       background: #f6f8fa;

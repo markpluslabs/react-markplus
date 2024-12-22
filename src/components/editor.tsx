@@ -18,7 +18,7 @@ import {
 } from "@codemirror/view";
 import debounce from "debounce";
 import { exclude } from "manate";
-import { auto } from "manate/react";
+import { auto } from "manate/react.js";
 import markplusEngine from "markplus-engine";
 import React, { useEffect, useRef } from "react";
 
@@ -35,18 +35,18 @@ const Editor = (props: { store: Store }) => {
           store.onChange(store.editor.state.doc.toString());
           lazyChange();
         }
-      }
+      },
     );
 
     // Define the custom key binding
     const customKeymap = keymap.of([
       {
         key: "Tab",
-        run: indentMore as any,
+        run: indentMore,
       },
       {
         key: "Shift-Tab",
-        run: indentLess as any,
+        run: indentLess,
       },
       {
         key: "Mod-s",
@@ -108,7 +108,7 @@ const Editor = (props: { store: Store }) => {
       const markdown = store.editor.state.doc.toString();
       const preview = await markplusEngine.render(markdown);
       document.querySelector<HTMLElement>(
-        `#${store.uid} .right-panel .preview`
+        `#${store.uid} .right-panel .preview`,
       )!.innerHTML = preview;
     }, 256);
     return () => {

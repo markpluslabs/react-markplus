@@ -29,7 +29,7 @@ const App = (props: { store: Store }) => {
     let preferencesSaver: ReturnType<typeof autoRun>;
     const main = async () => {
       const savedPreferences = await localforage.getItem<string>(
-        "markplus-preferences"
+        "markplus-preferences",
       );
       if (savedPreferences) {
         Object.assign(preferences, JSON.parse(savedPreferences));
@@ -38,7 +38,7 @@ const App = (props: { store: Store }) => {
       preferencesSaver = autoRun(() => {
         localforage.setItem(
           "markplus-preferences",
-          JSON.stringify(preferences)
+          JSON.stringify(preferences),
         );
       });
       preferencesSaver.start();
@@ -99,7 +99,8 @@ const App = (props: { store: Store }) => {
             title="Preferences"
             className="fa fa-cog"
             onClick={() => (store.preferencesModalOpen = true)}
-          ></i>,
+          >
+          </i>,
         ]}
       />
       <ConfigProvider

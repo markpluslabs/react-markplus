@@ -37,7 +37,7 @@ const Layout = (props: { store: Store }) => {
   }
   let theme = preferences.theme;
   if (theme === "auto") {
-    theme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    theme = matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light";
   }
@@ -47,14 +47,14 @@ const Layout = (props: { store: Store }) => {
         <Toolbar store={store} />
         <div
           className="gutter row-gutter"
-          title={
-            preferences.toolbar === "hide" ? "Show toolbar" : "Hide toolbar"
-          }
-          onClick={() =>
-            (preferences.toolbar =
-              preferences.toolbar === "hide" ? "show" : "hide")
-          }
-        ></div>
+          title={preferences.toolbar === "hide"
+            ? "Show toolbar"
+            : "Hide toolbar"}
+          onClick={() => (preferences.toolbar = preferences.toolbar === "hide"
+            ? "show"
+            : "hide")}
+        >
+        </div>
         <div className="cols-grid" style={{ gridTemplateColumns }}>
           <div className="left-panel">
             <Editor store={store} />
@@ -63,7 +63,8 @@ const Layout = (props: { store: Store }) => {
             className="gutter col-gutter"
             title="Resize"
             ref={colGutter}
-          ></div>
+          >
+          </div>
           <div className="right-panel">
             <article className="markdown-body preview"></article>
           </div>

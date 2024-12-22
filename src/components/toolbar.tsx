@@ -22,10 +22,12 @@ const Toolbar = (props: { store: Store }) => {
       changes: {
         from: mainSelection.from,
         to: mainSelection.to,
-        insert: `${modifier}${editor.state.sliceDoc(
-          mainSelection.from,
-          mainSelection.to
-        )}${modifier}`,
+        insert: `${modifier}${
+          editor.state.sliceDoc(
+            mainSelection.from,
+            mainSelection.to,
+          )
+        }${modifier}`,
       },
     });
   };
@@ -47,8 +49,8 @@ const Toolbar = (props: { store: Store }) => {
   const insertFence = (type: string, sample: string): void => {
     const editor = store.editor;
     const mainSelection = editor.state.selection.main;
-    const text =
-      editor.state.sliceDoc(mainSelection.from, mainSelection.to) || sample;
+    const text = editor.state.sliceDoc(mainSelection.from, mainSelection.to) ||
+      sample;
     editor.dispatch({
       changes: {
         from: mainSelection.from,
@@ -84,7 +86,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Bold"
                   className={`fa fa-bold`}
                   onClick={() => stylingClicked("**")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -94,7 +97,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Italic"
                   className={`fa fa-italic`}
                   onClick={() => stylingClicked("*")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -104,7 +108,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Strikethrough"
                   className={`fa fa-strikethrough`}
                   onClick={() => stylingClicked("~~")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -114,7 +119,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Underline"
                   className={`fa fa-underline`}
                   onClick={() => stylingClicked("++")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -124,7 +130,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Mark"
                   className={`fa fa-marker`}
                   onClick={() => stylingClicked("==")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -134,7 +141,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Emoji"
                   className="fa fa-regular fa-smile"
                   onClick={() => modals.emoji.open()}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -144,7 +152,8 @@ const Toolbar = (props: { store: Store }) => {
                   title="Font awesome"
                   className="fa fa-regular fa-flag"
                   onClick={() => modals.fontAwesome.open()}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -154,7 +163,8 @@ const Toolbar = (props: { store: Store }) => {
                   title={"Quote"}
                   className={`fa fa-quote-left`}
                   onClick={() => listClicked("> ")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -164,7 +174,8 @@ const Toolbar = (props: { store: Store }) => {
                   title={"Unordered list"}
                   className={`fa fa-list-ul`}
                   onClick={() => listClicked("- ")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -174,7 +185,8 @@ const Toolbar = (props: { store: Store }) => {
                   title={"Ordered list"}
                   className={`fa fa-list-ol`}
                   onClick={() => listClicked("1. ")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -184,7 +196,8 @@ const Toolbar = (props: { store: Store }) => {
                   title={"Unchecked list"}
                   className={`fa fa-regular fa-square`}
                   onClick={() => listClicked("- [ ] ")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -194,7 +207,8 @@ const Toolbar = (props: { store: Store }) => {
                   title={"Checked list"}
                   className={`fa fa-regular fa-check-square`}
                   onClick={() => listClicked("- [x] ")}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -206,20 +220,21 @@ const Toolbar = (props: { store: Store }) => {
                   onClick={() => {
                     const editor = store.editor;
                     const mainSelection = editor.state.selection.main;
-                    const text =
-                      editor.state.sliceDoc(
-                        mainSelection.from,
-                        mainSelection.to
-                      ) || "link";
+                    const text = editor.state.sliceDoc(
+                      mainSelection.from,
+                      mainSelection.to,
+                    ) || "link";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
                         to: mainSelection.to,
-                        insert: `[${text}](https://github.com/markpluslabs/react-markplus/)`,
+                        insert:
+                          `[${text}](https://github.com/markpluslabs/react-markplus/)`,
                       },
                     });
                   }}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -231,20 +246,21 @@ const Toolbar = (props: { store: Store }) => {
                   onClick={() => {
                     const editor = store.editor;
                     const mainSelection = editor.state.selection.main;
-                    const text =
-                      editor.state.sliceDoc(
-                        mainSelection.from,
-                        mainSelection.to
-                      ) || "image";
+                    const text = editor.state.sliceDoc(
+                      mainSelection.from,
+                      mainSelection.to,
+                    ) || "image";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
                         to: mainSelection.to,
-                        insert: `![${text}](https://markpluslabs.github.io/react-markplus/icon.svg)`,
+                        insert:
+                          `![${text}](https://markpluslabs.github.io/react-markplus/icon.svg)`,
                       },
                     });
                   }}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -256,11 +272,10 @@ const Toolbar = (props: { store: Store }) => {
                   onClick={() => {
                     const editor = store.editor;
                     const mainSelection = editor.state.selection.main;
-                    const text =
-                      editor.state.sliceDoc(
-                        mainSelection.from,
-                        mainSelection.to
-                      ) || "console.log('Hello, world!');";
+                    const text = editor.state.sliceDoc(
+                      mainSelection.from,
+                      mainSelection.to,
+                    ) || "console.log('Hello, world!');";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
@@ -269,7 +284,8 @@ const Toolbar = (props: { store: Store }) => {
                       },
                     });
                   }}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -306,7 +322,8 @@ row 2 col 1 | row 2 col 2`.trim();
                       });
                     }
                   }}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -318,11 +335,10 @@ row 2 col 1 | row 2 col 2`.trim();
                   onClick={() => {
                     const editor = store.editor;
                     const mainSelection = editor.state.selection.main;
-                    const text =
-                      editor.state.sliceDoc(
-                        mainSelection.from,
-                        mainSelection.to
-                      ) || "E = mc^2";
+                    const text = editor.state.sliceDoc(
+                      mainSelection.from,
+                      mainSelection.to,
+                    ) || "E = mc^2";
                     editor.dispatch({
                       changes: {
                         from: mainSelection.from,
@@ -331,7 +347,8 @@ row 2 col 1 | row 2 col 2`.trim();
                       },
                     });
                   }}
-                ></i>
+                >
+                </i>
               );
               break;
             }
@@ -341,7 +358,8 @@ row 2 col 1 | row 2 col 2`.trim();
                   title="flowchart"
                   className="fa fa-diagram-project"
                   onClick={() => insertFence("flowchart", "A -> B")}
-                ></i>
+                >
+                </i>
               );
               break;
             }

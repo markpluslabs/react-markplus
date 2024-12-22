@@ -1,16 +1,16 @@
-@use 'katex/dist/katex.css';
-@use '@fortawesome/fontawesome-free/css/all.css';
+@use "katex/dist/katex.css";
+@use "@fortawesome/fontawesome-free/css/all.css";
 
-@use './github-markdown.scss';
-@use './highlightjs.scss';
+@use "./github-markdown.scss";
+@use "./highlightjs.scss";
 
 .markplus {
   /*
-==============================
-  start of light/dark theme
-==============================
-*/
-  &[data-theme='light'] {
+  ==============================
+    start of light/dark theme
+  ==============================
+  */
+  &[data-theme="light"] {
     .cm-editor {
       background-color: #fff;
       color: #1f2328;
@@ -23,7 +23,7 @@
       background-color: white;
     }
   }
-  &[data-theme='dark'] {
+  &[data-theme="dark"] {
     .cm-editor {
       background-color: #0d1117;
       color: #f0f6fc;
@@ -51,16 +51,16 @@
     }
   }
   /*
-============================
-  end of light/dark theme
-============================
-*/
+  ============================
+    end of light/dark theme
+  ============================
+  */
 
   /*
-====================
-  start of layout
-====================
-*/
+  ====================
+    start of layout
+  ====================
+  */
   height: 100%;
   .rows-grid {
     display: grid;
@@ -117,16 +117,16 @@
     }
   }
   /*
-==================
-  end of layout
-==================
-*/
+  ==================
+    end of layout
+  ==================
+  */
 
   /* 
-====================
-  start of others
-====================
-*/
+  ====================
+    start of others
+  ====================
+  */
   .gutter {
     background-color: #dddddd;
   }
@@ -216,8 +216,8 @@
     border-color: #ebccd1;
   }
   /*
-==================
-  end of others
-==================
-*/
+  ==================
+    end of others
+  ==================
+  */
 }
