@@ -52,13 +52,17 @@ const MarkPlus = (props: {
     store.onChange = props.onChange ?? (() => {});
   }, [mode, toolbar, theme, toolbarItems, store, props.onChange]);
   useEffect(() => {
-    store.editor?.dispatch({
-      changes: {
-        from: 0,
-        to: store.editor.state.doc.length,
-        insert: markdown ?? "",
-      },
-    });
+    if (store.editor) {
+      const currentSelection = store.editor.state.selection;
+      store.editor.dispatch({
+        changes: {
+          from: 0,
+          to: store.editor.state.doc.length,
+          insert: markdown ?? "",
+        },
+        selection: currentSelection,
+      });
+    }
   }, [markdown, store.editor]);
   return (
     <ConfigProvider
