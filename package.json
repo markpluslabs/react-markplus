@@ -1,6 +1,6 @@
 {
   "name": "react-markplus",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -37,12 +37,12 @@
     "@codemirror/state": "^6.5.0",
     "@codemirror/view": "^6.36.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
-    "antd": "^5.22.6",
+    "antd": "^5.22.7",
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.8.1",
     "katex": "^0.16.18",
     "manate": "^2.0.0-beta.7",
-    "markplus-engine": "^0.2.1",
+    "markplus-engine": "^0.2.2",
     "split-grid": "^1.0.11",
     "wait-for-async": "^0.7.2"
   },
