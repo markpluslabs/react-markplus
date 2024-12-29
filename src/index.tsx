@@ -1,6 +1,12 @@
 import { ConfigProvider } from "antd";
 import { manage } from "manate";
-import React, { ReactElement, useEffect, useMemo } from "react";
+import React, {
+  forwardRef,
+  ReactElement,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+} from "react";
 
 import Layout from "./components/layout.tsx";
 import { Store } from "./store.ts";
@@ -32,18 +38,25 @@ export const defaultToolbarItems = [
   "flowchart",
 ];
 
-const MarkPlus = (props: {
+export interface MarkPlusRef {
+  getStore: () => Store;
+}
+
+const MarkPlus = forwardRef((props: {
   markdown?: string;
   mode?: "editor" | "preview" | "both";
   toolbar?: "show" | "hide" | "none";
   theme?: "light" | "dark" | "auto";
   toolbarItems?: (string | ReactElement)[];
   onChange?: (markdown: string) => void;
-}) => {
+}, ref) => {
   const { markdown, mode, toolbar, theme, toolbarItems } = props;
   const store = useMemo(() => {
     return manage(new Store());
   }, []);
+  useImperativeHandle(ref, () => ({
+    getStore: () => store, // Expose the `store` variable
+  }));
   useEffect(() => {
     store.preferences.mode = mode ?? "both";
     store.preferences.toolbar = toolbar ?? "show";
@@ -75,6 +88,6 @@ const MarkPlus = (props: {
       <Layout store={store} />
     </ConfigProvider>
   );
-};
+});
 
 export default MarkPlus;

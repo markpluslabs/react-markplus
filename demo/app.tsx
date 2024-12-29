@@ -2,16 +2,19 @@ import { ConfigProvider } from "antd";
 import localforage from "localforage";
 import { autoRun } from "manate";
 import { auto } from "manate/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import waitFor from "wait-for-async";
 
-import MarkPlus, { defaultToolbarItems } from "../src/index.tsx";
+import MarkPlus, { defaultToolbarItems, MarkPlusRef } from "../src/index.tsx";
 import PreferencesModal from "./preferences-modal.tsx";
 import { Store } from "./store.ts";
 
 const App = (props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
+
+  // `markPlusRef` here is just for demo purpose, we don't need it
+  const markPlusRef = useRef<MarkPlusRef | null>(null);
 
   // load sample markdown
   const [markdown, setMarkdown] = React.useState("");
@@ -20,6 +23,8 @@ const App = (props: { store: Store }) => {
       const r = await fetch("sample.md");
       const text = await r.text();
       setMarkdown(text);
+      const store = markPlusRef.current?.getStore();
+      console.log("store via ref:", store);
     };
     loadSampleData();
   }, []);
@@ -89,6 +94,7 @@ const App = (props: { store: Store }) => {
   return (
     <>
       <MarkPlus
+        ref={markPlusRef}
         markdown={markdown}
         {...preferences}
         toolbarItems={[
