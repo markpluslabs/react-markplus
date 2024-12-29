@@ -7,7 +7,7 @@ import Editor from "./editor.tsx";
 import Modals from "./modals/index.tsx";
 import Toolbar from "./toolbar.tsx";
 
-const Layout = (props: { store: Store }) => {
+const Layout = auto((props: { store: Store }) => {
   const { store } = props;
   const { preferences } = store;
   const colGutter = createRef<HTMLDivElement>();
@@ -73,6 +73,6 @@ const Layout = (props: { store: Store }) => {
       <Modals store={store} />
     </div>
   );
-};
+});
 
-export default auto(Layout);
+export default Layout;
