@@ -40,7 +40,7 @@
     "antd": "^5.22.7",
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.8.1",
-    "katex": "^0.16.18",
+    "katex": "^0.16.19",
     "manate": "^2.0.0-beta.7",
     "markplus-engine": "^0.2.2",
     "split-grid": "^1.0.11",

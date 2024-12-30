@@ -1249,6 +1249,13 @@ katex@^0.16.18:
   dependencies:
     commander "^8.3.0"
 
+katex@^0.16.19:
+  version "0.16.19"
+  resolved "https://registry.yarnpkg.com/katex/-/katex-0.16.19.tgz#698e026188876f9c8c93d3ecb27b212aaa056d0a"
+  integrity sha512-3IA6DYVhxhBabjSLTNO9S4+OliA3Qvb8pBQXMfC4WxXJgLwZgnfDl0BmB4z6nBMdznBsZ+CGM8DrGZ5hcguDZg==
+  dependencies:
+    commander "^8.3.0"
+
 lie@3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
