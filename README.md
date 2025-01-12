@@ -24,6 +24,14 @@ import MarkPlus from "react-markplus";
 <MarkPlus markdown="# Hello world!" />;
 ```
 
+## CSS
+
+You will need to import the following CSS:
+
+- "katex/dist/katex.css";
+- "@fortawesome/fontawesome-free/css/all.css";
+- "react-markplus/src/css/index.scss";
+
 ## markdown
 
 Initial markdown text to load into the editor.
