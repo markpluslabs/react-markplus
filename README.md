@@ -19,7 +19,7 @@ yarn add react-markplus
 ## Usage
 
 ```tsx
-import MarkPlus from 'react-markplus';
+import MarkPlus from "react-markplus";
 
 <MarkPlus markdown="# Hello world!" />;
 ```
@@ -29,7 +29,7 @@ import MarkPlus from 'react-markplus';
 Initial markdown text to load into the editor.
 
 ```tsx
-<MarkPlus markdown="# Hello world!" />
+<MarkPlus markdown="# Hello world!" />;
 ```
 
 Default value is `''`.
@@ -41,9 +41,9 @@ A callback function to be invoked automatically when markdown text changes.
 ```tsx
 <MarkPlus
   onChange={(markdown) => {
-    console.log('markdown text changed to:', markdown);
+    console.log("markdown text changed to:", markdown);
   }}
-/>
+/>;
 ```
 
 Default value is `() => {}`.
@@ -52,19 +52,22 @@ Default value is `() => {}`.
 
 A callback function to be invoked automatidally when preview html changes.
 
-This has been **removed** from the library. Because you are supposed to generate preview using [markplus-engine](https://github.com/markpluslabs/markplus-engine).
+This has been **removed** from the library. Because you are supposed to generate
+preview using
+[markplus-engine](https://github.com/markpluslabs/markplus-engine).
 
 ## toolbar
 
 Show, hide or remove toolbar.
 
 ```tsx
-<MarkPlus toolbar="show" />
+<MarkPlus toolbar="show" />;
 ```
 
 3 possible values:
 
-- `show`: show toolbar, show a gutter below toolbar. Click the gutter to hide toolbar.
+- `show`: show toolbar, show a gutter below toolbar. Click the gutter to hide
+  toolbar.
 - `hide`: hide toolbar, show a gutter on top. Click the gutter to show toolbar.
 - `none`: no toolbar, no gutter.
 
@@ -75,13 +78,14 @@ Default value: `show`.
 Display editor, preview or both.
 
 ```tsx
-<MarkPlus mode="both" />
+<MarkPlus mode="both" />;
 ```
 
 3 possible values:
 
 - `both`: show both editor and preview
-  - there is a vertical gutter between editor and preview, you may drag the gutter to adjust sizes of them.
+  - there is a vertical gutter between editor and preview, you may drag the
+    gutter to adjust sizes of them.
 - `editor`: show editor only
 - `preview`: show preview only
   - Use this mode if you don't need any editing feature.
@@ -94,7 +98,7 @@ Default value: `both`.
 Overall theme: light, dark or auto:
 
 ```tsx
-<MarkPlus theme="auto" />
+<MarkPlus theme="auto" />;
 ```
 
 3 possible values:
@@ -110,12 +114,12 @@ Default value: `auto`.
 You may configure the toolbar freely.
 
 ```tsx
-<MarkPlus toolbarItems={['about', '|', 'bold', 'italic']} />
+<MarkPlus toolbarItems={["about", "|", "bold", "italic"]} />;
 ```
 
-A toolbar item could be either a string or a `ReactElement`.
-For toolbar items included with library, you may just specify a string.
-For your own custom toolbar items, please specify a `ReactElement`.
+A toolbar item could be either a string or a `ReactElement`. For toolbar items
+included with library, you may just specify a string. For your own custom
+toolbar items, please specify a `ReactElement`.
 
 ## Included toolbar Items
 
@@ -163,37 +167,37 @@ For your own custom toolbar items, please specify a `ReactElement`.
 ## Default toolbar items
 
 ```tsx
-import { defaultToolbarItems } from 'react-markplus';
+import { defaultToolbarItems } from "react-markplus";
 ```
 
 Its value is:
 
 ```tsx
 [
-  'about',
-  '|',
-  'bold',
-  'italic',
-  'strikethrough',
-  'underline',
-  'mark',
-  '|',
-  'emoji',
-  'fontawesome',
-  '|',
-  'quote',
-  'unordered-list',
-  'ordered-list',
-  'unchecked-list',
-  'checked-list',
-  '|',
-  'link',
-  'image',
-  'code',
-  'table',
-  '|',
-  'math',
-  'flowchart',
+  "about",
+  "|",
+  "bold",
+  "italic",
+  "strikethrough",
+  "underline",
+  "mark",
+  "|",
+  "emoji",
+  "fontawesome",
+  "|",
+  "quote",
+  "unordered-list",
+  "ordered-list",
+  "unchecked-list",
+  "checked-list",
+  "|",
+  "link",
+  "image",
+  "code",
+  "table",
+  "|",
+  "math",
+  "flowchart",
 ];
 ```
 
@@ -206,16 +210,17 @@ Here is a sample to create and insert a custom toolbar item:
 ```tsx
 <MarkPlus
   toolbarItems={[
-    'about',
-    '|',
+    "about",
+    "|",
     <i
       key="preferences"
       title="Preferences"
       className="fa fa-cog"
       onClick={() => {
-        console.log('Todo: display a preferences modal');
+        console.log("Todo: display a preferences modal");
       }}
-    ></i>,
+    >
+    </i>,
   ]}
-/>
+/>;
 ```

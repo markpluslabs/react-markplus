@@ -100,13 +100,13 @@ const App = (props: { store: Store }) => {
         toolbarItems={[
           ...defaultToolbarItems,
           "|",
-          <i
-            key="preferences"
-            title="Preferences"
-            className="fa fa-cog"
-            onClick={() => (store.preferencesModalOpen = true)}
-          >
-          </i>,
+          // <i
+          //   key="preferences"
+          //   title="Preferences"
+          //   className="fa fa-cog"
+          //   onClick={() => (store.preferencesModalOpen = true)}
+          // >
+          // </i>,
         ]}
       />
       <ConfigProvider
