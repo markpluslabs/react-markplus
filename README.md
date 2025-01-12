@@ -224,3 +224,9 @@ Here is a sample to create and insert a custom toolbar item:
   ]}
 />;
 ```
+
+### Known issue
+
+Custom toolbar item will freeze in React 19 dev mode.
+
+It works in production mode though. It also works with React 18.

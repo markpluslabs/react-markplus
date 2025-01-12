@@ -101,7 +101,7 @@ const App = (props: { store: Store }) => {
           ...defaultToolbarItems,
           "|",
           // uncomment the following will cause page freeze
-          // not an issue in React 18
+          // not an issue in React 18, not an issue in React 19 prod mode
           // <i
           //   key="preferences"
           //   title="Preferences"
