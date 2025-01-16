@@ -42,13 +42,13 @@
     "github-markdown-css": "^5.8.1",
     "katex": "^0.16.20",
     "manate": "^2.0.0-beta.8",
-    "markplus-engine": "^0.2.4",
+    "markplus-engine": "^0.2.5",
     "split-grid": "^1.0.11",
     "wait-for-async": "^0.7.5"
   },
   "devDependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
-    "@types/node": "^22.10.6",
+    "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",

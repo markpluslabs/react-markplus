@@ -778,10 +778,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.6.tgz#628effeeae2064a1b4e79f78e81d87b7e5fc7b50"
   integrity sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==
 
-"@types/node@^22.10.6":
-  version "22.10.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.6.tgz#5c6795e71635876039f853cbccd59f523d9e4239"
-  integrity sha512-qNiuwC4ZDAUNcY47xgaSuS92cjf8JbSUoaKS77bmLG1rU7MlATVSiw/IlrjtIyyskXBZ8KkNfjK/P5na7rgXbQ==
+"@types/node@^22.10.7":
+  version "22.10.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.7.tgz#14a1ca33fd0ebdd9d63593ed8d3fbc882a6d28d7"
+  integrity sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==
   dependencies:
     undici-types "~6.20.0"
 
@@ -1375,20 +1375,20 @@ markdown-it@^14.1.0:
     punycode.js "^2.3.1"
     uc.micro "^2.1.0"
 
-markplus-charts@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.yarnpkg.com/markplus-charts/-/markplus-charts-0.2.6.tgz#b6d1277b3b3c584268e6bd028f41b32e2393c670"
-  integrity sha512-ppEgbC/wAhj+wjceSkvH+jAQ8tmDYuNp50+I7fE7iROQbmMtaWBSc4jMD8aO9CNZg6sikT7U40448xz+ra+8/w==
+markplus-charts@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/markplus-charts/-/markplus-charts-0.2.7.tgz#7137bc87917a20641969316fedc276b765e64cb2"
+  integrity sha512-qDN/gwXo7hTKGLEO5CaJt6qS34xAaAHjUfuIz0yTus2gRSY7mlrFybWi+4DGgenpQZ1SVulmNFi2Wk1oYdhyQQ==
   dependencies:
     chevrotain "^11.0.3"
     elkjs "^0.9.3"
     jsx2str "^0.1.6"
     web-worker "^1.3.0"
 
-markplus-engine@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/markplus-engine/-/markplus-engine-0.2.4.tgz#3ec2a76f8befb67586ce321420eb12c2225dca7c"
-  integrity sha512-J/+NyFnRml7YYcxL3PIgbhQ+JPO8b40C0Oi5pZXyBGjouo62iNpzYaiJd53jH8eZcjEG1eIvVLoUwGhi/wi0rg==
+markplus-engine@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/markplus-engine/-/markplus-engine-0.2.5.tgz#bd167d715ba3641f38d493e6cd179cb99a7c6e13"
+  integrity sha512-eeC1HD1Np26VPfqNxYe269Sp3YsTg417aHRfxfEM3PY/XmyBB3l1Q9sts0nza5AW5rv9xuegZODNBKgv2ubkuA==
   dependencies:
     highlight.js "^11.11.1"
     katex "^0.16.20"
@@ -1403,7 +1403,7 @@ markplus-engine@^0.2.4:
     markdown-it-regex "^0.2.2"
     markdown-it-sub "^2.0.0"
     markdown-it-sup "^2.0.0"
-    markplus-charts "^0.2.6"
+    markplus-charts "^0.2.7"
 
 mdurl@^2.0.0:
   version "2.0.0"
