@@ -1,6 +1,6 @@
 {
   "name": "react-markplus",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -32,10 +32,10 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@codemirror/commands": "6.7.1",
-    "@codemirror/language": "6.10.8",
+    "@codemirror/commands": "^6.8.0",
+    "@codemirror/language": "^6.10.8",
     "@codemirror/state": "6.5.0",
-    "@codemirror/view": "6.36.1",
+    "@codemirror/view": "^6.36.2",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "antd": "^5.23.1",
     "debounce": "^2.2.0",
