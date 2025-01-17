@@ -44,7 +44,7 @@
     "manate": "^2.0.0-beta.8",
     "markplus-engine": "^0.2.5",
     "split-grid": "^1.0.11",
-    "wait-for-async": "^0.7.5"
+    "wait-for-async": "^0.7.8"
   },
   "devDependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
