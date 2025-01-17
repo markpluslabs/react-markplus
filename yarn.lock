@@ -2265,10 +2265,10 @@ w3c-keyname@^2.2.4:
   resolved "https://registry.yarnpkg.com/w3c-keyname/-/w3c-keyname-2.2.8.tgz#7b17c8c6883d4e8b86ac8aba79d39e880f8869c5"
   integrity sha512-dpojBhNsCNN7T82Tm7k26A6G9ML3NkhDsnw9n/eoxSRlVBB4CEtIQ/KTCLI2Fwf3ataSXRhYFkQi3SlnFwPvPQ==
 
-wait-for-async@^0.7.8:
-  version "0.7.8"
-  resolved "https://registry.yarnpkg.com/wait-for-async/-/wait-for-async-0.7.8.tgz#91b58017875acdae2780e539c6339d40f1ffa7c8"
-  integrity sha512-GlXZmsn8SrCWWt2JN11Ed2wx+pDrHT9xBXNF/SBHa5b8JkPDDTWRm5GWQBorya2lDAlYq+2uNa/wQaUkWLijAw==
+wait-for-async@^0.7.9:
+  version "0.7.9"
+  resolved "https://registry.yarnpkg.com/wait-for-async/-/wait-for-async-0.7.9.tgz#f8c516880ce6b911738945739d8313d7f9b07ad9"
+  integrity sha512-DSo2ZTibu4O2rYNgEhcp3hvLvL4mJ3LosxAKa/QDeuOcaroNNZJs7jPKSpCVds8Lbu7RfawV9czelZuKc0GQtg==
 
 web-worker@^1.3.0:
   version "1.3.0"

@@ -20,7 +20,8 @@
     "serve": "yarn vite",
     "release": "yarn vite build && gh-pages -d demo/dist && rm -rf demo/dist",
     "prepublishOnly": "deno task compile",
-    "postpublish": "rm -rf lib"
+    "postpublish": "rm -rf lib",
+    "upgrade-all": "yarn yarn-upgrade-all && yarn add @codemirror/state@6.5.0 && rm -rf node_modules && yarn install"
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,7 @@
     "manate": "^2.0.0-beta.8",
     "markplus-engine": "^0.2.5",
     "split-grid": "^1.0.11",
-    "wait-for-async": "^0.7.8"
+    "wait-for-async": "^0.7.9"
   },
   "devDependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
