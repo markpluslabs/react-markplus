@@ -14,6 +14,7 @@ import {
   highlightActiveLine,
   KeyBinding,
   keymap,
+  scrollPastEnd,
   ViewUpdate,
 } from "@codemirror/view";
 import debounce from "debounce";
@@ -66,6 +67,7 @@ const Editor = (props: { store: Store }) => {
       extensions: [
         EditorView.lineWrapping,
         highlightActiveLine(),
+        scrollPastEnd(),
         history(),
         keymap.of([
           ...defaultKeymap,

@@ -37,7 +37,7 @@
     "@codemirror/state": "6.5.0",
     "@codemirror/view": "^6.36.2",
     "@fortawesome/fontawesome-free": "^6.7.2",
-    "antd": "^5.23.1",
+    "antd": "^5.23.2",
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.8.1",
     "katex": "^0.16.21",
@@ -59,7 +59,7 @@
     "sass-embedded": "^1.83.4",
     "shell-commands": "^0.4.2",
     "typescript": "^5.7.3",
-    "vite": "^6.0.7",
+    "vite": "^6.0.11",
     "yarn-upgrade-all": "^0.7.4"
   },
   "files": [
