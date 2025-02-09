@@ -24,5 +24,5 @@ useMemo doesn't have this restriction.
 ## CodeMirror 版本冲突
 
 升级所有包到最新版后, 常常出现版本冲突. 解决方案是: yarn list @codemirror/state
-然后把 @codemirror/state 调整成正确的版本, 使整个系统中只有一个版本. 还得杀出
+然后把 @codemirror/state 调整成正确的版本, 使整个系统中只有一个版本. 还得删除
 node_modules 文件夹并且 重新 yarn install

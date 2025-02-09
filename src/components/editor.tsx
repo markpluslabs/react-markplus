@@ -19,7 +19,7 @@ import {
 } from "@codemirror/view";
 import debounce from "debounce";
 import { exclude } from "manate";
-import { auto } from "manate/react.js";
+import { auto } from "manate/react";
 import markplusEngine from "markplus-engine";
 import React, { useEffect, useRef } from "react";
 

@@ -1,5 +1,5 @@
 import { Input, InputRef, Modal } from "antd";
-import { auto } from "manate/react.js";
+import { auto } from "manate/react";
 import React, { useRef, useState } from "react";
 
 import { Store } from "../../store.ts";

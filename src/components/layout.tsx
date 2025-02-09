@@ -1,4 +1,4 @@
-import { auto } from "manate/react.js";
+import { auto } from "manate/react";
 import React, { createRef, useEffect } from "react";
 import Split from "split-grid";
 

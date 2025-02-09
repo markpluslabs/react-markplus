@@ -37,19 +37,19 @@
     "@codemirror/state": "6.5.0",
     "@codemirror/view": "^6.36.2",
     "@fortawesome/fontawesome-free": "^6.7.2",
-    "antd": "^5.23.2",
+    "antd": "^5.23.4",
     "debounce": "^2.2.0",
     "github-markdown-css": "^5.8.1",
     "katex": "^0.16.21",
-    "manate": "^2.0.0-beta.8",
-    "markplus-engine": "^0.2.5",
+    "manate": "^2.0.0-rc.3",
+    "markplus-engine": "^0.2.7",
     "split-grid": "^1.0.11",
-    "wait-for-async": "^0.7.9"
+    "wait-for-async": "^0.7.13"
   },
   "devDependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
-    "@types/node": "^22.10.7",
-    "@types/react": "^19.0.7",
+    "@types/node": "^22.13.1",
+    "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
     "gh-pages": "^6.3.0",
@@ -59,7 +59,7 @@
     "sass-embedded": "^1.83.4",
     "shell-commands": "^0.4.2",
     "typescript": "^5.7.3",
-    "vite": "^6.0.11",
+    "vite": "^6.1.0",
     "yarn-upgrade-all": "^0.7.4"
   },
   "files": [

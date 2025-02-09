@@ -1,4 +1,4 @@
-import { auto } from "manate/react.js";
+import { auto } from "manate/react";
 import React from "react";
 
 import { Store } from "../../store.ts";
