@@ -1,6 +1,6 @@
 {
   "name": "react-markplus",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "A React markdown editor and previewer.",
   "keywords": [
     "markdown",
@@ -17,6 +17,7 @@
     "url": "https://github.com/markpluslabs/react-markplus/issues"
   },
   "scripts": {
+    "lint": "deno fmt && deno lint --fix",
     "serve": "yarn vite",
     "release": "yarn vite build && gh-pages -d demo/dist && rm -rf demo/dist",
     "prepublishOnly": "deno task compile",

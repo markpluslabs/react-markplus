@@ -6,7 +6,7 @@
     "declaration": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   },
   "files": ["src/index.tsx"]
 }
